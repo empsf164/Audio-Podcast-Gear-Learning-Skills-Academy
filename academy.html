@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WAVECRAFT Academy — Practical Audio Engineering & Podcasting Masterclasses</title>
+  <meta name="description" content="Master microphone technique, dialogue editing, noise reduction, and broadcast loudness with industry-leading audio engineers.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="bg-tech-pattern">
+
+  <!-- NAVBAR -->
+  <header class="wave-header">
+    <div class="container">
+      <nav class="wave-navbar" aria-label="Main Navigation">
+        <a href="index.html" class="wave-brand">
+          <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+          <span class="brand-text">WAVECRAFT</span>
+        </a>
+
+        <ul class="wave-nav-menu">
+          <li class="wave-nav-item"><a href="index.html" class="wave-nav-link">Home</a></li>
+          <li class="wave-nav-item"><a href="shop.html" class="wave-nav-link">Shop</a></li>
+          <li class="wave-nav-item"><a href="compare.html" class="wave-nav-link">Compare <span class="nav-badge compare-badge-count" style="display:none;">0</span></a></li>
+          <li class="wave-nav-item">
+            <a href="academy.html" class="wave-nav-link active" aria-haspopup="true">
+              Academy <i class="bi bi-chevron-down dropdown-caret"></i>
+            </a>
+            <div class="wave-dropdown">
+              <a href="academy.html" class="wave-dropdown-item"><i class="bi bi-mortarboard"></i><div><span class="fw-semibold">All Courses</span></div></a>
+              <a href="course-details.html?id=course-podcasting-fundamentals" class="wave-dropdown-item"><i class="bi bi-broadcast"></i><div><span class="fw-semibold">Podcasting Fundamentals</span></div></a>
+              <a href="course-details.html?id=course-mic-technique" class="wave-dropdown-item"><i class="bi bi-soundwave"></i><div><span class="fw-semibold">Recording & Mic Technique</span></div></a>
+              <a href="course-details.html?id=course-audio-editing" class="wave-dropdown-item"><i class="bi bi-scissors"></i><div><span class="fw-semibold">Audio Editing</span></div></a>
+              <a href="course-details.html?id=course-mixing-mastering" class="wave-dropdown-item"><i class="bi bi-activity"></i><div><span class="fw-semibold">Mixing & Mastering</span></div></a>
+              <a href="course-details.html?id=course-noise-control" class="wave-dropdown-item"><i class="bi bi-shield-check"></i><div><span class="fw-semibold">Noise Control</span></div></a>
+            </div>
+          </li>
+          <li class="wave-nav-item"><a href="guides.html" class="wave-nav-link">Guides</a></li>
+          <li class="wave-nav-item"><a href="warranty.html" class="wave-nav-link">Warranty</a></li>
+          <li class="wave-nav-item"><a href="about.html" class="wave-nav-link">About</a></li>
+          <li class="wave-nav-item"><a href="contact.html" class="wave-nav-link">Contact</a></li>
+        </ul>
+
+        <div class="wave-nav-actions">
+          <button class="btn-theme-toggle" id="themeToggleBtn" aria-label="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+          <button class="nav-icon-badge-btn cart-open-trigger" aria-label="Open Cart Drawer">
+            <i class="bi bi-bag"></i><span class="nav-badge cart-badge-count">1</span>
+          </button>
+          <a href="login.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Login</a>
+          <a href="signup.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Sign Up</a>
+          <a href="shop.html" class="btn-wave btn-wave-primary btn-wave-sm d-none d-sm-inline-flex">Shop Gear</a>
+          <button class="btn-mobile-toggle" id="mobileMenuToggle" aria-label="Open navigation"><i class="bi bi-list fs-4"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer & Cart Drawer (Shared) -->
+  <div class="wave-mobile-overlay" id="mobileMenuOverlay"></div>
+  <aside class="wave-mobile-menu" id="mobileMenuDrawer">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="wave-brand">
+        <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+        <span class="brand-text">WAVECRAFT</span>
+      </a>
+      <button class="btn btn-link text-light p-0" id="mobileMenuClose"><i class="bi bi-x-lg fs-5"></i></button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Shop Gear</a></li>
+      <li class="mobile-nav-item"><a href="compare.html" class="mobile-nav-link">Compare Gear</a></li>
+      <li class="mobile-nav-item"><a href="academy.html" class="mobile-nav-link active">Academy</a></li>
+      <li class="mobile-nav-item"><a href="guides.html" class="mobile-nav-link">Guides</a></li>
+      <li class="mobile-nav-item"><a href="warranty.html" class="mobile-nav-link">Warranty</a></li>
+      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </aside>
+
+  <div class="wave-mobile-overlay" id="cartOverlay"></div>
+  <aside class="cart-offcanvas" id="cartDrawer">
+    <div class="cart-header">
+      <h5 class="mb-0 fw-bold"><i class="bi bi-bag-check text-cyan me-2"></i>Studio Cart</h5>
+      <button class="btn btn-link text-light p-0" id="cartCloseBtn"><i class="bi bi-x-lg fs-5"></i></button>
+    </div>
+    <div class="cart-body" id="cartDrawerBody"></div>
+    <div class="cart-footer">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-secondary">Estimated Subtotal</span>
+        <span class="font-tech fs-5 fw-bold" id="cartSubtotal">$0.00</span>
+      </div>
+      <button class="btn-wave btn-wave-primary w-100 py-3" id="cartCheckoutBtn">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       ACADEMY HERO HEADER
+       ========================================================================== -->
+  <section class="py-5 border-bottom border-secondary border-opacity-10" style="background: radial-gradient(circle at 50% 0%, var(--accent-blue-dim) 0%, var(--bg-surface-1) 80%);">
+    <div class="container text-center py-3">
+      <div class="eyebrow mx-auto"><span class="eyebrow-dot"></span> WAVECRAFT ACADEMY</div>
+      <h1 class="display-5 fw-bold mb-3">Learn the Craft Behind the Sound.</h1>
+      <p class="text-secondary mx-auto mb-4" style="max-width: 620px;">
+        High-grade gear only reaches its potential with proper technique. Master voice acoustic capture, room reflections, surgical dialogue editing, and broadcast loudness.
+      </p>
+
+      <!-- Academy Metrics -->
+      <div class="row g-3 justify-content-center pt-2">
+        <div class="col-6 col-md-3">
+          <div class="p-3 rounded-3 border border-secondary border-opacity-25" style="background: var(--bg-surface-2);">
+            <div class="font-tech fs-4 fw-bold text-info">20+ Hours</div>
+            <div class="text-muted small">Practical Audio Labs</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 rounded-3 border border-secondary border-opacity-25" style="background: var(--bg-surface-2);">
+            <div class="font-tech fs-4 fw-bold text-info">Grammy-Nominated</div>
+            <div class="text-muted small">Engineer Instructors</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 rounded-3 border border-secondary border-opacity-25" style="background: var(--bg-surface-2);">
+            <div class="font-tech fs-4 fw-bold text-info">Free with Gear</div>
+            <div class="text-muted small">Course Bundling Included</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       COURSE FILTERS & CATALOG
+       ========================================================================== -->
+  <section class="py-5">
+    <div class="container">
+      <!-- Filter Bar -->
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4 p-3 rounded-4 border border-secondary border-opacity-25" style="background: var(--bg-surface-1);">
+        <!-- Level Pills -->
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <span class="small text-muted font-tech text-uppercase me-2">Level:</span>
+          <button class="btn btn-sm btn-outline-secondary filter-level-btn active" data-level="all">All Levels</button>
+          <button class="btn btn-sm btn-outline-secondary filter-level-btn" data-level="beginner">Beginner</button>
+          <button class="btn btn-sm btn-outline-secondary filter-level-btn" data-level="intermediate">Intermediate</button>
+          <button class="btn btn-sm btn-outline-secondary filter-level-btn" data-level="advanced">Advanced</button>
+        </div>
+
+        <!-- Topic Selector -->
+        <div class="d-flex align-items-center gap-2">
+          <label for="academyTopicSelect" class="small text-muted font-tech text-uppercase mb-0">Topic:</label>
+          <select id="academyTopicSelect" class="wave-select py-1 px-3 small" style="width: auto;">
+            <option value="all">All Audio Topics</option>
+            <option value="podcasting">Podcasting</option>
+            <option value="recording">Recording & Mic Technique</option>
+            <option value="editing">Audio Editing & Repair</option>
+            <option value="mixing">Mixing & Mastering</option>
+            <option value="noise-control">Noise Control & Acoustics</option>
+            <option value="streaming">Live Streaming & OBS</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Course Cards Grid -->
+      <div class="row g-4" id="academyCourseListContainer">
+        <!-- Rendered via JavaScript on DOM load -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="wave-footer">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="index.html" class="wave-brand mb-3 d-inline-flex">
+            <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+            <span class="brand-text">WAVECRAFT</span>
+          </a>
+          <p class="text-secondary small mb-3">
+            <strong>Build Better Sound. Create With Confidence.</strong><br>
+            A specialist destination combining professional podcast audio technology, intelligent acoustic comparisons, and creator production academy.
+          </p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-col-title">Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=microphones">Microphones</a></li>
+            <li><a href="shop.html?category=headphones">Headphones</a></li>
+            <li><a href="shop.html?category=interfaces">Interfaces</a></li>
+            <li><a href="shop.html?category=bundles">Podcast Bundles</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-3">
+          <h4 class="footer-col-title">Academy</h4>
+          <ul class="footer-links">
+            <li><a href="academy.html">All Courses</a></li>
+            <li><a href="course-details.html?id=course-podcasting-fundamentals">Podcasting</a></li>
+            <li><a href="course-details.html?id=course-mic-technique">Mic Technique</a></li>
+            <li><a href="course-details.html?id=course-noise-control">Noise Control</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4 class="footer-col-title">Support</h4>
+          <ul class="footer-links">
+            <li><a href="warranty.html">Register Warranty</a></li>
+            <li><a href="noise-cancellation-guide.html">Noise-Cancellation Guide</a></li>
+            <li><a href="contact.html">Contact Engineering Support</a></li>
+            <li><a href="about.html">About WAVECRAFT</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 WAVECRAFT Audio Technologies LLC. All rights reserved.</div>
+        <div class="d-flex align-items-center gap-3">
+          <a href="about.html">Privacy</a><span>•</span><a href="about.html">Terms</a><span>•</span><a href="warranty.html">Warranty Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/compare.js"></script>
+  <script src="assets/js/academy.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('academyCourseListContainer');
+      const topicSelect = document.getElementById('academyTopicSelect');
+      const levelBtns = document.querySelectorAll('.filter-level-btn');
+
+      let currentLevel = 'all';
+      let currentTopic = 'all';
+
+      function renderCourses() {
+        if (!window.WavecraftAcademy || !container) return;
+        const allCourses = window.WavecraftAcademy.getAll();
+
+        const filtered = allCourses.filter(c => {
+          const matchLevel = (currentLevel === 'all' || c.level.toLowerCase() === currentLevel);
+          const matchTopic = (currentTopic === 'all' || c.topic === currentTopic);
+          return matchLevel && matchTopic;
+        });
+
+        if (filtered.length === 0) {
+          container.innerHTML = `
+            <div class="col-12 text-center py-5">
+              <i class="bi bi-collection-play text-muted fs-1 mb-3 d-inline-block"></i>
+              <h5>No Courses Found</h5>
+              <p class="text-muted small">Try selecting another audio topic or level filter.</p>
+            </div>
+          `;
+        } else {
+          container.innerHTML = filtered.map(c => window.WavecraftAcademy.renderCard(c)).join('');
+        }
+      }
+
+      levelBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          levelBtns.forEach(b => b.classList.remove('active', 'btn-info', 'text-dark'));
+          levelBtns.forEach(b => b.classList.add('btn-outline-secondary'));
+          btn.classList.add('active', 'btn-info', 'text-dark');
+          btn.classList.remove('btn-outline-secondary');
+          currentLevel = btn.getAttribute('data-level');
+          renderCourses();
+        });
+      });
+
+      if (topicSelect) {
+        topicSelect.addEventListener('change', () => {
+          currentTopic = topicSelect.value;
+          renderCourses();
+        });
+      }
+
+      renderCourses();
+    });
+  </script>
+</body>
+</html>

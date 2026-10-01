@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WAVECRAFT Studio Mic X1 — Professional Broadcast Dynamic Microphone</title>
+  <meta name="description" content="Dual USB-C and XLR broadcast dynamic microphone engineered for podcasting, streaming, and treated studio speech.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="bg-tech-pattern">
+
+  <!-- NAVBAR -->
+  <header class="wave-header">
+    <div class="container">
+      <nav class="wave-navbar" aria-label="Main Navigation">
+        <a href="index.html" class="wave-brand">
+          <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+          <span class="brand-text">WAVECRAFT</span>
+        </a>
+
+        <ul class="wave-nav-menu">
+          <li class="wave-nav-item"><a href="index.html" class="wave-nav-link">Home</a></li>
+          <li class="wave-nav-item">
+            <a href="shop.html" class="wave-nav-link active" aria-haspopup="true">
+              Shop <i class="bi bi-chevron-down dropdown-caret"></i>
+            </a>
+            <div class="wave-dropdown">
+              <a href="shop.html?category=microphones" class="wave-dropdown-item"><i class="bi bi-mic"></i><div><span class="fw-semibold">Microphones</span><span class="item-desc">Dynamic & Condenser</span></div></a>
+              <a href="shop.html?category=headphones" class="wave-dropdown-item"><i class="bi bi-headphones"></i><div><span class="fw-semibold">Headphones</span><span class="item-desc">Studio Monitoring</span></div></a>
+              <a href="shop.html?category=interfaces" class="wave-dropdown-item"><i class="bi bi-cpu"></i><div><span class="fw-semibold">Audio Interfaces</span><span class="item-desc">USB-C Preamps</span></div></a>
+              <a href="shop.html?category=mixers" class="wave-dropdown-item"><i class="bi bi-sliders"></i><div><span class="fw-semibold">Mixers & Consoles</span><span class="item-desc">Podcast Decks</span></div></a>
+              <a href="shop.html?category=bundles" class="wave-dropdown-item"><i class="bi bi-box-seam"></i><div><span class="fw-semibold">Podcast Bundles</span><span class="item-desc">Turnkey Suites</span></div></a>
+            </div>
+          </li>
+          <li class="wave-nav-item"><a href="compare.html" class="wave-nav-link">Compare <span class="nav-badge compare-badge-count" style="display:none;">0</span></a></li>
+          <li class="wave-nav-item">
+            <a href="academy.html" class="wave-nav-link" aria-haspopup="true">
+              Academy <i class="bi bi-chevron-down dropdown-caret"></i>
+            </a>
+            <div class="wave-dropdown">
+              <a href="academy.html" class="wave-dropdown-item"><i class="bi bi-mortarboard"></i><div><span class="fw-semibold">All Courses</span></div></a>
+              <a href="course-details.html?id=course-mic-technique" class="wave-dropdown-item"><i class="bi bi-soundwave"></i><div><span class="fw-semibold">Microphone Technique</span></div></a>
+              <a href="course-details.html?id=course-noise-control" class="wave-dropdown-item"><i class="bi bi-shield-check"></i><div><span class="fw-semibold">Noise Control</span></div></a>
+            </div>
+          </li>
+          <li class="wave-nav-item"><a href="guides.html" class="wave-nav-link">Guides</a></li>
+          <li class="wave-nav-item"><a href="warranty.html" class="wave-nav-link">Warranty</a></li>
+          <li class="wave-nav-item"><a href="about.html" class="wave-nav-link">About</a></li>
+          <li class="wave-nav-item"><a href="contact.html" class="wave-nav-link">Contact</a></li>
+        </ul>
+
+        <div class="wave-nav-actions">
+          <button class="btn-theme-toggle" id="themeToggleBtn" aria-label="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+          <button class="nav-icon-badge-btn cart-open-trigger" aria-label="Open Cart Drawer">
+            <i class="bi bi-bag"></i><span class="nav-badge cart-badge-count">1</span>
+          </button>
+          <a href="login.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Login</a>
+          <a href="signup.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Sign Up</a>
+          <a href="shop.html" class="btn-wave btn-wave-primary btn-wave-sm d-none d-sm-inline-flex">Shop Gear</a>
+          <button class="btn-mobile-toggle" id="mobileMenuToggle" aria-label="Open navigation"><i class="bi bi-list fs-4"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer & Cart Drawer (Shared) -->
+  <div class="wave-mobile-overlay" id="mobileMenuOverlay"></div>
+  <aside class="wave-mobile-menu" id="mobileMenuDrawer">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="wave-brand">
+        <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+        <span class="brand-text">WAVECRAFT</span>
+      </a>
+      <button class="btn btn-link text-light p-0" id="mobileMenuClose"><i class="bi bi-x-lg fs-5"></i></button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Shop Gear</a></li>
+      <li class="mobile-nav-item"><a href="compare.html" class="mobile-nav-link">Compare Gear</a></li>
+      <li class="mobile-nav-item"><a href="academy.html" class="mobile-nav-link">Academy</a></li>
+      <li class="mobile-nav-item"><a href="guides.html" class="mobile-nav-link">Guides</a></li>
+      <li class="mobile-nav-item"><a href="warranty.html" class="mobile-nav-link">Warranty</a></li>
+      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </aside>
+
+  <div class="wave-mobile-overlay" id="cartOverlay"></div>
+  <aside class="cart-offcanvas" id="cartDrawer">
+    <div class="cart-header">
+      <h5 class="mb-0 fw-bold"><i class="bi bi-bag-check text-cyan me-2"></i>Studio Cart</h5>
+      <button class="btn btn-link text-light p-0" id="cartCloseBtn"><i class="bi bi-x-lg fs-5"></i></button>
+    </div>
+    <div class="cart-body" id="cartDrawerBody"></div>
+    <div class="cart-footer">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-secondary">Estimated Subtotal</span>
+        <span class="font-tech fs-5 fw-bold" id="cartSubtotal">$0.00</span>
+      </div>
+      <button class="btn-wave btn-wave-primary w-100 py-3" id="cartCheckoutBtn">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       PRODUCT SHOWROOM SECTION
+       ========================================================================== -->
+  <section class="py-4 border-bottom border-secondary border-opacity-10" style="background: var(--bg-surface-1);">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb small mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="shop.html">Shop</a></li>
+          <li class="breadcrumb-item active text-secondary" id="breadProductName">WAVECRAFT Studio Mic X1</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <!-- LEFT: Product Gallery & 360 Viewer Toggle -->
+        <div class="col-12 col-lg-7">
+          <div class="mb-3 d-flex justify-content-between align-items-center">
+            <div class="btn-group" role="group" aria-label="View mode toggle">
+              <button type="button" class="btn btn-sm btn-outline-info active" id="btnShowPhotoGallery">
+                <i class="bi bi-images me-1"></i> Studio Photography
+              </button>
+              <button type="button" class="btn btn-sm btn-outline-info" id="btnShow360Gallery">
+                <i class="bi bi-arrow-repeat me-1"></i> 360° Interactive Showroom
+              </button>
+            </div>
+            <span class="text-muted small font-tech">LABORATORY CALIBRATED</span>
+          </div>
+
+          <!-- Photo Gallery View -->
+          <div id="galleryPhotoView">
+            <div class="p-3 rounded-4 border border-secondary border-opacity-25 mb-3" style="background: var(--bg-surface-1);">
+              <img id="mainProductPhoto" src="assets/images/products/mic-x1.jpg" alt="Product Image" class="w-100 rounded-3" style="max-height: 520px; object-fit: contain;">
+            </div>
+
+            <div class="row g-2" id="galleryThumbnails">
+              <div class="col-3">
+                <img src="assets/images/products/mic-x1.jpg" class="img-fluid rounded border border-info border-opacity-50 p-1" style="cursor: pointer; background: var(--bg-surface-2);" alt="Thumb 1">
+              </div>
+              <div class="col-3">
+                <img src="assets/images/hero/hero-setup.jpg" class="img-fluid rounded border border-secondary border-opacity-25 p-1" style="cursor: pointer; background: var(--bg-surface-2);" alt="Thumb 2">
+              </div>
+              <div class="col-3">
+                <img src="assets/images/products/bundle-pro-creator.jpg" class="img-fluid rounded border border-secondary border-opacity-25 p-1" style="cursor: pointer; background: var(--bg-surface-2);" alt="Thumb 3">
+              </div>
+              <div class="col-3">
+                <img src="assets/images/guides/guide-noise-acoustics.jpg" class="img-fluid rounded border border-secondary border-opacity-25 p-1" style="cursor: pointer; background: var(--bg-surface-2);" alt="Thumb 4">
+              </div>
+            </div>
+          </div>
+
+          <!-- 360 Viewer View (Hidden initially until toggled) -->
+          <div id="gallery360View" class="d-none">
+            <div id="details360ViewerContainer"></div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Product Overview & Buy Box -->
+        <div class="col-12 col-lg-5">
+          <div class="p-4 rounded-4 border border-secondary border-opacity-25 sticky-top" style="background: var(--bg-surface-1); top: 90px; z-index: 10;">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="badge bg-info text-dark font-tech" id="prodDetailsBadge">Flagship</span>
+              <span class="text-info font-tech small fw-bold" id="prodDetailsBrand">WAVECRAFT</span>
+            </div>
+
+            <h1 class="h2 fw-bold mb-2" id="prodDetailsTitle">WAVECRAFT Studio Mic X1</h1>
+
+            <!-- Ratings -->
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <div class="text-warning small">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <span class="font-tech fw-bold small text-light" id="prodDetailsRating">4.9</span>
+              <span class="text-muted small">(184 Verified Acoustic Lab Reviews)</span>
+            </div>
+
+            <!-- Price & Availability -->
+            <div class="d-flex align-items-baseline gap-3 mb-3">
+              <span class="display-6 font-tech fw-bold text-light" id="prodDetailsPrice">$199</span>
+              <span class="text-success small fw-bold"><i class="bi bi-check-circle-fill me-1"></i>In Stock — Ships Today</span>
+            </div>
+
+            <p class="text-secondary small mb-4" id="prodDetailsDesc">
+              The definitive hybrid broadcast dynamic microphone for podcasters and streamers. Features pristine dual connectivity, internal pneumatic shock absorption, and broadcast-grade capsule voicing.
+            </p>
+
+            <!-- Key Specs Quick Strip -->
+            <div class="row g-2 mb-4">
+              <div class="col-6">
+                <div class="p-2 rounded border border-secondary border-opacity-10 text-center" style="background: var(--bg-surface-2);">
+                  <div class="text-muted small" style="font-size: 0.72rem;">SAMPLING</div>
+                  <div class="font-tech fw-bold small text-light">24-bit / 96 kHz</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-2 rounded border border-secondary border-opacity-10 text-center" style="background: var(--bg-surface-2);">
+                  <div class="text-muted small" style="font-size: 0.72rem;">CONNECTIVITY</div>
+                  <div class="font-tech fw-bold small text-light">USB-C + XLR</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-2 rounded border border-secondary border-opacity-10 text-center" style="background: var(--bg-surface-2);">
+                  <div class="text-muted small" style="font-size: 0.72rem;">POLAR PATTERN</div>
+                  <div class="font-tech fw-bold small text-light">Cardioid Dynamic</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-2 rounded border border-secondary border-opacity-10 text-center" style="background: var(--bg-surface-2);">
+                  <div class="text-muted small" style="font-size: 0.72rem;">FREQUENCY</div>
+                  <div class="font-tech fw-bold small text-light">20 Hz – 20 kHz</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action CTAs -->
+            <div class="d-grid gap-2 mb-3">
+              <button class="btn-wave btn-wave-primary btn-wave-lg add-to-cart-btn" id="prodDetailsAddToCartBtn" data-id="mic-x1">
+                <i class="bi bi-bag-plus me-1"></i> Add to Cart • Free Priority Shipping
+              </button>
+
+              <button class="btn-wave btn-wave-secondary btn-wave-sm" id="prodDetailsCompareBtn">
+                <i class="bi bi-intersect me-1"></i> Add to Technical Comparison
+              </button>
+            </div>
+
+            <!-- Warranty Trust Hook -->
+            <div class="p-3 rounded-3 border border-info border-opacity-25 d-flex align-items-center gap-3" style="background: var(--accent-cyan-dim);">
+              <i class="bi bi-shield-check text-info fs-3"></i>
+              <div>
+                <div class="fw-bold small text-light">3-Year Extended Warranty Included</div>
+                <div class="text-secondary small">Activate instant coverage via our serial registry.</div>
+              </div>
+              <a href="warranty.html?product=mic-x1" class="btn btn-sm btn-outline-info ms-auto">Register</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       TECHNICAL SPECIFICATIONS, COMPATIBILITY, ACCESSORIES & ACADEMY CONNECT
+       ========================================================================== -->
+  <section class="py-5 border-top border-secondary border-opacity-10" style="background: var(--bg-surface-1);">
+    <div class="container">
+      <!-- Tabs Nav -->
+      <ul class="nav nav-pills mb-4 border-bottom border-secondary border-opacity-25 pb-3" id="productTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active font-tech" id="tab-specs-btn" data-bs-toggle="pill" data-bs-target="#tab-specs" type="button" role="tab">
+            <i class="bi bi-sliders me-1"></i> Technical Specifications
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link font-tech" id="tab-included-btn" data-bs-toggle="pill" data-bs-target="#tab-included" type="button" role="tab">
+            <i class="bi bi-box me-1"></i> What's Included
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link font-tech" id="tab-compatibility-btn" data-bs-toggle="pill" data-bs-target="#tab-compatibility" type="button" role="tab">
+            <i class="bi bi-pc-display me-1"></i> Compatibility & Power
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link font-tech" id="tab-academy-btn" data-bs-toggle="pill" data-bs-target="#tab-academy" type="button" role="tab">
+            <i class="bi bi-mortarboard me-1"></i> Related Academy Training
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link font-tech" id="tab-faqs-btn" data-bs-toggle="pill" data-bs-target="#tab-faqs" type="button" role="tab">
+            <i class="bi bi-question-circle me-1"></i> Engineering FAQs
+          </button>
+        </li>
+      </ul>
+
+      <!-- Tabs Content -->
+      <div class="tab-content" id="productTabsContent">
+        <!-- 1. Technical Specs Table -->
+        <div class="tab-pane fade show active" id="tab-specs" role="tabpanel">
+          <div class="row g-4">
+            <div class="col-12 col-lg-6">
+              <h5 class="h6 text-uppercase font-tech text-info mb-3">Audio & Transducer Performance</h5>
+              <table class="table table-bordered border-secondary border-opacity-25 small mb-4">
+                <tbody>
+                  <tr><th class="w-50 bg-surface-2 text-secondary">Capsule Architecture</th><td>Large-diaphragm dynamic voiced for speech intelligibility</td></tr>
+                  <tr><th class="bg-surface-2 text-secondary">Polar Pattern</th><td>Tight Cardioid with >20dB off-axis room reflection rejection</td></tr>
+                  <tr><th class="bg-surface-2 text-secondary">Frequency Response</th><td>20 Hz – 20,000 Hz with subtle broadcast warmth curve</td></tr>
+                  <tr><th class="bg-surface-2 text-secondary">Max SPL</th><td>135 dB SPL (THD &lt; 0.5% at 1 kHz)</td></tr>
+                  <tr><th class="bg-surface-2 text-secondary">Self-Noise / EIN</th><td>-128 dBu Equivalent Input Noise (Clean ADC Floor)</td></tr>
+                  <tr><th class="bg-surface-2 text-secondary">High-Pass Filter</th><td>80 Hz, 12 dB/octave switchable rumble filter</td></tr>
+                </tbody>
+              </table>
+
+              <h5 class="h6 text-uppercase font-tech text-info mb-3">Digital Conversion & Monitoring</h5>
+              <table class="table table-bordered border-secondary border-opacity-25 small">
+                <tbody>
+                  <tr><th class="w-50 bg-surface-2 text-secondary">A/D Resolution</th><td>24-bit / 96 kHz Studio Mastering Grade</td></tr>
+                  <tr><th class="bg-surface-2 text-secondary">Headphone Amp</th><td>3.5 mm TRS stereo, 38 mW into 32 Ohms</td></tr>
+                  <tr><th class="bg-surface-2 text-secondary">Direct Hardware Monitor</th><td>Zero-latency real-time voice sidetone with mix blend</td></tr>
+                  <tr><th class="bg-surface-2 text-secondary">Onboard DSP</th><td>Speech Limiter, Noise Gate, Vocal Brightness Exciter</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="col-12 col-lg-6">
+              <h5 class="h6 text-uppercase font-tech text-info mb-3">Connectivity & Electrical</h5>
+              <table class="table table-bordered border-secondary border-opacity-25 small mb-4">
+                <tbody>
+                  <tr><th class="w-50 bg-surface-2 text-secondary">Analog Interface</th><td>Standard 3-Pin XLR Male (Gold-plated Neutrik pins)</td></tr>
+                  <tr><th class="bg-surface-2 text-secondary">Digital Interface</th><td>USB 2.0 Type-C bus-powered high-speed port</td></tr>
+                  <tr><th class="bg-surface-2 text-secondary">Phantom Power</th><td>Not required (Dynamic moving-coil transducer safe)</td></tr>
+                  <tr><th class="bg-surface-2 text-secondary">Output Impedance</th><td>350 Ohms balanced analog line load</td></tr>
+                </tbody>
+              </table>
+
+              <h5 class="h6 text-uppercase font-tech text-info mb-3">Physical Dimensions & Build</h5>
+              <table class="table table-bordered border-secondary border-opacity-25 small">
+                <tbody>
+                  <tr><th class="w-50 bg-surface-2 text-secondary">Chassis Material</th><td>CNC-machined anodized aluminum & die-cast zinc</td></tr>
+                  <tr><th class="bg-surface-2 text-secondary">Dimensions</th><td>164 mm length × 53 mm diameter</td></tr>
+                  <tr><th class="bg-surface-2 text-secondary">Weight</th><td>645 grams (including integrated shockmount yoke)</td></tr>
+                  <tr><th class="bg-surface-2 text-secondary">Thread Mount</th><td>Standard 5/8"-27 thread with 3/8"-16 brass adapter</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. What's Included -->
+        <div class="tab-pane fade" id="tab-included" role="tabpanel">
+          <div class="row g-4">
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="p-3 rounded-3 border border-secondary border-opacity-25 text-center" style="background: var(--bg-surface-2);">
+                <i class="bi bi-mic text-info fs-2 mb-2 d-inline-block"></i>
+                <h6 class="mb-1">WAVECRAFT Mic X1</h6>
+                <p class="text-muted small mb-0">With internal pneumatic shock isolation.</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="p-3 rounded-3 border border-secondary border-opacity-25 text-center" style="background: var(--bg-surface-2);">
+                <i class="bi bi-shield-shaded text-info fs-2 mb-2 d-inline-block"></i>
+                <h6 class="mb-1">Integrated Yoke Mount</h6>
+                <p class="text-muted small mb-0">Dual knurled tightening screws for any arm.</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="p-3 rounded-3 border border-secondary border-opacity-25 text-center" style="background: var(--bg-surface-2);">
+                <i class="bi bi-cable text-info fs-2 mb-2 d-inline-block"></i>
+                <h6 class="mb-1">Braided USB-C Cable (2m)</h6>
+                <p class="text-muted small mb-0">Gold-plated connectors with EMI ferrite bead.</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="p-3 rounded-3 border border-secondary border-opacity-25 text-center" style="background: var(--bg-surface-2);">
+                <i class="bi bi-patch-check text-info fs-2 mb-2 d-inline-block"></i>
+                <h6 class="mb-1">Warranty Certificate</h6>
+                <p class="text-muted small mb-0">Serial card with instant activation code.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Compatibility -->
+        <div class="tab-pane fade" id="tab-compatibility" role="tabpanel">
+          <div class="p-4 rounded-3 border border-secondary border-opacity-25" style="background: var(--bg-surface-2);">
+            <h5 class="h6 text-uppercase font-tech text-info mb-3">Operating Systems & Software Certification</h5>
+            <div class="row g-3">
+              <div class="col-12 col-md-4">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <i class="bi bi-apple fs-4 text-light"></i>
+                  <div><strong>macOS 10.15+ & Sequoia</strong><br><span class="text-muted small">Class-compliant (No drivers required)</span></div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <i class="bi bi-windows fs-4 text-light"></i>
+                  <div><strong>Windows 10 / 11</strong><br><span class="text-muted small">Plug-and-play + optional ASIO driver</span></div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <i class="bi bi-tablet fs-4 text-light"></i>
+                  <div><strong>iPadOS & iOS (USB-C)</strong><br><span class="text-muted small">Supports GarageBand, Ferrite, Logic</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Related Academy Training (CRITICAL REQUIREMENT) -->
+        <div class="tab-pane fade" id="tab-academy" role="tabpanel">
+          <div class="p-4 rounded-4 border border-info border-opacity-25" style="background: linear-gradient(135deg, var(--bg-surface-2), var(--bg-surface-1));">
+            <div class="row align-items-center g-4">
+              <div class="col-12 col-lg-4">
+                <img src="assets/images/academy/course-mic-technique.jpg" alt="Microphone Technique Academy Course" class="w-100 rounded-3 shadow">
+              </div>
+              <div class="col-12 col-lg-8">
+                <div class="eyebrow mb-2"><span class="eyebrow-dot"></span> WAVECRAFT ACADEMY INTEGRATION</div>
+                <h3 class="h4 mb-2">Learn How to Get the Best Sound From This Microphone</h3>
+                <p class="text-secondary small mb-3">
+                  Buying great gear is only half the battle. Master the proximity effect, calculate off-axis rejection angles for non-treated rooms, and dial in ideal gain staging with instructor Marcus Chen.
+                </p>
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <span class="badge bg-primary text-light font-tech">Free with Mic X1 Purchase</span>
+                  <span class="text-muted small"><i class="bi bi-clock me-1"></i>3h 30m • 10 Practical Lessons</span>
+                </div>
+                <a href="course-details.html?id=course-mic-technique" class="btn-wave btn-wave-primary btn-wave-sm">
+                  Explore Course Curriculum & Preview <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. FAQs -->
+        <div class="tab-pane fade" id="tab-faqs" role="tabpanel">
+          <div class="accordion accordion-flush" id="productFaqAccordion">
+            <div class="accordion-item bg-transparent border-bottom border-secondary border-opacity-25">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed bg-transparent text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  Can I use both the USB-C and XLR outputs at the same time?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#productFaqAccordion">
+                <div class="accordion-body text-secondary small">
+                  Yes! The WAVECRAFT Studio Mic X1 allows simultaneous dual output. You can send the digital USB-C stream to your streaming PC while simultaneously routing the analog XLR output to an interface or backup hardware recorder.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item bg-transparent border-bottom border-secondary border-opacity-25">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed bg-transparent text-light" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  Does this microphone require a Cloudlifter or inline preamp?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#productFaqAccordion">
+                <div class="accordion-body text-secondary small">
+                  Unlike vintage broadcast dynamic mics, the WAVECRAFT X1 features high-sensitivity neodymium magnets delivering -54 dBV/Pa. Any modern interface with +55 dB of gain (such as the WAVECRAFT Core Stream 2x2) drives it effortlessly with plenty of clean headroom.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="wave-footer">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="index.html" class="wave-brand mb-3 d-inline-flex">
+            <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+            <span class="brand-text">WAVECRAFT</span>
+          </a>
+          <p class="text-secondary small mb-3">
+            <strong>Build Better Sound. Create With Confidence.</strong><br>
+            A specialist destination combining professional podcast audio technology, intelligent acoustic comparisons, and creator production academy.
+          </p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-col-title">Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=microphones">Microphones</a></li>
+            <li><a href="shop.html?category=headphones">Headphones</a></li>
+            <li><a href="shop.html?category=interfaces">Interfaces</a></li>
+            <li><a href="shop.html?category=bundles">Podcast Bundles</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-3">
+          <h4 class="footer-col-title">Academy</h4>
+          <ul class="footer-links">
+            <li><a href="academy.html">All Courses</a></li>
+            <li><a href="course-details.html?id=course-mic-technique">Mic Technique</a></li>
+            <li><a href="course-details.html?id=course-noise-control">Noise Control</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4 class="footer-col-title">Support</h4>
+          <ul class="footer-links">
+            <li><a href="warranty.html">Register Warranty</a></li>
+            <li><a href="noise-cancellation-guide.html">Noise-Cancellation Guide</a></li>
+            <li><a href="contact.html">Contact Engineering Support</a></li>
+            <li><a href="about.html">About WAVECRAFT</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 WAVECRAFT Audio Technologies LLC. All rights reserved.</div>
+        <div class="d-flex align-items-center gap-3">
+          <a href="about.html">Privacy</a><span>•</span><a href="about.html">Terms</a><span>•</span><a href="warranty.html">Warranty Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/compare.js"></script>
+  <script src="assets/js/viewer-360.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Check query param for product ID, default to 'mic-x1'
+      const urlParams = new URLSearchParams(window.location.search);
+      const prodId = urlParams.get('id') || 'mic-x1';
+
+      if (window.WavecraftProducts) {
+        const prod = window.WavecraftProducts.getById(prodId) || window.WavecraftProducts.getById('mic-x1');
+        if (prod) {
+          document.getElementById('breadProductName').textContent = prod.name;
+          document.getElementById('prodDetailsTitle').textContent = prod.name;
+          document.getElementById('prodDetailsPrice').textContent = `$${prod.price}`;
+          document.getElementById('prodDetailsDesc').textContent = prod.description;
+          document.getElementById('prodDetailsBrand').textContent = prod.brand;
+          document.getElementById('prodDetailsBadge').textContent = prod.badge || 'PRO';
+          document.getElementById('prodDetailsRating').textContent = prod.rating;
+          document.getElementById('mainProductPhoto').src = prod.image;
+          document.getElementById('prodDetailsAddToCartBtn').setAttribute('data-id', prod.id);
+
+          // Compare button
+          const compareBtn = document.getElementById('prodDetailsCompareBtn');
+          if (compareBtn) {
+            compareBtn.addEventListener('click', () => {
+              window.WavecraftCompare.toggle(prod.id);
+            });
+          }
+        }
+      }
+
+      // Toggle between photo gallery & 360 viewer
+      const btnPhoto = document.getElementById('btnShowPhotoGallery');
+      const btn360 = document.getElementById('btnShow360Gallery');
+      const viewPhoto = document.getElementById('galleryPhotoView');
+      const view360 = document.getElementById('gallery360View');
+
+      if (btnPhoto && btn360) {
+        btnPhoto.addEventListener('click', () => {
+          btnPhoto.classList.add('active');
+          btn360.classList.remove('active');
+          viewPhoto.classList.remove('d-none');
+          view360.classList.add('d-none');
+        });
+
+        btn360.addEventListener('click', () => {
+          btn360.classList.add('active');
+          btnPhoto.classList.remove('active');
+          viewPhoto.classList.add('d-none');
+          view360.classList.remove('d-none');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Guides & Audio Glossary — WAVECRAFT Knowledge Hub</title>
+  <meta name="description"
+    content="In-depth technical guides on microphone selection, USB vs XLR interfaces, acoustic room treatment, and comprehensive audio engineering glossary.">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body class="bg-tech-pattern">
+
+  <!-- NAVBAR -->
+  <header class="wave-header">
+    <div class="container">
+      <nav class="wave-navbar" aria-label="Main Navigation">
+        <a href="index.html" class="wave-brand">
+          <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+          <span class="brand-text">WAVECRAFT</span>
+        </a>
+
+        <ul class="wave-nav-menu">
+          <li class="wave-nav-item"><a href="index.html" class="wave-nav-link">Home</a></li>
+          <li class="wave-nav-item"><a href="shop.html" class="wave-nav-link">Shop</a></li>
+          <li class="wave-nav-item"><a href="compare.html" class="wave-nav-link">Compare <span
+                class="nav-badge compare-badge-count" style="display:none;">0</span></a></li>
+          <li class="wave-nav-item"><a href="academy.html" class="wave-nav-link">Academy</a></li>
+          <li class="wave-nav-item"><a href="guides.html" class="wave-nav-link active">Guides</a></li>
+          <li class="wave-nav-item"><a href="warranty.html" class="wave-nav-link">Warranty</a></li>
+          <li class="wave-nav-item"><a href="about.html" class="wave-nav-link">About</a></li>
+          <li class="wave-nav-item"><a href="contact.html" class="wave-nav-link">Contact</a></li>
+        </ul>
+
+        <div class="wave-nav-actions">
+          <button class="btn-theme-toggle" id="themeToggleBtn" aria-label="Toggle theme"><i
+              class="bi bi-sun-fill"></i></button>
+          <button class="nav-icon-badge-btn cart-open-trigger" aria-label="Open Cart Drawer">
+            <i class="bi bi-bag"></i><span class="nav-badge cart-badge-count">1</span>
+          </button>
+          <a href="login.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Login</a>
+          <a href="signup.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Sign Up</a>
+          <a href="shop.html" class="btn-wave btn-wave-primary btn-wave-sm d-none d-sm-inline-flex">Shop Gear</a>
+          <button class="btn-mobile-toggle" id="mobileMenuToggle" aria-label="Open navigation"><i
+              class="bi bi-list fs-4"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer & Cart Drawer (Shared) -->
+  <div class="wave-mobile-overlay" id="mobileMenuOverlay"></div>
+  <aside class="wave-mobile-menu" id="mobileMenuDrawer">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="wave-brand">
+        <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+        <span class="brand-text">WAVECRAFT</span>
+      </a>
+      <button class="btn btn-link text-light p-0" id="mobileMenuClose"><i class="bi bi-x-lg fs-5"></i></button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Shop Gear</a></li>
+      <li class="mobile-nav-item"><a href="compare.html" class="mobile-nav-link">Compare Gear</a></li>
+      <li class="mobile-nav-item"><a href="academy.html" class="mobile-nav-link">Academy</a></li>
+      <li class="mobile-nav-item"><a href="guides.html" class="mobile-nav-link active">Guides</a></li>
+      <li class="mobile-nav-item"><a href="noise-cancellation-guide.html" class="mobile-nav-link">Noise Guide</a></li>
+      <li class="mobile-nav-item"><a href="warranty.html" class="mobile-nav-link">Warranty</a></li>
+      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </aside>
+
+  <div class="wave-mobile-overlay" id="cartOverlay"></div>
+  <aside class="cart-offcanvas" id="cartDrawer">
+    <div class="cart-header">
+      <h5 class="mb-0 fw-bold"><i class="bi bi-bag-check text-cyan me-2"></i>Studio Cart</h5>
+      <button class="btn btn-link text-light p-0" id="cartCloseBtn"><i class="bi bi-x-lg fs-5"></i></button>
+    </div>
+    <div class="cart-body" id="cartDrawerBody"></div>
+    <div class="cart-footer">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-secondary">Estimated Subtotal</span>
+        <span class="font-tech fs-5 fw-bold" id="cartSubtotal">$0.00</span>
+      </div>
+      <button class="btn-wave btn-wave-primary w-100 py-3" id="cartCheckoutBtn">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       GUIDES HERO HEADER
+       ========================================================================== -->
+  <section class="py-5 border-bottom border-secondary border-opacity-10" style="background: var(--bg-surface-1);">
+    <div class="container text-center py-2">
+      <div class="eyebrow mx-auto"><span class="eyebrow-dot"></span> WAVECRAFT KNOWLEDGE HUB</div>
+      <h1 class="display-5 fw-bold mb-3">Audio Engineering Guides & Glossary</h1>
+      <p class="text-secondary mx-auto mb-4" style="max-width: 650px;">
+        Unbiased, laboratory-backed technical breakdowns designed to eliminate guessing from your studio signal chain.
+      </p>
+
+      <div class="d-flex flex-wrap justify-content-center gap-2">
+        <a href="#guide-microphones" class="btn btn-sm btn-outline-secondary">Microphone Guide</a>
+        <a href="#guide-usb-vs-xlr" class="btn btn-sm btn-outline-secondary">USB vs XLR</a>
+        <a href="#guide-dynamic-vs-condenser" class="btn btn-sm btn-outline-secondary">Dynamic vs Condenser</a>
+        <a href="#guide-interfaces" class="btn btn-sm btn-outline-secondary">Audio Interfaces</a>
+        <a href="#guide-setup" class="btn btn-sm btn-outline-secondary">Podcast Setup</a>
+        <a href="noise-cancellation-guide.html" class="btn btn-sm btn-outline-info">Noise-Cancellation Guide <i
+            class="bi bi-arrow-right"></i></a>
+        <a href="#audio-glossary" class="btn btn-sm btn-outline-secondary">Audio Glossary</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FEATURED EDITORIAL GUIDES
+       ========================================================================== -->
+  <section class="py-5">
+    <div class="container">
+
+      <!-- Guide 1: Microphone Selection -->
+      <article class="p-4 p-lg-5 rounded-4 border border-secondary border-opacity-25 mb-5" id="guide-microphones"
+        style="background: var(--bg-surface-1);">
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-lg-8">
+            <span class="text-info font-tech small fw-bold text-uppercase mb-2 d-inline-block">GUIDE 01 • TRANSDUCER
+              SELECTION</span>
+            <h2 class="h2 fw-bold mb-3">Which Microphone Is Right for Your Podcast?</h2>
+            <p class="text-secondary">
+              Most creators make the mistake of buying sensitive condenser microphones in echoey living rooms. A
+              microphone does not know what sounds you want and what sounds you don’t—it simply transduces air pressure
+              fluctuations into electrical voltage.
+            </p>
+            <div class="row g-3 my-3">
+              <div class="col-12 col-md-6">
+                <div class="p-3 rounded-3 border border-secondary border-opacity-10"
+                  style="background: var(--bg-surface-2);">
+                  <h6 class="text-info fw-bold mb-1"><i class="bi bi-mic-fill me-1"></i>Dynamic Microphones</h6>
+                  <p class="text-muted small mb-0">Heavier moving coil diaphragm. Requires close speaking distance (2–4
+                    inches). Naturally rejects distant HVAC, fan rumble, and room echo.</p>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="p-3 rounded-3 border border-secondary border-opacity-10"
+                  style="background: var(--bg-surface-2);">
+                  <h6 class="text-info fw-bold mb-1"><i class="bi bi-reception-4 me-1"></i>Condenser Microphones</h6>
+                  <p class="text-muted small mb-0">Ultra-thin gold-sputtered foil. Captures delicate top-end shimmer and
+                    mouth nuances. Requires a treated acoustic room or vocal booth.</p>
+                </div>
+              </div>
+            </div>
+            <a href="shop.html?category=microphones" class="btn-wave btn-wave-primary btn-wave-sm">
+              Explore Dynamic & Condenser Mics <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+          <div class="col-12 col-lg-4">
+            <img src="assets/images/products/mic-x1.jpg" alt="Dynamic Broadcast Microphone"
+              class="w-100 rounded-3 shadow">
+          </div>
+        </div>
+      </article>
+
+      <!-- Guide 2: USB vs XLR -->
+      <article class="p-4 p-lg-5 rounded-4 border border-secondary border-opacity-25 mb-5" id="guide-usb-vs-xlr"
+        style="background: var(--bg-surface-1);">
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-lg-4 order-2 order-lg-1">
+            <img src="assets/images/products/interface-core2.jpg" alt="USB-C Audio Interface"
+              class="w-100 rounded-3 shadow">
+          </div>
+          <div class="col-12 col-lg-8 order-1 order-lg-2">
+            <span class="text-info font-tech small fw-bold text-uppercase mb-2 d-inline-block">GUIDE 02 • SIGNAL
+              TOPOLOGY</span>
+            <h2 class="h2 fw-bold mb-3">USB vs XLR: Which Should You Choose?</h2>
+            <p class="text-secondary">
+              USB microphones combine the capsule, preamp, analog-to-digital converter (ADC), and headphone amplifier
+              onto a single internal chip. XLR microphones output raw balanced analog voltage, giving you the freedom to
+              choose your interface, preamp, and multi-mic expansions.
+            </p>
+            <div class="table-responsive">
+              <table class="table table-bordered border-secondary border-opacity-25 small mb-3">
+                <thead class="bg-surface-2">
+                  <tr>
+                    <th>Feature</th>
+                    <th>USB-C Connection</th>
+                    <th>XLR Analog Connection</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="fw-bold">Setup Complexity</td>
+                    <td>Plug-and-play into PC/Mac/iPad</td>
+                    <td>Requires Audio Interface or Mixer</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Multi-Mic Recording</td>
+                    <td>Difficult without aggregate software</td>
+                    <td>Effortless (2, 4, or 8 mics into interface)</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">Cable Length</td>
+                    <td>Limited to 3 meters before signal drop</td>
+                    <td>Up to 100 meters with zero interference</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">WAVECRAFT Solution</td>
+                    <td colspan="2" class="text-info text-center fw-bold">WAVECRAFT Studio Mic X1 includes BOTH USB-C
+                      and XLR ports</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <a href="product-details.html?id=mic-x1" class="btn-wave btn-wave-outline btn-wave-sm">
+              Discover Hybrid USB/XLR Mic X1 <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Guide 3: Podcast Setup Guide -->
+      <article class="p-4 p-lg-5 rounded-4 border border-secondary border-opacity-25 mb-5" id="guide-setup"
+        style="background: var(--bg-surface-1);">
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-lg-8">
+            <span class="text-info font-tech small fw-bold text-uppercase mb-2 d-inline-block">GUIDE 03 • PHYSICAL
+              ERGONOMICS</span>
+            <h2 class="h2 fw-bold mb-3">How to Build an Ergonomic Podcast Setup</h2>
+            <p class="text-secondary">
+              Good posture directly translates into consistent vocal resonance. By mounting your microphone on a
+              low-profile boom arm, you eliminate mechanical desk vibrations caused by typing and mouse movement while
+              keeping eye contact clear with your camera and co-host.
+            </p>
+            <ul class="text-secondary small mb-3">
+              <li><strong>The 3:1 Rule:</strong> Maintain a 3-to-1 distance ratio between adjacent microphones to
+                prevent hollow phase comb filtering.</li>
+              <li><strong>Shockmount Isolation:</strong> Decouple your mic from desk rumble caused by elbow leaning and
+                table thumps.</li>
+              <li><strong>Direct Sidetone Monitoring:</strong> Always monitor your voice with closed-back headphones to
+                avoid shouting.</li>
+            </ul>
+            <a href="shop.html?category=bundles" class="btn-wave btn-wave-primary btn-wave-sm">
+              View Matched Podcast Bundles <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+          <div class="col-12 col-lg-4">
+            <img src="assets/images/products/bundle-pro-creator.jpg" alt="Podcast Studio Desk Setup"
+              class="w-100 rounded-3 shadow">
+          </div>
+        </div>
+      </article>
+
+      <!-- ==========================================================================
+           AUDIO GLOSSARY
+           ========================================================================== -->
+      <div class="pt-4" id="audio-glossary">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> REFERENCE DICTIONARY</div>
+        <h2 class="h1 fw-bold mb-4">The Audio Engineer's Glossary</h2>
+
+        <div class="row g-3">
+          <div class="col-12 col-md-6">
+            <div class="p-3 rounded-3 border border-secondary border-opacity-25"
+              style="background: var(--bg-surface-1);">
+              <h5 class="h6 font-tech text-info mb-1">EIN (Equivalent Input Noise)</h5>
+              <p class="text-secondary small mb-0">
+                A measure of the electrical noise created internally by a preamp circuit, usually expressed in dBu.
+                Lower numbers (such as -129 dBu) mean virtually silent gain with zero perceptible hiss.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="p-3 rounded-3 border border-secondary border-opacity-25"
+              style="background: var(--bg-surface-1);">
+              <h5 class="h6 font-tech text-info mb-1">LUFS (Loudness Units Full Scale)</h5>
+              <p class="text-secondary small mb-0">
+                The international broadcast standard for perceived loudness. Podcast platforms normalize speech between
+                <strong>-16 LUFS (Apple/Stereo)</strong> and <strong>-19 LUFS (Mono)</strong>.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="p-3 rounded-3 border border-secondary border-opacity-25"
+              style="background: var(--bg-surface-1);">
+              <h5 class="h6 font-tech text-info mb-1">Proximity Effect</h5>
+              <p class="text-secondary small mb-0">
+                An increase in low-frequency bass response that occurs when a sound source gets closer to a directional
+                (cardioid) microphone. Speaking within 2 inches yields radio-DJ warmth.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="p-3 rounded-3 border border-secondary border-opacity-25"
+              style="background: var(--bg-surface-1);">
+              <h5 class="h6 font-tech text-info mb-1">Polar Null Point</h5>
+              <p class="text-secondary small mb-0">
+                The exact physical angle where a microphone is least sensitive. For cardioid patterns, the null point is
+                180° directly behind the capsule; pointing this at your computer fan shields the recording.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="p-3 rounded-3 border border-secondary border-opacity-25"
+              style="background: var(--bg-surface-1);">
+              <h5 class="h6 font-tech text-info mb-1">Comb Filtering</h5>
+              <p class="text-secondary small mb-0">
+                An acoustic interference hollow artifact caused when the exact same voice reaches a microphone at two
+                different times (e.g. directly and reflecting off an untreated bare wall).
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="p-3 rounded-3 border border-secondary border-opacity-25"
+              style="background: var(--bg-surface-1);">
+              <h5 class="h6 font-tech text-info mb-1">+48V Phantom Power</h5>
+              <p class="text-secondary small mb-0">
+                Direct current electrical voltage delivered through balanced XLR pins 2 and 3 to polarize true condenser
+                microphone capsules and power internal converters.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="wave-footer">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="index.html" class="wave-brand mb-3 d-inline-flex">
+            <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+            <span class="brand-text">WAVECRAFT</span>
+          </a>
+          <p class="text-secondary small mb-3">
+            <strong>Build Better Sound. Create With Confidence.</strong><br>
+            A specialist destination combining professional podcast audio technology, intelligent acoustic comparisons,
+            and creator production academy.
+          </p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-col-title">Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=microphones">Microphones</a></li>
+            <li><a href="shop.html?category=headphones">Headphones</a></li>
+            <li><a href="shop.html?category=interfaces">Interfaces</a></li>
+            <li><a href="shop.html?category=bundles">Podcast Bundles</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-3">
+          <h4 class="footer-col-title">Academy</h4>
+          <ul class="footer-links">
+            <li><a href="academy.html">All Courses</a></li>
+            <li><a href="course-details.html?id=course-mic-technique">Mic Technique</a></li>
+            <li><a href="course-details.html?id=course-noise-control">Noise Control</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4 class="footer-col-title">Support</h4>
+          <ul class="footer-links">
+            <li><a href="warranty.html">Register Warranty</a></li>
+            <li><a href="noise-cancellation-guide.html">Noise-Cancellation Guide</a></li>
+            <li><a href="contact.html">Contact Engineering Support</a></li>
+            <li><a href="about.html">About WAVECRAFT</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 WAVECRAFT Audio Technologies LLC. All rights reserved.</div>
+        <div class="d-flex align-items-center gap-3">
+          <a href="about.html">Privacy</a><span>•</span><a href="about.html">Terms</a><span>•</span><a
+            href="warranty.html">Warranty Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/compare.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

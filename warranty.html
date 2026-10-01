@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warranty Registration & Authenticity Verification — WAVECRAFT</title>
+  <meta name="description" content="Register your WAVECRAFT broadcast microphones, interfaces, and headphones for instant 2-Year Official + 1-Year Extended Warranty coverage.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="bg-tech-pattern">
+
+  <!-- NAVBAR -->
+  <header class="wave-header">
+    <div class="container">
+      <nav class="wave-navbar" aria-label="Main Navigation">
+        <a href="index.html" class="wave-brand">
+          <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+          <span class="brand-text">WAVECRAFT</span>
+        </a>
+
+        <ul class="wave-nav-menu">
+          <li class="wave-nav-item"><a href="index.html" class="wave-nav-link">Home</a></li>
+          <li class="wave-nav-item"><a href="shop.html" class="wave-nav-link">Shop</a></li>
+          <li class="wave-nav-item"><a href="compare.html" class="wave-nav-link">Compare <span class="nav-badge compare-badge-count" style="display:none;">0</span></a></li>
+          <li class="wave-nav-item"><a href="academy.html" class="wave-nav-link">Academy</a></li>
+          <li class="wave-nav-item"><a href="guides.html" class="wave-nav-link">Guides</a></li>
+          <li class="wave-nav-item"><a href="warranty.html" class="wave-nav-link active">Warranty</a></li>
+          <li class="wave-nav-item"><a href="about.html" class="wave-nav-link">About</a></li>
+          <li class="wave-nav-item"><a href="contact.html" class="wave-nav-link">Contact</a></li>
+        </ul>
+
+        <div class="wave-nav-actions">
+          <button class="btn-theme-toggle" id="themeToggleBtn" aria-label="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+          <button class="nav-icon-badge-btn cart-open-trigger" aria-label="Open Cart Drawer">
+            <i class="bi bi-bag"></i><span class="nav-badge cart-badge-count">1</span>
+          </button>
+          <a href="login.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Login</a>
+          <a href="signup.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Sign Up</a>
+          <a href="shop.html" class="btn-wave btn-wave-primary btn-wave-sm d-none d-sm-inline-flex">Shop Gear</a>
+          <button class="btn-mobile-toggle" id="mobileMenuToggle" aria-label="Open navigation"><i class="bi bi-list fs-4"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer & Cart Drawer (Shared) -->
+  <div class="wave-mobile-overlay" id="mobileMenuOverlay"></div>
+  <aside class="wave-mobile-menu" id="mobileMenuDrawer">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="wave-brand">
+        <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+        <span class="brand-text">WAVECRAFT</span>
+      </a>
+      <button class="btn btn-link text-light p-0" id="mobileMenuClose"><i class="bi bi-x-lg fs-5"></i></button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Shop Gear</a></li>
+      <li class="mobile-nav-item"><a href="compare.html" class="mobile-nav-link">Compare Gear</a></li>
+      <li class="mobile-nav-item"><a href="academy.html" class="mobile-nav-link">Academy</a></li>
+      <li class="mobile-nav-item"><a href="guides.html" class="mobile-nav-link">Guides</a></li>
+      <li class="mobile-nav-item"><a href="warranty.html" class="mobile-nav-link active">Warranty</a></li>
+      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </aside>
+
+  <div class="wave-mobile-overlay" id="cartOverlay"></div>
+  <aside class="cart-offcanvas" id="cartDrawer">
+    <div class="cart-header">
+      <h5 class="mb-0 fw-bold"><i class="bi bi-bag-check text-cyan me-2"></i>Studio Cart</h5>
+      <button class="btn btn-link text-light p-0" id="cartCloseBtn"><i class="bi bi-x-lg fs-5"></i></button>
+    </div>
+    <div class="cart-body" id="cartDrawerBody"></div>
+    <div class="cart-footer">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-secondary">Estimated Subtotal</span>
+        <span class="font-tech fs-5 fw-bold" id="cartSubtotal">$0.00</span>
+      </div>
+      <button class="btn-wave btn-wave-primary w-100 py-3" id="cartCheckoutBtn">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       WARRANTY REGISTRATION HERO & FORM
+       ========================================================================== -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+          
+          <!-- Registration Form Container -->
+          <div id="warrantyFormContainer">
+            <div class="text-center mb-4">
+              <div class="eyebrow mx-auto"><span class="eyebrow-dot"></span> AUTHENTICITY & PROTECTION</div>
+              <h1 class="display-6 fw-bold mb-2">Register Your Gear</h1>
+              <p class="text-secondary small mb-3">
+                Activate your complimentary 2-Year Official Manufacturer Warranty + 1-Year Extended Academy Member Warranty.
+              </p>
+              
+              <!-- Demo Notice Disclaimer -->
+              <div class="alert alert-secondary border-info border-opacity-25 bg-surface-2 small text-secondary py-2 d-inline-flex align-items-center gap-2">
+                <i class="bi bi-info-circle-fill text-info"></i>
+                <span><strong>Front-End Demo:</strong> Serial registration is validated locally for interactive preview.</span>
+                <button type="button" class="btn btn-sm btn-link text-info p-0 text-decoration-none fw-bold" id="btnSampleSerialFill">
+                  Autofill Sample Data
+                </button>
+              </div>
+            </div>
+
+            <div class="warranty-card">
+              <form id="warrantyRegistrationForm" novalidate>
+                <div class="row g-3">
+                  <!-- First Name -->
+                  <div class="col-12 col-sm-6">
+                    <label for="warrantyFirstName" class="wave-form-label">First Name *</label>
+                    <input type="text" class="wave-input" id="warrantyFirstName" placeholder="e.g. Alexander" required>
+                    <div class="form-feedback-error">Please provide your first name.</div>
+                  </div>
+
+                  <!-- Last Name -->
+                  <div class="col-12 col-sm-6">
+                    <label for="warrantyLastName" class="wave-form-label">Last Name *</label>
+                    <input type="text" class="wave-input" id="warrantyLastName" placeholder="e.g. Wright" required>
+                    <div class="form-feedback-error">Please provide your last name.</div>
+                  </div>
+
+                  <!-- Email Address -->
+                  <div class="col-12 col-sm-6">
+                    <label for="warrantyEmail" class="wave-form-label">Email Address *</label>
+                    <input type="email" class="wave-input" id="warrantyEmail" placeholder="e.g. alex@creatorstudio.com" required>
+                    <div class="form-feedback-error">Please provide a valid email address.</div>
+                  </div>
+
+                  <!-- Product Selection -->
+                  <div class="col-12 col-sm-6">
+                    <label for="warrantyProductSelect" class="wave-form-label">Audio Product *</label>
+                    <select class="wave-select" id="warrantyProductSelect" required>
+                      <option value="" disabled selected>Select registered equipment...</option>
+                      <option value="mic-x1">WAVECRAFT Studio Mic X1 (Hybrid Dynamic)</option>
+                      <option value="mic-vocal-c3">WAVECRAFT Vocal Pure C3 (Condenser)</option>
+                      <option value="headphones-hd7">WAVECRAFT Reference Pro HD-7 (Headphones)</option>
+                      <option value="interface-core2">WAVECRAFT Core Stream 2x2 (Interface)</option>
+                      <option value="mixer-deck4">WAVECRAFT Broadcast Deck 4 (Mixer Console)</option>
+                      <option value="bundle-pro-creator">WAVECRAFT Creator Suite Pro Bundle</option>
+                    </select>
+                    <div class="form-feedback-error">Please select an audio product.</div>
+                  </div>
+
+                  <!-- Serial Number -->
+                  <div class="col-12 col-sm-6">
+                    <label for="warrantySerialNumber" class="wave-form-label">
+                      Serial Number * <span class="text-muted fw-normal font-tech">(Format: WCX1-XXXX-XXXX)</span>
+                    </label>
+                    <input type="text" class="wave-input font-tech text-uppercase" id="warrantySerialNumber" placeholder="WCX1-8842-7109" required>
+                    <div class="form-feedback-error">Please enter the valid laser-etched serial key (minimum 8 characters).</div>
+                  </div>
+
+                  <!-- Purchase Date -->
+                  <div class="col-12 col-sm-6">
+                    <label for="warrantyPurchaseDate" class="wave-form-label">Purchase Date *</label>
+                    <input type="date" class="wave-input" id="warrantyPurchaseDate" required>
+                    <div class="form-feedback-error">Please select your purchase date.</div>
+                  </div>
+
+                  <!-- Purchase Location / Retailer -->
+                  <div class="col-12 col-sm-6">
+                    <label for="warrantyPurchaseLocation" class="wave-form-label">Authorized Retailer / Location *</label>
+                    <input type="text" class="wave-input" id="warrantyPurchaseLocation" placeholder="e.g. WAVECRAFT Official Store, B&H, Sweetwater" required>
+                    <div class="form-feedback-error">Please specify where you purchased the gear.</div>
+                  </div>
+
+                  <!-- Country -->
+                  <div class="col-12 col-sm-6">
+                    <label for="warrantyCountry" class="wave-form-label">Country *</label>
+                    <select class="wave-select" id="warrantyCountry" required>
+                      <option value="US">United States</option>
+                      <option value="CA">Canada</option>
+                      <option value="UK">United Kingdom</option>
+                      <option value="DE">Germany</option>
+                      <option value="FR">France</option>
+                      <option value="AU">Australia</option>
+                      <option value="JP">Japan</option>
+                      <option value="IN">India</option>
+                      <option value="OTHER">International / Other</option>
+                    </select>
+                  </div>
+
+                  <!-- Agreement Checkbox -->
+                  <div class="col-12 pt-2">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="warrantyAgreeTerms" required>
+                      <label class="form-check-label small text-secondary" for="warrantyAgreeTerms">
+                        I confirm this serial number is genuine and agree to the WAVECRAFT Limited Warranty terms.
+                      </label>
+                      <div class="form-feedback-error">You must accept the warranty terms to proceed.</div>
+                    </div>
+                  </div>
+
+                  <!-- Submit CTA -->
+                  <div class="col-12 pt-3">
+                    <button type="submit" class="btn-wave btn-wave-primary btn-wave-lg w-100">
+                      <i class="bi bi-patch-check-fill me-1"></i> Register Warranty & Activate Protection
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- ==========================================================================
+               WARRANTY CONFIRMATION & DIGITAL CERTIFICATE (Shown on Submit)
+               ========================================================================== -->
+          <div id="warrantyConfirmationCard" style="display: none;">
+            <div class="warranty-certificate-card text-center mb-4">
+              <i class="bi bi-shield-check certificate-watermark"></i>
+              
+              <div class="mb-3">
+                <span class="badge bg-success text-light font-tech px-3 py-2"><i class="bi bi-check-circle-fill me-1"></i>VERIFIED & ACTIVATED</span>
+              </div>
+
+              <h2 class="display-6 fw-bold mb-1">Warranty Registered Successfully</h2>
+              <p class="text-secondary small mb-4">Official WAVECRAFT Audio Authenticity Certificate</p>
+
+              <div class="row g-3 text-start mb-4 p-3 rounded-3" style="background: var(--bg-surface-2);">
+                <div class="col-12 col-sm-6">
+                  <div class="text-muted small" style="font-size: 0.72rem;">REGISTERED PRODUCT</div>
+                  <div class="font-tech fw-bold text-light" id="certProductName">WAVECRAFT Studio Mic X1</div>
+                </div>
+
+                <div class="col-12 col-sm-6">
+                  <div class="text-muted small" style="font-size: 0.72rem;">SERIAL NUMBER</div>
+                  <div class="font-tech fw-bold text-info" id="certSerialNum">WCX1-8842-7109</div>
+                </div>
+
+                <div class="col-12 col-sm-6">
+                  <div class="text-muted small" style="font-size: 0.72rem;">REGISTERED TO</div>
+                  <div class="font-tech text-light" id="certCustomerName">Alexander Wright</div>
+                  <div class="text-muted small" id="certCustomerEmail">alex@creatorstudio.com</div>
+                </div>
+
+                <div class="col-12 col-sm-6">
+                  <div class="text-muted small" style="font-size: 0.72rem;">REGISTRATION ID</div>
+                  <div class="font-tech text-light" id="certRegId">WC-REG-2026-94812</div>
+                </div>
+
+                <div class="col-12 col-sm-6">
+                  <div class="text-muted small" style="font-size: 0.72rem;">ACTIVATION DATE</div>
+                  <div class="font-tech text-light" id="certRegDate">October 1, 2026</div>
+                </div>
+
+                <div class="col-12 col-sm-6">
+                  <div class="text-muted small" style="font-size: 0.72rem;">WARRANTY COVERAGE EXPIRY</div>
+                  <div class="font-tech text-success fw-bold" id="certExpiryDate">October 1, 2029 (3-Year Extended)</div>
+                </div>
+              </div>
+
+              <div class="alert alert-secondary bg-surface-1 border-secondary border-opacity-25 small text-secondary mb-4">
+                <strong>Coverage Details:</strong> Your equipment is covered for transducer defects, ADC circuit failure, preamp noise elevation, and mechanical yoke wear. Free laboratory replacement parts provided with prepaid shipping.
+              </div>
+
+              <div class="d-flex flex-wrap justify-content-center gap-3 no-print">
+                <button class="btn-wave btn-wave-secondary btn-wave-sm" id="btnPrintCertificate">
+                  <i class="bi bi-printer me-1"></i> Print / Save Certificate
+                </button>
+                <a href="shop.html" class="btn-wave btn-wave-primary btn-wave-sm">
+                  Return to Shop
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="wave-footer">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="index.html" class="wave-brand mb-3 d-inline-flex">
+            <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+            <span class="brand-text">WAVECRAFT</span>
+          </a>
+          <p class="text-secondary small mb-3">
+            <strong>Build Better Sound. Create With Confidence.</strong><br>
+            A specialist destination combining professional podcast audio technology, intelligent acoustic comparisons, and creator production academy.
+          </p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-col-title">Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=microphones">Microphones</a></li>
+            <li><a href="shop.html?category=headphones">Headphones</a></li>
+            <li><a href="shop.html?category=interfaces">Interfaces</a></li>
+            <li><a href="shop.html?category=bundles">Podcast Bundles</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-3">
+          <h4 class="footer-col-title">Academy</h4>
+          <ul class="footer-links">
+            <li><a href="academy.html">All Courses</a></li>
+            <li><a href="course-details.html?id=course-mic-technique">Mic Technique</a></li>
+            <li><a href="course-details.html?id=course-noise-control">Noise Control</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4 class="footer-col-title">Support</h4>
+          <ul class="footer-links">
+            <li><a href="warranty.html">Register Warranty</a></li>
+            <li><a href="noise-cancellation-guide.html">Noise-Cancellation Guide</a></li>
+            <li><a href="contact.html">Contact Engineering Support</a></li>
+            <li><a href="about.html">About WAVECRAFT</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 WAVECRAFT Audio Technologies LLC. All rights reserved.</div>
+        <div class="d-flex align-items-center gap-3">
+          <a href="about.html">Privacy</a><span>•</span><a href="about.html">Terms</a><span>•</span><a href="warranty.html">Warranty Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/compare.js"></script>
+  <script src="assets/js/warranty.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

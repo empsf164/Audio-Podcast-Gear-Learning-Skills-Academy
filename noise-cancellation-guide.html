@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding Noise in Your Recording Environment — WAVECRAFT Guide</title>
+  <meta name="description" content="Master acoustic room reflections, mechanical desk vibrations, environmental noise, and why software noise cancellation has physical tradeoffs.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="bg-tech-pattern">
+
+  <!-- NAVBAR -->
+  <header class="wave-header">
+    <div class="container">
+      <nav class="wave-navbar" aria-label="Main Navigation">
+        <a href="index.html" class="wave-brand">
+          <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+          <span class="brand-text">WAVECRAFT</span>
+        </a>
+
+        <ul class="wave-nav-menu">
+          <li class="wave-nav-item"><a href="index.html" class="wave-nav-link">Home</a></li>
+          <li class="wave-nav-item"><a href="shop.html" class="wave-nav-link">Shop</a></li>
+          <li class="wave-nav-item"><a href="compare.html" class="wave-nav-link">Compare <span class="nav-badge compare-badge-count" style="display:none;">0</span></a></li>
+          <li class="wave-nav-item"><a href="academy.html" class="wave-nav-link">Academy</a></li>
+          <li class="wave-nav-item">
+            <a href="guides.html" class="wave-nav-link active" aria-haspopup="true">
+              Guides <i class="bi bi-chevron-down dropdown-caret"></i>
+            </a>
+            <div class="wave-dropdown">
+              <a href="guides.html#guide-microphones" class="wave-dropdown-item"><i class="bi bi-journal-text"></i><div><span class="fw-semibold">Microphone Guide</span></div></a>
+              <a href="noise-cancellation-guide.html" class="wave-dropdown-item"><i class="bi bi-soundwave"></i><div><span class="fw-semibold">Noise-Cancellation Guide</span></div></a>
+              <a href="guides.html#guide-interfaces" class="wave-dropdown-item"><i class="bi bi-lightning-charge"></i><div><span class="fw-semibold">Audio Interface Guide</span></div></a>
+              <a href="guides.html#audio-glossary" class="wave-dropdown-item"><i class="bi bi-book"></i><div><span class="fw-semibold">Audio Glossary</span></div></a>
+            </div>
+          </li>
+          <li class="wave-nav-item"><a href="warranty.html" class="wave-nav-link">Warranty</a></li>
+          <li class="wave-nav-item"><a href="about.html" class="wave-nav-link">About</a></li>
+          <li class="wave-nav-item"><a href="contact.html" class="wave-nav-link">Contact</a></li>
+        </ul>
+
+        <div class="wave-nav-actions">
+          <button class="btn-theme-toggle" id="themeToggleBtn" aria-label="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+          <button class="nav-icon-badge-btn cart-open-trigger" aria-label="Open Cart Drawer">
+            <i class="bi bi-bag"></i><span class="nav-badge cart-badge-count">1</span>
+          </button>
+          <a href="login.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Login</a>
+          <a href="signup.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Sign Up</a>
+          <a href="shop.html" class="btn-wave btn-wave-primary btn-wave-sm d-none d-sm-inline-flex">Shop Gear</a>
+          <button class="btn-mobile-toggle" id="mobileMenuToggle" aria-label="Open navigation"><i class="bi bi-list fs-4"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer & Cart Drawer (Shared) -->
+  <div class="wave-mobile-overlay" id="mobileMenuOverlay"></div>
+  <aside class="wave-mobile-menu" id="mobileMenuDrawer">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="wave-brand">
+        <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+        <span class="brand-text">WAVECRAFT</span>
+      </a>
+      <button class="btn btn-link text-light p-0" id="mobileMenuClose"><i class="bi bi-x-lg fs-5"></i></button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Shop Gear</a></li>
+      <li class="mobile-nav-item"><a href="compare.html" class="mobile-nav-link">Compare Gear</a></li>
+      <li class="mobile-nav-item"><a href="academy.html" class="mobile-nav-link">Academy</a></li>
+      <li class="mobile-nav-item"><a href="guides.html" class="mobile-nav-link">Guides</a></li>
+      <li class="mobile-nav-item"><a href="noise-cancellation-guide.html" class="mobile-nav-link active">Noise Guide</a></li>
+      <li class="mobile-nav-item"><a href="warranty.html" class="mobile-nav-link">Warranty</a></li>
+      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </aside>
+
+  <div class="wave-mobile-overlay" id="cartOverlay"></div>
+  <aside class="cart-offcanvas" id="cartDrawer">
+    <div class="cart-header">
+      <h5 class="mb-0 fw-bold"><i class="bi bi-bag-check text-cyan me-2"></i>Studio Cart</h5>
+      <button class="btn btn-link text-light p-0" id="cartCloseBtn"><i class="bi bi-x-lg fs-5"></i></button>
+    </div>
+    <div class="cart-body" id="cartDrawerBody"></div>
+    <div class="cart-footer">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-secondary">Estimated Subtotal</span>
+        <span class="font-tech fs-5 fw-bold" id="cartSubtotal">$0.00</span>
+      </div>
+      <button class="btn-wave btn-wave-primary w-100 py-3" id="cartCheckoutBtn">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       NOISE GUIDE HERO HEADER
+       ========================================================================== -->
+  <section class="py-5 border-bottom border-secondary border-opacity-10" style="background: var(--bg-surface-1);">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb small mb-3">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="guides.html">Guides</a></li>
+          <li class="breadcrumb-item active text-secondary">Noise-Cancellation Guide</li>
+        </ol>
+      </nav>
+
+      <div class="row align-items-center g-4 g-lg-5">
+        <div class="col-12 col-lg-7">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> ACOUSTIC RESEARCH LABORATORY</div>
+          <h1 class="display-5 fw-bold mb-3">Understanding Noise in Your Recording Environment</h1>
+          <p class="text-secondary mb-4">
+            Noise is not a curse—it is a physical wave propagating through air and building materials. In professional audio engineering, we treat noise through a rigorous four-stage hierarchy: <strong>Isolation, Decoupling, Polar Orientation, and Gating</strong>.
+          </p>
+
+          <!-- Core Scientific Principle Box -->
+          <div class="p-3 rounded-3 border border-warning border-opacity-25" style="background: rgba(245, 158, 11, 0.08);">
+            <div class="d-flex align-items-start gap-2">
+              <i class="bi bi-exclamation-diamond text-warning fs-5 mt-1 flex-shrink-0"></i>
+              <div class="small text-secondary">
+                <strong class="text-warning">The Engineering Law of Noise Reduction:</strong> There is no digital algorithm or hardware capsule that can eliminate 100% of unwanted sound without creating phase distortion, unnatural frequency notches, or robotic vocal timbre.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-5">
+          <div class="rounded-4 overflow-hidden border border-secondary border-opacity-25 shadow-lg">
+            <img src="assets/images/guides/guide-noise-acoustics.jpg" alt="Acoustic Measurement Testing" class="w-100 h-auto d-block">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       THE THREE CLASSIFICATIONS OF NOISE
+       ========================================================================== -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="eyebrow mx-auto"><span class="eyebrow-dot"></span> NOISE TAXONOMY</div>
+        <h2 class="h1 fw-bold">The Three Noise Vector Categories</h2>
+        <p class="text-secondary mx-auto" style="max-width: 580px;">
+          Before attempting to solve audio problems, you must identify whether your unwanted signal travels through air, solid matter, or wall reflections.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Environmental Noise -->
+        <div class="col-12 col-md-4">
+          <div class="p-4 rounded-4 border border-secondary border-opacity-25 h-100" style="background: var(--bg-surface-1);">
+            <div class="trust-icon-box mb-3 text-info"><i class="bi bi-cloud-haze2 fs-4"></i></div>
+            <h4 class="h5 fw-bold mb-2">1. Environmental Noise</h4>
+            <span class="badge bg-secondary font-tech small mb-3">Airborne Sound Waves</span>
+            <p class="text-secondary small mb-3">
+              Sound generated outside your microphone's nearfield zone: street traffic, air conditioning airflow, computer cooling fans, and nearby sirens.
+            </p>
+            <ul class="text-muted small ps-3 mb-0">
+              <li>HVAC ducts & window gaps</li>
+              <li>High-velocity GPU/CPU fans</li>
+              <li>Low-frequency city rumble</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Mechanical Noise -->
+        <div class="col-12 col-md-4">
+          <div class="p-4 rounded-4 border border-secondary border-opacity-25 h-100" style="background: var(--bg-surface-1);">
+            <div class="trust-icon-box mb-3 text-info"><i class="bi bi-activity fs-4"></i></div>
+            <h4 class="h5 fw-bold mb-2">2. Mechanical Noise</h4>
+            <span class="badge bg-secondary font-tech small mb-3">Structure-Borne Vibrations</span>
+            <p class="text-secondary small mb-3">
+              Physical kinetic energy traveling directly through physical contact: mechanical keyboard clatter, mouse clicks, and floor footfall footsteps.
+            </p>
+            <ul class="text-muted small ps-3 mb-0">
+              <li>Desk bumps into rigid mic stands</li>
+              <li>Spring squeaks on cheap boom arms</li>
+              <li>Typing shock through wood tabletops</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Room Noise -->
+        <div class="col-12 col-md-4">
+          <div class="p-4 rounded-4 border border-secondary border-opacity-25 h-100" style="background: var(--bg-surface-1);">
+            <div class="trust-icon-box mb-3 text-info"><i class="bi bi-aspect-ratio fs-4"></i></div>
+            <h4 class="h5 fw-bold mb-2">3. Room Reflections</h4>
+            <span class="badge bg-secondary font-tech small mb-3">Acoustic Boundary Echo</span>
+            <p class="text-secondary small mb-3">
+              Your voice reflecting off bare drywall, hardwood floors, and glass windows. The delayed reflections enter the mic out-of-phase with your direct voice.
+            </p>
+            <ul class="text-muted small ps-3 mb-0">
+              <li>Flutter echo & hollow resonance</li>
+              <li>Comb filtering cancelations</li>
+              <li>Muddy low-mid buildup (200–500 Hz)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       THE PHYSICAL & DIGITAL SOLUTIONS
+       ========================================================================== -->
+  <section class="py-5" style="background: var(--bg-surface-1); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="eyebrow mx-auto"><span class="eyebrow-dot"></span> ENGINEERING SOLUTIONS</div>
+        <h2 class="h1 fw-bold">Effective Control Methodologies</h2>
+        <p class="text-secondary mx-auto" style="max-width: 600px;">
+          Ranked from highest audio quality preservation to highest processing tradeoff.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="p-3 rounded-3 border border-secondary border-opacity-25" style="background: var(--bg-surface-2);">
+            <div class="font-tech text-info fw-bold small mb-1">METHOD 01</div>
+            <h5 class="h6 mb-2">Proximity & Placement</h5>
+            <p class="text-muted small mb-0">
+              Moving your mouth to 2–3 inches from the capsule instantly boosts the <strong>Signal-to-Noise Ratio (SNR)</strong> by over +12 dB.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="p-3 rounded-3 border border-secondary border-opacity-25" style="background: var(--bg-surface-2);">
+            <div class="font-tech text-info fw-bold small mb-1">METHOD 02</div>
+            <h5 class="h6 mb-2">Cardioid Null Positioning</h5>
+            <p class="text-muted small mb-0">
+              Orienting the 180° dead-zone rear of the mic directly toward computer fans or reflective walls drops unwanted bleed by 20 dB.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="p-3 rounded-3 border border-secondary border-opacity-25" style="background: var(--bg-surface-2);">
+            <div class="font-tech text-info fw-bold small mb-1">METHOD 03</div>
+            <h5 class="h6 mb-2">Shockmount & Low-Profile Arm</h5>
+            <p class="text-muted small mb-0">
+              Elastic suspension bands absorb mechanical vibrations before they reach the transducer capsule.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="p-3 rounded-3 border border-secondary border-opacity-25" style="background: var(--bg-surface-2);">
+            <div class="font-tech text-info fw-bold small mb-1">METHOD 04</div>
+            <h5 class="h6 mb-2">Downward Expander / Gate</h5>
+            <p class="text-muted small mb-0">
+              Gently mutes background room tone by -10 dB when you stop speaking, without abruptly chopping off natural breath endings.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Web Audio Interactive Lab -->
+      <div class="audio-waveform-player mt-5 p-4">
+        <div class="row align-items-center g-4">
+          <div class="col-12 col-lg-6">
+            <span class="font-tech text-info small fw-bold text-uppercase"><i class="bi bi-sliders me-1"></i>INTERACTIVE LABORATORY</span>
+            <h4 class="h5 fw-bold mb-2">Audition High-Pass Rumble Elimination</h4>
+            <p class="text-secondary small mb-0">
+              Listen to synthetic air-conditioner low frequency pink noise rumble. Toggle the 80 Hz high-pass low-cut filter to observe how sub-bass energy vanishes while human vocal presence frequencies (1 kHz - 4 kHz) remain pristine.
+            </p>
+          </div>
+
+          <div class="col-12 col-lg-6 d-flex flex-wrap gap-2 justify-content-lg-end">
+            <button class="btn-wave btn-wave-secondary audio-demo-noise-btn" data-lowcut="false">
+              <i class="bi bi-volume-up me-1"></i>Raw Noise (Full Rumble)
+            </button>
+            <button class="btn-wave btn-wave-primary audio-demo-noise-btn" data-lowcut="true">
+              <i class="bi bi-filter me-1"></i>Apply 80 Hz Low-Cut Filter
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       RECOMMENDED NOISE-TAMING SUITE
+       ========================================================================== -->
+  <section class="py-5">
+    <div class="container text-center">
+      <div class="eyebrow mx-auto"><span class="eyebrow-dot"></span> ACOUSTIC RIG</div>
+      <h2 class="h1 fw-bold mb-3">Tame Your Room With WAVECRAFT Gear</h2>
+      <p class="text-secondary mx-auto mb-4" style="max-width: 580px;">
+        Every piece of WAVECRAFT hardware is voiced and mechanically engineered to deliver maximum acoustic isolation in non-ideal home studios.
+      </p>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="assets/images/products/mic-x1.jpg" alt="WAVECRAFT Studio Mic X1">
+            </div>
+            <h3 class="product-title"><a href="product-details.html?id=mic-x1">WAVECRAFT Studio Mic X1</a></h3>
+            <p class="text-muted small">Deep cardioid dynamic rejection with internal pneumatic shockmount.</p>
+            <div class="product-footer">
+              <span class="product-price">$199</span>
+              <a href="product-details.html?id=mic-x1" class="btn-wave btn-wave-secondary btn-wave-sm">View Mic X1</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="assets/images/products/bundle-pro-creator.jpg" alt="Creator Suite Pro Bundle">
+            </div>
+            <h3 class="product-title"><a href="product-details.html?id=bundle-pro-creator">Creator Suite Pro Bundle</a></h3>
+            <p class="text-muted small">Complete isolated rig: boom arm, closed cans, interface & dynamic capsule.</p>
+            <div class="product-footer">
+              <span class="product-price">$549</span>
+              <a href="product-details.html?id=bundle-pro-creator" class="btn-wave btn-wave-primary btn-wave-sm">Explore Bundle</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="wave-footer">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="index.html" class="wave-brand mb-3 d-inline-flex">
+            <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+            <span class="brand-text">WAVECRAFT</span>
+          </a>
+          <p class="text-secondary small mb-3">
+            <strong>Build Better Sound. Create With Confidence.</strong><br>
+            A specialist destination combining professional podcast audio technology, intelligent acoustic comparisons, and creator production academy.
+          </p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-col-title">Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=microphones">Microphones</a></li>
+            <li><a href="shop.html?category=headphones">Headphones</a></li>
+            <li><a href="shop.html?category=interfaces">Interfaces</a></li>
+            <li><a href="shop.html?category=bundles">Podcast Bundles</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-3">
+          <h4 class="footer-col-title">Academy</h4>
+          <ul class="footer-links">
+            <li><a href="academy.html">All Courses</a></li>
+            <li><a href="course-details.html?id=course-noise-control">Noise Control</a></li>
+            <li><a href="course-details.html?id=course-mic-technique">Mic Technique</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4 class="footer-col-title">Support</h4>
+          <ul class="footer-links">
+            <li><a href="warranty.html">Register Warranty</a></li>
+            <li><a href="noise-cancellation-guide.html">Noise-Cancellation Guide</a></li>
+            <li><a href="contact.html">Contact Support</a></li>
+            <li><a href="about.html">About WAVECRAFT</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 WAVECRAFT Audio Technologies LLC. All rights reserved.</div>
+        <div class="d-flex align-items-center gap-3">
+          <a href="about.html">Privacy</a><span>•</span><a href="about.html">Terms</a><span>•</span><a href="warranty.html">Warranty Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/compare.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Engineering Support — WAVECRAFT</title>
+  <meta name="description" content="Reach the WAVECRAFT audio engineering team for hardware support, warranty assistance, and academy inquiries.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="bg-tech-pattern">
+
+  <!-- NAVBAR -->
+  <header class="wave-header">
+    <div class="container">
+      <nav class="wave-navbar" aria-label="Main Navigation">
+        <a href="index.html" class="wave-brand">
+          <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+          <span class="brand-text">WAVECRAFT</span>
+        </a>
+
+        <ul class="wave-nav-menu">
+          <li class="wave-nav-item"><a href="index.html" class="wave-nav-link">Home</a></li>
+          <li class="wave-nav-item"><a href="shop.html" class="wave-nav-link">Shop</a></li>
+          <li class="wave-nav-item"><a href="compare.html" class="wave-nav-link">Compare <span class="nav-badge compare-badge-count" style="display:none;">0</span></a></li>
+          <li class="wave-nav-item"><a href="academy.html" class="wave-nav-link">Academy</a></li>
+          <li class="wave-nav-item"><a href="guides.html" class="wave-nav-link">Guides</a></li>
+          <li class="wave-nav-item"><a href="warranty.html" class="wave-nav-link">Warranty</a></li>
+          <li class="wave-nav-item"><a href="about.html" class="wave-nav-link">About</a></li>
+          <li class="wave-nav-item"><a href="contact.html" class="wave-nav-link active">Contact</a></li>
+        </ul>
+
+        <div class="wave-nav-actions">
+          <button class="btn-theme-toggle" id="themeToggleBtn" aria-label="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+          <button class="nav-icon-badge-btn cart-open-trigger" aria-label="Open Cart Drawer">
+            <i class="bi bi-bag"></i><span class="nav-badge cart-badge-count">1</span>
+          </button>
+          <a href="login.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Login</a>
+          <a href="signup.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Sign Up</a>
+          <a href="shop.html" class="btn-wave btn-wave-primary btn-wave-sm d-none d-sm-inline-flex">Shop Gear</a>
+          <button class="btn-mobile-toggle" id="mobileMenuToggle" aria-label="Open navigation"><i class="bi bi-list fs-4"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer & Cart Drawer (Shared) -->
+  <div class="wave-mobile-overlay" id="mobileMenuOverlay"></div>
+  <aside class="wave-mobile-menu" id="mobileMenuDrawer">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="wave-brand">
+        <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+        <span class="brand-text">WAVECRAFT</span>
+      </a>
+      <button class="btn btn-link text-light p-0" id="mobileMenuClose"><i class="bi bi-x-lg fs-5"></i></button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Shop Gear</a></li>
+      <li class="mobile-nav-item"><a href="compare.html" class="mobile-nav-link">Compare Gear</a></li>
+      <li class="mobile-nav-item"><a href="academy.html" class="mobile-nav-link">Academy</a></li>
+      <li class="mobile-nav-item"><a href="guides.html" class="mobile-nav-link">Guides</a></li>
+      <li class="mobile-nav-item"><a href="warranty.html" class="mobile-nav-link">Warranty</a></li>
+      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link active">Contact</a></li>
+    </ul>
+  </aside>
+
+  <div class="wave-mobile-overlay" id="cartOverlay"></div>
+  <aside class="cart-offcanvas" id="cartDrawer">
+    <div class="cart-header">
+      <h5 class="mb-0 fw-bold"><i class="bi bi-bag-check text-cyan me-2"></i>Studio Cart</h5>
+      <button class="btn btn-link text-light p-0" id="cartCloseBtn"><i class="bi bi-x-lg fs-5"></i></button>
+    </div>
+    <div class="cart-body" id="cartDrawerBody"></div>
+    <div class="cart-footer">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-secondary">Estimated Subtotal</span>
+        <span class="font-tech fs-5 fw-bold" id="cartSubtotal">$0.00</span>
+      </div>
+      <button class="btn-wave btn-wave-primary w-100 py-3" id="cartCheckoutBtn">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       CONTACT SECTION
+       ========================================================================== -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <!-- Contact Information -->
+        <div class="col-12 col-lg-5">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> DIRECT SUPPORT</div>
+          <h1 class="display-6 fw-bold mb-3">Talk with our Audio Engineers</h1>
+          <p class="text-secondary mb-4">
+            Have questions about pairing a microphone with your interface or room treatment options? Our acousticians are on hand to assist.
+          </p>
+
+          <div class="d-flex flex-column gap-3 mb-4">
+            <div class="p-3 rounded-3 border border-secondary border-opacity-25 d-flex align-items-center gap-3" style="background: var(--bg-surface-1);">
+              <div class="trust-icon-box text-info"><i class="bi bi-envelope"></i></div>
+              <div>
+                <div class="text-muted small">EMAIL SUPPORT</div>
+                <div class="fw-bold text-light">engineering@wavecraftaudio.com</div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-3 border border-secondary border-opacity-25 d-flex align-items-center gap-3" style="background: var(--bg-surface-1);">
+              <div class="trust-icon-box text-info"><i class="bi bi-geo-alt"></i></div>
+              <div>
+                <div class="text-muted small">ACOUSTIC LABORATORY</div>
+                <div class="fw-bold text-light">742 Audio Way, Studio District, CA 94107</div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-3 border border-secondary border-opacity-25 d-flex align-items-center gap-3" style="background: var(--bg-surface-1);">
+              <div class="trust-icon-box text-info"><i class="bi bi-clock-history"></i></div>
+              <div>
+                <div class="text-muted small">LABORATORY HOURS</div>
+                <div class="fw-bold text-light">Mon – Fri: 08:00 – 18:00 PST</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-12 col-lg-7">
+          <div class="p-4 p-md-5 rounded-4 border border-secondary border-opacity-25" style="background: var(--bg-surface-1);">
+            <h3 class="h4 fw-bold mb-3">Send a Message</h3>
+            
+            <form id="contactForm" novalidate>
+              <div class="row g-3">
+                <div class="col-12 col-sm-6">
+                  <label for="contactName" class="wave-form-label">Your Name *</label>
+                  <input type="text" class="wave-input" id="contactName" placeholder="e.g. Jordan Miller" required>
+                  <div class="form-feedback-error">Please provide your name.</div>
+                </div>
+
+                <div class="col-12 col-sm-6">
+                  <label for="contactEmail" class="wave-form-label">Email Address *</label>
+                  <input type="email" class="wave-input" id="contactEmail" placeholder="e.g. jordan@podcast.io" required>
+                  <div class="form-feedback-error">Please enter a valid email address.</div>
+                </div>
+
+                <div class="col-12">
+                  <label for="contactTopic" class="wave-form-label">Topic *</label>
+                  <select class="wave-select" id="contactTopic" required>
+                    <option value="" disabled selected>Select topic inquiry...</option>
+                    <option value="product">Product Support & Compatibility</option>
+                    <option value="order">Order Question & Delivery</option>
+                    <option value="academy">Academy Curriculum Access</option>
+                    <option value="warranty">Warranty Registration Support</option>
+                    <option value="general">General Audio Inquiry</option>
+                  </select>
+                  <div class="form-feedback-error">Please select an inquiry topic.</div>
+                </div>
+
+                <div class="col-12">
+                  <label for="contactMessage" class="wave-form-label">Message *</label>
+                  <textarea class="wave-textarea" id="contactMessage" rows="5" placeholder="Tell us about your room acoustics, gear setup, or question..." required></textarea>
+                  <div class="form-feedback-error">Please enter your message.</div>
+                </div>
+
+                <div class="col-12 pt-2">
+                  <button type="submit" class="btn-wave btn-wave-primary btn-wave-lg w-100">
+                    <i class="bi bi-send-fill me-1"></i> Send Message to Engineering Team
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="wave-footer">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="index.html" class="wave-brand mb-3 d-inline-flex">
+            <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+            <span class="brand-text">WAVECRAFT</span>
+          </a>
+          <p class="text-secondary small mb-3">
+            <strong>Build Better Sound. Create With Confidence.</strong><br>
+            A specialist destination combining professional podcast audio technology, intelligent acoustic comparisons, and creator production academy.
+          </p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-col-title">Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=microphones">Microphones</a></li>
+            <li><a href="shop.html?category=headphones">Headphones</a></li>
+            <li><a href="shop.html?category=interfaces">Interfaces</a></li>
+            <li><a href="shop.html?category=bundles">Podcast Bundles</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-3">
+          <h4 class="footer-col-title">Academy</h4>
+          <ul class="footer-links">
+            <li><a href="academy.html">All Courses</a></li>
+            <li><a href="course-details.html?id=course-mic-technique">Mic Technique</a></li>
+            <li><a href="course-details.html?id=course-noise-control">Noise Control</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4 class="footer-col-title">Support</h4>
+          <ul class="footer-links">
+            <li><a href="warranty.html">Register Warranty</a></li>
+            <li><a href="noise-cancellation-guide.html">Noise-Cancellation Guide</a></li>
+            <li><a href="contact.html">Contact Engineering Support</a></li>
+            <li><a href="about.html">About WAVECRAFT</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 WAVECRAFT Audio Technologies LLC. All rights reserved.</div>
+        <div class="d-flex align-items-center gap-3">
+          <a href="about.html">Privacy</a><span>•</span><a href="about.html">Terms</a><span>•</span><a href="warranty.html">Warranty Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/compare.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('contactForm');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          let isValid = true;
+          const name = document.getElementById('contactName');
+          const email = document.getElementById('contactEmail');
+          const topic = document.getElementById('contactTopic');
+          const msg = document.getElementById('contactMessage');
+
+          [name, email, topic, msg].forEach(input => {
+            if (!input.value.trim()) {
+              input.classList.add('is-invalid');
+              isValid = false;
+            } else {
+              input.classList.remove('is-invalid');
+            }
+          });
+
+          if (isValid) {
+            window.WavecraftToast && window.WavecraftToast.show('Thank you! Your inquiry has been sent to our audio engineering team.', 'success');
+            form.reset();
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Signal Lost / Frequency Not Found | WAVECRAFT</title>
+  <meta name="description" content="The audio page or frequency you are looking for is outside the audible spectrum.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="bg-tech-pattern d-flex flex-column min-vh-100">
+
+  <!-- NAVBAR -->
+  <header class="wave-header">
+    <div class="container">
+      <nav class="wave-navbar" aria-label="Main Navigation">
+        <a href="index.html" class="wave-brand">
+          <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+          <span class="brand-text">WAVECRAFT</span>
+        </a>
+
+        <div class="wave-nav-actions ms-auto">
+          <button class="btn-theme-toggle" id="themeToggleBtn" aria-label="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+          <a href="index.html" class="btn-wave btn-wave-primary btn-wave-sm">Return Home</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 404 MAIN -->
+  <main class="flex-grow-1 d-flex align-items-center py-5">
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+          <div class="eyebrow mx-auto"><span class="eyebrow-dot"></span> ZERO SIGNAL DETECTED</div>
+          
+          <div class="font-tech fw-bold display-1 text-info my-2" style="letter-spacing: 0.05em;">
+            404
+          </div>
+
+          <h1 class="h2 fw-bold mb-3">Audio Frequency Not Found</h1>
+          <p class="text-secondary mx-auto mb-4" style="max-width: 480px;">
+            The requested audio route has flatlined or fallen outside the audible 20 Hz – 20 kHz spectrum. Check the URL or re-calibrate your signal path below.
+          </p>
+
+          <!-- Flatline Waveform Simulation -->
+          <div class="p-3 rounded-3 border border-secondary border-opacity-25 mb-4 mx-auto" style="background: var(--bg-surface-1); max-width: 400px;">
+            <div class="d-flex align-items-center justify-content-between text-muted small font-tech mb-2">
+              <span>INPUT CH 01: SILENCE</span>
+              <span>-inf dBFS</span>
+            </div>
+            <div style="height: 2px; background: var(--accent-red); box-shadow: 0 0 8px var(--accent-red);"></div>
+          </div>
+
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="index.html" class="btn-wave btn-wave-primary">
+              <i class="bi bi-house-door me-1"></i> Return Home
+            </a>
+            <a href="shop.html" class="btn-wave btn-wave-secondary">
+              <i class="bi bi-shop me-1"></i> Shop Hardware
+            </a>
+            <a href="academy.html" class="btn-wave btn-wave-outline">
+              <i class="bi bi-mortarboard me-1"></i> Browse Academy
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="wave-footer mt-auto py-3">
+    <div class="container text-center small text-muted">
+      © 2026 WAVECRAFT Audio Technologies LLC. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

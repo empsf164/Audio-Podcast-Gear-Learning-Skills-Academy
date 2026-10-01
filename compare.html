@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Spec Comparison Matrix — WAVECRAFT</title>
+  <meta name="description" content="Compare acoustic polar patterns, frequency response curves, preamp EIN noise floor, and sample rates side by side.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="bg-tech-pattern">
+
+  <!-- NAVBAR -->
+  <header class="wave-header">
+    <div class="container">
+      <nav class="wave-navbar" aria-label="Main Navigation">
+        <a href="index.html" class="wave-brand">
+          <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+          <span class="brand-text">WAVECRAFT</span>
+        </a>
+
+        <ul class="wave-nav-menu">
+          <li class="wave-nav-item"><a href="index.html" class="wave-nav-link">Home</a></li>
+          <li class="wave-nav-item"><a href="shop.html" class="wave-nav-link">Shop</a></li>
+          <li class="wave-nav-item"><a href="compare.html" class="wave-nav-link active">Compare <span class="nav-badge compare-badge-count" style="display:none;">0</span></a></li>
+          <li class="wave-nav-item"><a href="academy.html" class="wave-nav-link">Academy</a></li>
+          <li class="wave-nav-item"><a href="guides.html" class="wave-nav-link">Guides</a></li>
+          <li class="wave-nav-item"><a href="warranty.html" class="wave-nav-link">Warranty</a></li>
+          <li class="wave-nav-item"><a href="about.html" class="wave-nav-link">About</a></li>
+          <li class="wave-nav-item"><a href="contact.html" class="wave-nav-link">Contact</a></li>
+        </ul>
+
+        <div class="wave-nav-actions">
+          <button class="btn-theme-toggle" id="themeToggleBtn" aria-label="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+          <button class="nav-icon-badge-btn cart-open-trigger" aria-label="Open Cart Drawer">
+            <i class="bi bi-bag"></i><span class="nav-badge cart-badge-count">1</span>
+          </button>
+          <a href="login.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Login</a>
+          <a href="signup.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Sign Up</a>
+          <a href="shop.html" class="btn-wave btn-wave-primary btn-wave-sm d-none d-sm-inline-flex">Shop Gear</a>
+          <button class="btn-mobile-toggle" id="mobileMenuToggle" aria-label="Open navigation"><i class="bi bi-list fs-4"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer & Cart Drawer (Shared) -->
+  <div class="wave-mobile-overlay" id="mobileMenuOverlay"></div>
+  <aside class="wave-mobile-menu" id="mobileMenuDrawer">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="wave-brand">
+        <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+        <span class="brand-text">WAVECRAFT</span>
+      </a>
+      <button class="btn btn-link text-light p-0" id="mobileMenuClose"><i class="bi bi-x-lg fs-5"></i></button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Shop Gear</a></li>
+      <li class="mobile-nav-item"><a href="compare.html" class="mobile-nav-link active">Compare Gear</a></li>
+      <li class="mobile-nav-item"><a href="academy.html" class="mobile-nav-link">Academy</a></li>
+      <li class="mobile-nav-item"><a href="guides.html" class="mobile-nav-link">Guides</a></li>
+      <li class="mobile-nav-item"><a href="warranty.html" class="mobile-nav-link">Warranty</a></li>
+      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </aside>
+
+  <div class="wave-mobile-overlay" id="cartOverlay"></div>
+  <aside class="cart-offcanvas" id="cartDrawer">
+    <div class="cart-header">
+      <h5 class="mb-0 fw-bold"><i class="bi bi-bag-check text-cyan me-2"></i>Studio Cart</h5>
+      <button class="btn btn-link text-light p-0" id="cartCloseBtn"><i class="bi bi-x-lg fs-5"></i></button>
+    </div>
+    <div class="cart-body" id="cartDrawerBody"></div>
+    <div class="cart-footer">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-secondary">Estimated Subtotal</span>
+        <span class="font-tech fs-5 fw-bold" id="cartSubtotal">$0.00</span>
+      </div>
+      <button class="btn-wave btn-wave-primary w-100 py-3" id="cartCheckoutBtn">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       COMPARE HEADER & TOOLBAR
+       ========================================================================= -->
+  <section class="py-4 border-bottom border-secondary border-opacity-10" style="background: var(--bg-surface-1);">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb small mb-2">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="shop.html">Shop</a></li>
+          <li class="breadcrumb-item active text-secondary">Technical Comparison</li>
+        </ol>
+      </nav>
+
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <div>
+          <h1 class="h2 mb-1 fw-bold">Acoustic & Hardware Comparison</h1>
+          <p class="text-secondary small mb-0">Evaluate 2 to 4 devices side-by-side using empirical engineering benchmarks.</p>
+        </div>
+
+        <!-- Controls: Highlight Diffs, Add Product, Clear All -->
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <div class="form-check form-switch me-2">
+            <input class="form-check-input" type="checkbox" id="switchHighlightDiffs">
+            <label class="form-check-label small text-secondary" for="switchHighlightDiffs">Highlight Differences</label>
+          </div>
+
+          <div class="dropdown">
+            <button class="btn-wave btn-wave-secondary btn-wave-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              <i class="bi bi-plus-circle me-1"></i> Add Gear to Compare
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end bg-dropdown border-secondary p-2" id="addCompareDropdownMenu" style="min-width: 260px;">
+              <!-- Populated dynamically with available products -->
+            </ul>
+          </div>
+
+          <button class="btn-wave btn-wave-outline btn-wave-sm" id="btnClearComparison">
+            <i class="bi bi-trash me-1"></i> Clear
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       COMPARISON MATRIX TABLE
+       ========================================================================== -->
+  <section class="py-5">
+    <div class="container">
+      <div class="spec-compare-card p-3 p-md-4">
+        <div id="fullComparisonTableContainer">
+          <!-- Populated by compare.js -->
+        </div>
+      </div>
+
+      <!-- Quick Guidance Box -->
+      <div class="row g-4 mt-4">
+        <div class="col-12 col-md-4">
+          <div class="p-3 rounded-3 border border-secondary border-opacity-25" style="background: var(--bg-surface-1);">
+            <div class="d-flex align-items-center gap-2 mb-2 text-info font-tech small fw-bold">
+              <i class="bi bi-soundwave fs-5"></i> POLAR REJECTION
+            </div>
+            <p class="text-secondary small mb-0">
+              Cardioid patterns offer the highest rejection at 180° (directly behind the mic), making them ideal for home studios with wall reflections.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="p-3 rounded-3 border border-secondary border-opacity-25" style="background: var(--bg-surface-1);">
+            <div class="d-flex align-items-center gap-2 mb-2 text-info font-tech small fw-bold">
+              <i class="bi bi-speedometer2 fs-5"></i> SAMPLE RATES
+            </div>
+            <p class="text-secondary small mb-0">
+              While 48 kHz is the international standard for podcasting and video, 96 kHz allows higher headroom when pitching or applying heavy spectral repair.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="p-3 rounded-3 border border-secondary border-opacity-25" style="background: var(--bg-surface-1);">
+            <div class="d-flex align-items-center gap-2 mb-2 text-info font-tech small fw-bold">
+              <i class="bi bi-shield-check fs-5"></i> EIN NOISE FLOOR
+            </div>
+            <p class="text-secondary small mb-0">
+              Look for preamps with -128 dBu EIN or lower. This ensures pristine gain when amplifying quiet voices without introducing background hiss.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="wave-footer">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="index.html" class="wave-brand mb-3 d-inline-flex">
+            <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+            <span class="brand-text">WAVECRAFT</span>
+          </a>
+          <p class="text-secondary small mb-3">
+            <strong>Build Better Sound. Create With Confidence.</strong><br>
+            A specialist destination combining professional podcast audio technology, intelligent acoustic comparisons, and creator production academy.
+          </p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-col-title">Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=microphones">Microphones</a></li>
+            <li><a href="shop.html?category=headphones">Headphones</a></li>
+            <li><a href="shop.html?category=interfaces">Interfaces</a></li>
+            <li><a href="shop.html?category=bundles">Podcast Bundles</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-3">
+          <h4 class="footer-col-title">Academy</h4>
+          <ul class="footer-links">
+            <li><a href="academy.html">All Courses</a></li>
+            <li><a href="course-details.html?id=course-mic-technique">Mic Technique</a></li>
+            <li><a href="course-details.html?id=course-noise-control">Noise Control</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4 class="footer-col-title">Support</h4>
+          <ul class="footer-links">
+            <li><a href="warranty.html">Register Warranty</a></li>
+            <li><a href="noise-cancellation-guide.html">Noise-Cancellation Guide</a></li>
+            <li><a href="contact.html">Contact Engineering Support</a></li>
+            <li><a href="about.html">About WAVECRAFT</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 WAVECRAFT Audio Technologies LLC. All rights reserved.</div>
+        <div class="d-flex align-items-center gap-3">
+          <a href="about.html">Privacy</a><span>•</span><a href="about.html">Terms</a><span>•</span><a href="warranty.html">Warranty Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/compare.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let isHighlighting = false;
+
+      function updateTable() {
+        if (window.WavecraftCompare) {
+          window.WavecraftCompare.renderTable('fullComparisonTableContainer', { highlightDiffs: isHighlighting });
+          updateDropdown();
+        }
+      }
+
+      function updateDropdown() {
+        const menu = document.getElementById('addCompareDropdownMenu');
+        if (!menu || !window.WavecraftProducts || !window.WavecraftCompare) return;
+
+        const currentList = window.WavecraftCompare.get();
+        const allProds = window.WavecraftProducts.getAll();
+
+        const available = allProds.filter(p => !currentList.includes(p.id));
+
+        if (available.length === 0) {
+          menu.innerHTML = '<li class="p-2 text-muted small">All products currently in comparison</li>';
+          return;
+        }
+
+        menu.innerHTML = available.map(p => `
+          <li>
+            <a class="dropdown-item d-flex align-items-center gap-2 p-2 rounded small text-light add-prod-item" href="#" data-id="${p.id}">
+              <img src="${p.image}" style="width: 32px; height: 32px; object-fit: cover;" class="rounded">
+              <div class="flex-grow-1">
+                <div class="fw-bold">${p.name}</div>
+                <div class="font-tech text-muted" style="font-size: 0.72rem;">$${p.price}</div>
+              </div>
+              <i class="bi bi-plus-lg text-info"></i>
+            </a>
+          </li>
+        `).join('');
+
+        menu.querySelectorAll('.add-prod-item').forEach(link => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const id = link.getAttribute('data-id');
+            window.WavecraftCompare.toggle(id);
+            updateTable();
+          });
+        });
+      }
+
+      // Switch listener
+      const switchDiff = document.getElementById('switchHighlightDiffs');
+      if (switchDiff) {
+        switchDiff.addEventListener('change', (e) => {
+          isHighlighting = e.target.checked;
+          updateTable();
+        });
+      }
+
+      // Clear button
+      const clearBtn = document.getElementById('btnClearComparison');
+      if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+          window.WavecraftCompare.clear();
+          updateTable();
+        });
+      }
+
+      window.addEventListener('wavecraft:compare-updated', updateTable);
+      updateTable();
+    });
+  </script>
+</body>
+</html>

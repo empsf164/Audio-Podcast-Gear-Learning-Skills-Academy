@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Audio Gear — WAVECRAFT Professional Podcast Store</title>
+  <meta name="description" content="Explore studio microphones, reference headphones, high-gain audio interfaces, and turnkey podcast suites.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="bg-tech-pattern">
+
+  <!-- NAVBAR -->
+  <header class="wave-header">
+    <div class="container">
+      <nav class="wave-navbar" aria-label="Main Navigation">
+        <a href="index.html" class="wave-brand">
+          <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+          <span class="brand-text">WAVECRAFT</span>
+        </a>
+
+        <ul class="wave-nav-menu">
+          <li class="wave-nav-item"><a href="index.html" class="wave-nav-link">Home</a></li>
+          <li class="wave-nav-item">
+            <a href="shop.html" class="wave-nav-link active" aria-haspopup="true">
+              Shop <i class="bi bi-chevron-down dropdown-caret"></i>
+            </a>
+            <div class="wave-dropdown">
+              <a href="shop.html?category=microphones" class="wave-dropdown-item"><i class="bi bi-mic"></i><div><span class="fw-semibold">Microphones</span><span class="item-desc">Dynamic & Condenser</span></div></a>
+              <a href="shop.html?category=headphones" class="wave-dropdown-item"><i class="bi bi-headphones"></i><div><span class="fw-semibold">Headphones</span><span class="item-desc">Studio Monitoring</span></div></a>
+              <a href="shop.html?category=interfaces" class="wave-dropdown-item"><i class="bi bi-cpu"></i><div><span class="fw-semibold">Audio Interfaces</span><span class="item-desc">USB-C Preamps</span></div></a>
+              <a href="shop.html?category=mixers" class="wave-dropdown-item"><i class="bi bi-sliders"></i><div><span class="fw-semibold">Mixers & Consoles</span><span class="item-desc">Podcast Decks</span></div></a>
+              <a href="shop.html?category=bundles" class="wave-dropdown-item"><i class="bi bi-box-seam"></i><div><span class="fw-semibold">Podcast Bundles</span><span class="item-desc">Turnkey Suites</span></div></a>
+              <a href="shop.html?category=accessories" class="wave-dropdown-item"><i class="bi bi-tools"></i><div><span class="fw-semibold">Accessories</span><span class="item-desc">Arms & Cables</span></div></a>
+            </div>
+          </li>
+          <li class="wave-nav-item"><a href="compare.html" class="wave-nav-link">Compare <span class="nav-badge compare-badge-count" style="display:none;">0</span></a></li>
+          <li class="wave-nav-item">
+            <a href="academy.html" class="wave-nav-link" aria-haspopup="true">
+              Academy <i class="bi bi-chevron-down dropdown-caret"></i>
+            </a>
+            <div class="wave-dropdown">
+              <a href="academy.html" class="wave-dropdown-item"><i class="bi bi-mortarboard"></i><div><span class="fw-semibold">All Courses</span><span class="item-desc">Audio Curriculum</span></div></a>
+              <a href="course-details.html?id=course-podcasting-fundamentals" class="wave-dropdown-item"><i class="bi bi-broadcast"></i><div><span class="fw-semibold">Podcasting Fundamentals</span></div></a>
+              <a href="course-details.html?id=course-mic-technique" class="wave-dropdown-item"><i class="bi bi-soundwave"></i><div><span class="fw-semibold">Recording & Mic Technique</span></div></a>
+              <a href="course-details.html?id=course-audio-editing" class="wave-dropdown-item"><i class="bi bi-scissors"></i><div><span class="fw-semibold">Audio Editing</span></div></a>
+            </div>
+          </li>
+          <li class="wave-nav-item">
+            <a href="guides.html" class="wave-nav-link" aria-haspopup="true">Guides <i class="bi bi-chevron-down dropdown-caret"></i></a>
+            <div class="wave-dropdown">
+              <a href="guides.html#guide-microphones" class="wave-dropdown-item"><i class="bi bi-journal-text"></i><div><span class="fw-semibold">Microphone Guide</span></div></a>
+              <a href="noise-cancellation-guide.html" class="wave-dropdown-item"><i class="bi bi-soundwave"></i><div><span class="fw-semibold">Noise-Cancellation Guide</span></div></a>
+              <a href="guides.html#guide-interfaces" class="wave-dropdown-item"><i class="bi bi-lightning-charge"></i><div><span class="fw-semibold">Audio Interface Guide</span></div></a>
+              <a href="guides.html#guide-setup" class="wave-dropdown-item"><i class="bi bi-hdd-rack"></i><div><span class="fw-semibold">Podcast Setup Guide</span></div></a>
+            </div>
+          </li>
+          <li class="wave-nav-item"><a href="warranty.html" class="wave-nav-link">Warranty</a></li>
+          <li class="wave-nav-item"><a href="about.html" class="wave-nav-link">About</a></li>
+          <li class="wave-nav-item"><a href="contact.html" class="wave-nav-link">Contact</a></li>
+        </ul>
+
+        <div class="wave-nav-actions">
+          <button class="btn-theme-toggle" id="themeToggleBtn" aria-label="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+          <button class="nav-icon-badge-btn cart-open-trigger" aria-label="Open Cart Drawer">
+            <i class="bi bi-bag"></i><span class="nav-badge cart-badge-count">1</span>
+          </button>
+          <a href="login.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Login</a>
+          <a href="signup.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Sign Up</a>
+          <a href="shop.html" class="btn-wave btn-wave-primary btn-wave-sm d-none d-sm-inline-flex">Shop Gear</a>
+          <button class="btn-mobile-toggle" id="mobileMenuToggle" aria-label="Open navigation"><i class="bi bi-list fs-4"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer & Cart Drawer (Shared) -->
+  <div class="wave-mobile-overlay" id="mobileMenuOverlay"></div>
+  <aside class="wave-mobile-menu" id="mobileMenuDrawer">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="wave-brand">
+        <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+        <span class="brand-text">WAVECRAFT</span>
+      </a>
+      <button class="btn btn-link text-light p-0" id="mobileMenuClose"><i class="bi bi-x-lg fs-5"></i></button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link active">Shop Gear</a></li>
+      <li class="mobile-nav-item"><a href="compare.html" class="mobile-nav-link">Compare Gear</a></li>
+      <li class="mobile-nav-item"><a href="academy.html" class="mobile-nav-link">Academy</a></li>
+      <li class="mobile-nav-item"><a href="guides.html" class="mobile-nav-link">Guides</a></li>
+      <li class="mobile-nav-item"><a href="noise-cancellation-guide.html" class="mobile-nav-link">Noise Guide</a></li>
+      <li class="mobile-nav-item"><a href="warranty.html" class="mobile-nav-link">Warranty</a></li>
+      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </aside>
+
+  <div class="wave-mobile-overlay" id="cartOverlay"></div>
+  <aside class="cart-offcanvas" id="cartDrawer">
+    <div class="cart-header">
+      <h5 class="mb-0 fw-bold"><i class="bi bi-bag-check text-cyan me-2"></i>Studio Cart</h5>
+      <button class="btn btn-link text-light p-0" id="cartCloseBtn"><i class="bi bi-x-lg fs-5"></i></button>
+    </div>
+    <div class="cart-body" id="cartDrawerBody"></div>
+    <div class="cart-footer">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-secondary">Estimated Subtotal</span>
+        <span class="font-tech fs-5 fw-bold" id="cartSubtotal">$0.00</span>
+      </div>
+      <button class="btn-wave btn-wave-primary w-100 py-3" id="cartCheckoutBtn">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       SHOP HEADER & BREADCRUMBS
+       ========================================================================== -->
+  <section class="py-4 border-bottom border-secondary border-opacity-10" style="background: var(--bg-surface-1);">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb small mb-2">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active text-secondary" aria-current="page">Shop</li>
+        </ol>
+      </nav>
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <div>
+          <h1 class="h2 mb-1 fw-bold">Professional Audio Gear</h1>
+          <p class="text-secondary small mb-0">Broadcast microphones, low-noise preamps, and acoustic monitoring instruments.</p>
+        </div>
+        <!-- Search bar -->
+        <div class="position-relative" style="min-width: 280px; max-width: 360px; width: 100%;">
+          <input type="text" id="shopSearchInput" class="wave-input pe-5" placeholder="Search microphones, headphones, interfaces...">
+          <i class="bi bi-search position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SHOP CATALOG BODY WITH MULTI-FACETED FILTERS
+       ========================================================================== -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Sidebar Filters -->
+        <div class="col-12 col-lg-3">
+          <div class="p-4 rounded-4 border border-secondary border-opacity-25" style="background: var(--bg-surface-1);">
+            <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom border-secondary border-opacity-10">
+              <h5 class="h6 mb-0 text-uppercase font-tech fw-bold"><i class="bi bi-funnel me-1 text-info"></i> Filters</h5>
+              <button class="btn btn-sm btn-link text-info p-0 text-decoration-none small" id="btnClearFilters">Reset All</button>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="mb-4">
+              <label class="wave-form-label font-tech text-uppercase small text-muted">Category</label>
+              <div class="form-check mb-2">
+                <input class="form-check-input filter-category" type="radio" name="filterCat" id="catAll" value="all" checked>
+                <label class="form-check-label small" for="catAll">All Equipment</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input filter-category" type="radio" name="filterCat" id="catMics" value="microphones">
+                <label class="form-check-label small" for="catMics">Microphones (Dynamic & Condenser)</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input filter-category" type="radio" name="filterCat" id="catHeadphones" value="headphones">
+                <label class="form-check-label small" for="catHeadphones">Studio Headphones</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input filter-category" type="radio" name="filterCat" id="catInterfaces" value="interfaces">
+                <label class="form-check-label small" for="catInterfaces">Audio Interfaces</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input filter-category" type="radio" name="filterCat" id="catMixers" value="mixers">
+                <label class="form-check-label small" for="catMixers">Mixers & Consoles</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input filter-category" type="radio" name="filterCat" id="catBundles" value="bundles">
+                <label class="form-check-label small" for="catBundles">Podcast Bundles</label>
+              </div>
+            </div>
+
+            <!-- Connectivity Filter -->
+            <div class="mb-4">
+              <label class="wave-form-label font-tech text-uppercase small text-muted">Connection Type</label>
+              <div class="form-check mb-2">
+                <input class="form-check-input filter-conn" type="checkbox" id="connXLR" value="XLR">
+                <label class="form-check-label small" for="connXLR">XLR 3-Pin Balanced</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input filter-conn" type="checkbox" id="connUSB" value="USB-C">
+                <label class="form-check-label small" for="connUSB">USB-C High-Speed</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input filter-conn" type="checkbox" id="connHybrid" value="Hybrid">
+                <label class="form-check-label small" for="connHybrid">Dual Hybrid (USB-C + XLR)</label>
+              </div>
+            </div>
+
+            <!-- Price Filter -->
+            <div class="mb-4">
+              <label class="wave-form-label font-tech text-uppercase small text-muted">Price Tier</label>
+              <select id="filterPriceTier" class="wave-select form-select-sm">
+                <option value="all">All Prices</option>
+                <option value="under-200">Under $200</option>
+                <option value="200-400">$200 – $400</option>
+                <option value="above-400">$400 and above</option>
+              </select>
+            </div>
+
+            <!-- In Stock Check -->
+            <div class="form-check form-switch pt-2 border-top border-secondary border-opacity-10">
+              <input class="form-check-input" type="checkbox" id="filterInStockOnly" checked>
+              <label class="form-check-label small text-secondary" for="filterInStockOnly">In Stock Only</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Products Grid Area -->
+        <div class="col-12 col-lg-9">
+          <!-- Control Strip: Active Count & Sort Dropdown -->
+          <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 p-3 rounded-3" style="background: var(--bg-surface-2);">
+            <div class="small text-secondary">
+              Showing <span class="fw-bold text-light font-tech" id="productsCountDisplay">0</span> Audio Instruments
+            </div>
+
+            <div class="d-flex align-items-center gap-2">
+              <label for="shopSortSelect" class="small text-secondary mb-0">Sort By:</label>
+              <select id="shopSortSelect" class="wave-select py-1 px-2 small" style="width: auto;">
+                <option value="featured">Featured Gear</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating-desc">Customer Rating</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Product Cards Container -->
+          <div class="row g-4" id="shopProductsContainer">
+            <!-- Populated dynamically by script -->
+          </div>
+
+          <!-- Empty State (Hidden by default) -->
+          <div id="shopEmptyState" class="text-center py-5 d-none">
+            <div class="mb-3 text-muted" style="font-size: 3rem;"><i class="bi bi-mic-mute"></i></div>
+            <h4 class="mb-2">No Products Match Your Criteria</h4>
+            <p class="text-muted mb-4">Try clearing active category or price filters to see our full audio lineup.</p>
+            <button class="btn-wave btn-wave-primary" id="btnEmptyClearFilters">
+              Clear All Filters
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="wave-footer">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="index.html" class="wave-brand mb-3 d-inline-flex">
+            <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+            <span class="brand-text">WAVECRAFT</span>
+          </a>
+          <p class="text-secondary small mb-3">
+            <strong>Build Better Sound. Create With Confidence.</strong><br>
+            A specialist destination combining professional podcast audio technology, intelligent acoustic comparisons, and creator production academy.
+          </p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-col-title">Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=microphones">Microphones</a></li>
+            <li><a href="shop.html?category=headphones">Headphones</a></li>
+            <li><a href="shop.html?category=interfaces">Interfaces</a></li>
+            <li><a href="shop.html?category=bundles">Podcast Bundles</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-3">
+          <h4 class="footer-col-title">Academy</h4>
+          <ul class="footer-links">
+            <li><a href="academy.html">All Courses</a></li>
+            <li><a href="course-details.html?id=course-podcasting-fundamentals">Podcasting</a></li>
+            <li><a href="course-details.html?id=course-mic-technique">Mic Technique</a></li>
+            <li><a href="course-details.html?id=course-noise-control">Noise Control</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4 class="footer-col-title">Support</h4>
+          <ul class="footer-links">
+            <li><a href="warranty.html">Register Warranty</a></li>
+            <li><a href="noise-cancellation-guide.html">Noise-Cancellation Guide</a></li>
+            <li><a href="contact.html">Contact Engineering Support</a></li>
+            <li><a href="about.html">About WAVECRAFT</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 WAVECRAFT Audio Technologies LLC. All rights reserved.</div>
+        <div class="d-flex align-items-center gap-3">
+          <a href="about.html">Privacy</a><span>•</span><a href="about.html">Terms</a><span>•</span><a href="warranty.html">Warranty Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/compare.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('shopProductsContainer');
+      const emptyState = document.getElementById('shopEmptyState');
+      const countDisplay = document.getElementById('productsCountDisplay');
+      const searchInput = document.getElementById('shopSearchInput');
+      const sortSelect = document.getElementById('shopSortSelect');
+      const priceSelect = document.getElementById('filterPriceTier');
+      const inStockCheck = document.getElementById('filterInStockOnly');
+      const clearBtn = document.getElementById('btnClearFilters');
+      const emptyClearBtn = document.getElementById('btnEmptyClearFilters');
+
+      // Check URL search parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const initialCat = urlParams.get('category');
+      if (initialCat) {
+        const matchingRadio = document.querySelector(`.filter-category[value="${initialCat}"]`);
+        if (matchingRadio) matchingRadio.checked = true;
+      }
+
+      function applyFilters() {
+        if (!window.WavecraftProducts) return;
+        let prods = window.WavecraftProducts.getAll().slice();
+
+        // 1. Category radio
+        const selectedCat = document.querySelector('.filter-category:checked').value;
+        if (selectedCat !== 'all') {
+          prods = prods.filter(p => p.category === selectedCat);
+        }
+
+        // 2. Search query
+        const query = searchInput.value.trim().toLowerCase();
+        if (query) {
+          prods = prods.filter(p => 
+            p.name.toLowerCase().includes(query) ||
+            p.description.toLowerCase().includes(query) ||
+            p.connectivity.toLowerCase().includes(query) ||
+            p.category.toLowerCase().includes(query)
+          );
+        }
+
+        // 3. Connection filters
+        const activeConns = Array.from(document.querySelectorAll('.filter-conn:checked')).map(cb => cb.value);
+        if (activeConns.length > 0) {
+          prods = prods.filter(p => {
+            return activeConns.some(conn => {
+              if (conn === 'Hybrid') return p.connectivity.includes('+');
+              return p.connectivity.includes(conn);
+            });
+          });
+        }
+
+        // 4. Price tier
+        const priceTier = priceSelect.value;
+        if (priceTier === 'under-200') {
+          prods = prods.filter(p => p.price < 200);
+        } else if (priceTier === '200-400') {
+          prods = prods.filter(p => p.price >= 200 && p.price <= 400);
+        } else if (priceTier === 'above-400') {
+          prods = prods.filter(p => p.price > 400);
+        }
+
+        // 5. In stock only
+        if (inStockCheck.checked) {
+          prods = prods.filter(p => p.inStock);
+        }
+
+        // 6. Sorting
+        const sortVal = sortSelect.value;
+        if (sortVal === 'price-asc') {
+          prods.sort((a, b) => a.price - b.price);
+        } else if (sortVal === 'price-desc') {
+          prods.sort((a, b) => b.price - a.price);
+        } else if (sortVal === 'rating-desc') {
+          prods.sort((a, b) => b.rating - a.rating);
+        }
+
+        // Render
+        countDisplay.textContent = prods.length;
+        if (prods.length === 0) {
+          container.innerHTML = '';
+          emptyState.classList.remove('d-none');
+        } else {
+          emptyState.classList.add('d-none');
+          container.innerHTML = prods.map(p => window.WavecraftProducts.renderCard(p)).join('');
+        }
+      }
+
+      // Bind listeners
+      document.querySelectorAll('.filter-category, .filter-conn').forEach(el => el.addEventListener('change', applyFilters));
+      searchInput.addEventListener('input', applyFilters);
+      sortSelect.addEventListener('change', applyFilters);
+      priceSelect.addEventListener('change', applyFilters);
+      inStockCheck.addEventListener('change', applyFilters);
+
+      function resetAll() {
+        document.getElementById('catAll').checked = true;
+        document.querySelectorAll('.filter-conn').forEach(cb => cb.checked = false);
+        searchInput.value = '';
+        priceSelect.value = 'all';
+        sortSelect.value = 'featured';
+        inStockCheck.checked = true;
+        applyFilters();
+      }
+
+      if (clearBtn) clearBtn.addEventListener('click', resetAll);
+      if (emptyClearBtn) emptyClearBtn.addEventListener('click', resetAll);
+
+      // Initial render
+      applyFilters();
+    });
+  </script>
+</body>
+</html>

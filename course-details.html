@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Details — WAVECRAFT Academy</title>
+  <meta name="description" content="In-depth syllabus, learning outcomes, and instructor curriculum for professional audio podcast production.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="bg-tech-pattern">
+
+  <!-- NAVBAR -->
+  <header class="wave-header">
+    <div class="container">
+      <nav class="wave-navbar" aria-label="Main Navigation">
+        <a href="index.html" class="wave-brand">
+          <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+          <span class="brand-text">WAVECRAFT</span>
+        </a>
+
+        <ul class="wave-nav-menu">
+          <li class="wave-nav-item"><a href="index.html" class="wave-nav-link">Home</a></li>
+          <li class="wave-nav-item"><a href="shop.html" class="wave-nav-link">Shop</a></li>
+          <li class="wave-nav-item"><a href="compare.html" class="wave-nav-link">Compare <span class="nav-badge compare-badge-count" style="display:none;">0</span></a></li>
+          <li class="wave-nav-item"><a href="academy.html" class="wave-nav-link active">Academy</a></li>
+          <li class="wave-nav-item"><a href="guides.html" class="wave-nav-link">Guides</a></li>
+          <li class="wave-nav-item"><a href="warranty.html" class="wave-nav-link">Warranty</a></li>
+          <li class="wave-nav-item"><a href="about.html" class="wave-nav-link">About</a></li>
+          <li class="wave-nav-item"><a href="contact.html" class="wave-nav-link">Contact</a></li>
+        </ul>
+
+        <div class="wave-nav-actions">
+          <button class="btn-theme-toggle" id="themeToggleBtn" aria-label="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+          <button class="nav-icon-badge-btn cart-open-trigger" aria-label="Open Cart Drawer">
+            <i class="bi bi-bag"></i><span class="nav-badge cart-badge-count">1</span>
+          </button>
+          <a href="login.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Login</a>
+          <a href="signup.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Sign Up</a>
+          <a href="shop.html" class="btn-wave btn-wave-primary btn-wave-sm d-none d-sm-inline-flex">Shop Gear</a>
+          <button class="btn-mobile-toggle" id="mobileMenuToggle" aria-label="Open navigation"><i class="bi bi-list fs-4"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer & Cart Drawer (Shared) -->
+  <div class="wave-mobile-overlay" id="mobileMenuOverlay"></div>
+  <aside class="wave-mobile-menu" id="mobileMenuDrawer">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="wave-brand">
+        <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+        <span class="brand-text">WAVECRAFT</span>
+      </a>
+      <button class="btn btn-link text-light p-0" id="mobileMenuClose"><i class="bi bi-x-lg fs-5"></i></button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Shop Gear</a></li>
+      <li class="mobile-nav-item"><a href="compare.html" class="mobile-nav-link">Compare Gear</a></li>
+      <li class="mobile-nav-item"><a href="academy.html" class="mobile-nav-link active">Academy</a></li>
+      <li class="mobile-nav-item"><a href="guides.html" class="mobile-nav-link">Guides</a></li>
+      <li class="mobile-nav-item"><a href="warranty.html" class="mobile-nav-link">Warranty</a></li>
+      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </aside>
+
+  <div class="wave-mobile-overlay" id="cartOverlay"></div>
+  <aside class="cart-offcanvas" id="cartDrawer">
+    <div class="cart-header">
+      <h5 class="mb-0 fw-bold"><i class="bi bi-bag-check text-cyan me-2"></i>Studio Cart</h5>
+      <button class="btn btn-link text-light p-0" id="cartCloseBtn"><i class="bi bi-x-lg fs-5"></i></button>
+    </div>
+    <div class="cart-body" id="cartDrawerBody"></div>
+    <div class="cart-footer">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-secondary">Estimated Subtotal</span>
+        <span class="font-tech fs-5 fw-bold" id="cartSubtotal">$0.00</span>
+      </div>
+      <button class="btn-wave btn-wave-primary w-100 py-3" id="cartCheckoutBtn">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       COURSE HEADER & ENROLLMENT HERO
+       ========================================================================== -->
+  <section class="py-5 border-bottom border-secondary border-opacity-10" style="background: var(--bg-surface-1);">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb small mb-3">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="academy.html">Academy</a></li>
+          <li class="breadcrumb-item active text-secondary" id="breadCourseTitle">Microphone Technique</li>
+        </ol>
+      </nav>
+
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-7">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="badge bg-info text-dark font-tech" id="courseLevelBadge">Intermediate</span>
+            <span class="text-muted small font-tech" id="courseTopicBadge">RECORDING & ACOUSTICS</span>
+          </div>
+
+          <h1 class="h1 fw-bold mb-3" id="courseMainTitle">Professional Microphone Technique & Precision Gain Staging</h1>
+          
+          <p class="text-secondary mb-4" id="courseMainDesc">
+            Stop fixing muffled or distorted audio in post-production. Learn how acoustic placement, polar patterns, and analog gain staging yield crystal clarity at the source.
+          </p>
+
+          <!-- Key Stats -->
+          <div class="d-flex flex-wrap gap-4 mb-4 pb-2 border-bottom border-secondary border-opacity-10">
+            <div>
+              <div class="text-muted small" style="font-size: 0.75rem;">DURATION</div>
+              <div class="font-tech fw-bold text-light" id="courseDuration">3h 30m</div>
+            </div>
+            <div>
+              <div class="text-muted small" style="font-size: 0.75rem;">CURRICULUM</div>
+              <div class="font-tech fw-bold text-light" id="courseLessonsCount">10 Modules</div>
+            </div>
+            <div>
+              <div class="text-muted small" style="font-size: 0.75rem;">CERTIFICATION</div>
+              <div class="font-tech fw-bold text-light">Included</div>
+            </div>
+            <div>
+              <div class="text-muted small" style="font-size: 0.75rem;">PRICING</div>
+              <div class="font-tech fw-bold text-info" id="coursePriceTag">Free with Gear</div>
+            </div>
+          </div>
+
+          <!-- Instructor Strip -->
+          <div class="d-flex align-items-center gap-3">
+            <div class="instructor-avatar" style="width: 44px; height: 44px; font-size: 1rem;" id="courseInstructorAvatar">MC</div>
+            <div>
+              <div class="fw-bold text-light" id="courseInstructorName">Marcus Chen</div>
+              <div class="text-muted small" id="courseInstructorRole">Grammy-Nominated Audio Engineer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course Media / Enrollment Card -->
+        <div class="col-12 col-lg-5">
+          <div class="p-4 rounded-4 border border-secondary border-opacity-25" style="background: var(--bg-surface-2);">
+            <div class="position-relative rounded-3 overflow-hidden mb-3">
+              <img id="courseHeroImg" src="assets/images/academy/course-mic-technique.jpg" alt="Course Preview" class="w-100 h-auto d-block">
+              <div class="position-absolute top-50 start-50 translate-middle">
+                <button class="btn btn-info rounded-circle p-3 shadow-lg" id="btnPlayCourseTeaser" aria-label="Play Lesson Teaser">
+                  <i class="bi bi-play-fill fs-3 text-dark"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="d-grid gap-2 mb-3">
+              <button class="btn-wave btn-wave-primary btn-wave-lg" id="btnStartLearning">
+                <i class="bi bi-lightning-charge me-1"></i> Start Learning Now
+              </button>
+            </div>
+
+            <div class="small text-muted text-center">
+              <i class="bi bi-shield-check text-info me-1"></i> Instant full access • Self-paced lessons • Resource downloads
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       COURSE CURRICULUM & LEARNING OUTCOMES
+       ========================================================================== -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <!-- Left: Curriculum Modules -->
+        <div class="col-12 col-lg-8">
+          <h3 class="h4 fw-bold mb-3"><i class="bi bi-journal-bookmark me-2 text-info"></i>Course Curriculum</h3>
+          <p class="text-secondary small mb-4">Click any unlocked module to preview lesson objectives and waveform demonstrations.</p>
+
+          <div class="list-group list-group-flush rounded-4 overflow-hidden border border-secondary border-opacity-25" id="curriculumListGroup">
+            <!-- Populated dynamically by script -->
+          </div>
+
+          <!-- Interactive Web Audio Signal Demo -->
+          <div class="audio-waveform-player mt-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="font-tech text-info small fw-bold"><i class="bi bi-soundwave me-1"></i>MODULE PREVIEW: 1kHz HARMONIC CALIBRATION</span>
+              <span class="text-muted small">Live Audio Engine</span>
+            </div>
+            <p class="small text-secondary mb-3">
+              Experience the standard calibration test tone used by audio engineers to align DAW recording levels to <strong>-18 dBFS</strong> nominal target.
+            </p>
+            <button class="btn-wave btn-wave-secondary btn-wave-sm audio-demo-tone-btn" data-freq="1000">
+              <i class="bi bi-play-fill me-1"></i>Play 1kHz Reference Tone
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Learning Outcomes & Gear Pairing -->
+        <div class="col-12 col-lg-4">
+          <!-- Learning Outcomes Box -->
+          <div class="p-4 rounded-4 border border-secondary border-opacity-25 mb-4" style="background: var(--bg-surface-1);">
+            <h4 class="h6 text-uppercase font-tech text-info mb-3"><i class="bi bi-check2-circle me-1"></i>What You Will Master</h4>
+            <ul class="list-unstyled mb-0" id="courseOutcomesList">
+              <!-- Populated dynamically -->
+            </ul>
+          </div>
+
+          <!-- Matched Hardware Pairing -->
+          <div class="p-4 rounded-4 border border-info border-opacity-25" style="background: var(--bg-surface-1);">
+            <span class="badge bg-info text-dark font-tech small mb-2">RECOMMENDED GEAR</span>
+            <h5 class="h6 mb-2">WAVECRAFT Studio Mic X1</h5>
+            <p class="text-muted small mb-3">
+              The flagship hybrid dynamic microphone used throughout this course lab for acoustic proximity demonstrations.
+            </p>
+            <div class="d-flex align-items-center justify-content-between pt-2 border-top border-secondary border-opacity-10">
+              <span class="font-tech fw-bold text-light">$199</span>
+              <a href="product-details.html?id=mic-x1" class="btn-wave btn-wave-outline btn-wave-sm">
+                View Hardware
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enrollment Demo Modal -->
+  <div class="modal fade" id="enrollmentModal" tabindex="-1" aria-labelledby="enrollmentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dropdown border-info">
+        <div class="modal-header border-secondary border-opacity-25">
+          <h5 class="modal-title font-tech" id="enrollmentModalLabel"><i class="bi bi-mortarboard-fill text-info me-2"></i>Academy Enrollment Confirmed</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body py-4 text-center">
+          <i class="bi bi-check-circle-fill text-info display-4 mb-3 d-inline-block"></i>
+          <h4 class="h5 mb-2">You're Enrolled in the Course!</h4>
+          <p class="text-secondary small mb-3">
+            Welcome to WAVECRAFT Academy. Your learning dashboard access key has been generated. You can begin streaming lesson 01 immediately.
+          </p>
+          <div class="p-3 rounded-3 border border-secondary border-opacity-25 font-tech small text-info mb-3" style="background: var(--bg-surface-2);">
+            ACCESS KEY: WC-ACAD-2026-ENROLL-OK
+          </div>
+          <button type="button" class="btn-wave btn-wave-primary w-100" data-bs-dismiss="modal">
+            Enter Lesson Player
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="wave-footer">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="index.html" class="wave-brand mb-3 d-inline-flex">
+            <div class="brand-wave-icon"><i class="bi bi-soundwave"></i></div>
+            <span class="brand-text">WAVECRAFT</span>
+          </a>
+          <p class="text-secondary small mb-3">
+            <strong>Build Better Sound. Create With Confidence.</strong><br>
+            A specialist destination combining professional podcast audio technology, intelligent acoustic comparisons, and creator production academy.
+          </p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-col-title">Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=microphones">Microphones</a></li>
+            <li><a href="shop.html?category=headphones">Headphones</a></li>
+            <li><a href="shop.html?category=interfaces">Interfaces</a></li>
+            <li><a href="shop.html?category=bundles">Podcast Bundles</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-3">
+          <h4 class="footer-col-title">Academy</h4>
+          <ul class="footer-links">
+            <li><a href="academy.html">All Courses</a></li>
+            <li><a href="course-details.html?id=course-mic-technique">Mic Technique</a></li>
+            <li><a href="course-details.html?id=course-noise-control">Noise Control</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4 class="footer-col-title">Support</h4>
+          <ul class="footer-links">
+            <li><a href="warranty.html">Register Warranty</a></li>
+            <li><a href="noise-cancellation-guide.html">Noise-Cancellation Guide</a></li>
+            <li><a href="contact.html">Contact Engineering Support</a></li>
+            <li><a href="about.html">About WAVECRAFT</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 WAVECRAFT Audio Technologies LLC. All rights reserved.</div>
+        <div class="d-flex align-items-center gap-3">
+          <a href="about.html">Privacy</a><span>•</span><a href="about.html">Terms</a><span>•</span><a href="warranty.html">Warranty Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/compare.js"></script>
+  <script src="assets/js/academy.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const courseId = urlParams.get('id') || 'course-mic-technique';
+
+      if (window.WavecraftAcademy) {
+        const course = window.WavecraftAcademy.getById(courseId) || window.WavecraftAcademy.getById('course-mic-technique');
+        if (course) {
+          document.getElementById('breadCourseTitle').textContent = course.title;
+          document.getElementById('courseMainTitle').textContent = course.title;
+          document.getElementById('courseMainDesc').textContent = course.description;
+          document.getElementById('courseLevelBadge').textContent = course.level;
+          document.getElementById('courseDuration').textContent = course.duration;
+          document.getElementById('courseLessonsCount').textContent = `${course.lessons} Modules`;
+          document.getElementById('coursePriceTag').textContent = course.price;
+          document.getElementById('courseInstructorName').textContent = course.instructor;
+          document.getElementById('courseInstructorRole').textContent = course.instructorRole;
+          document.getElementById('courseInstructorAvatar').textContent = course.instructorAvatar;
+          document.getElementById('courseHeroImg').src = course.image;
+
+          // Outcomes
+          const outcomesEl = document.getElementById('courseOutcomesList');
+          if (outcomesEl && course.outcomes) {
+            outcomesEl.innerHTML = course.outcomes.map(item => `
+              <li class="d-flex align-items-start gap-2 mb-3 text-secondary small">
+                <i class="bi bi-check-lg text-info fs-6 mt-1 flex-shrink-0"></i>
+                <span>${item}</span>
+              </li>
+            `).join('');
+          }
+
+          // Curriculum
+          const currEl = document.getElementById('curriculumListGroup');
+          if (currEl && course.curriculum) {
+            currEl.innerHTML = course.curriculum.map(mod => `
+              <div class="list-group-item bg-transparent text-light border-secondary border-opacity-25 p-3 d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-3">
+                  <span class="font-tech text-info fw-bold" style="font-size: 0.85rem;">${mod.num}</span>
+                  <div>
+                    <div class="fw-semibold small">${mod.title}</div>
+                    <div class="text-muted" style="font-size: 0.72rem;"><i class="bi bi-clock me-1"></i>${mod.duration}</div>
+                  </div>
+                </div>
+                ${mod.preview ? '<span class="badge bg-secondary text-light font-tech small">Preview</span>' : '<i class="bi bi-lock text-muted"></i>'}
+              </div>
+            `).join('');
+          }
+        }
+      }
+
+      // Enrollment Modal trigger
+      const startBtn = document.getElementById('btnStartLearning');
+      if (startBtn) {
+        startBtn.addEventListener('click', () => {
+          const modal = new bootstrap.Modal(document.getElementById('enrollmentModal'));
+          modal.show();
+        });
+      }
+
+      const teaserBtn = document.getElementById('btnPlayCourseTeaser');
+      if (teaserBtn) {
+        teaserBtn.addEventListener('click', () => {
+          const modal = new bootstrap.Modal(document.getElementById('enrollmentModal'));
+          modal.show();
+        });
+      }
+    });
+  </script>
+</body>
+</html>
