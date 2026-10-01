@@ -9,6 +9,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
   <link rel="stylesheet" href="assets/css/theme.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
@@ -28,33 +30,18 @@
           <li class="wave-nav-item"><a href="index.html" class="wave-nav-link">Home</a></li>
           <li class="wave-nav-item"><a href="shop.html" class="wave-nav-link">Shop</a></li>
           <li class="wave-nav-item"><a href="compare.html" class="wave-nav-link">Compare <span class="nav-badge compare-badge-count" style="display:none;">0</span></a></li>
-          <li class="wave-nav-item">
-            <a href="academy.html" class="wave-nav-link active" aria-haspopup="true">
-              Academy <i class="bi bi-chevron-down dropdown-caret"></i>
-            </a>
-            <div class="wave-dropdown">
-              <a href="academy.html" class="wave-dropdown-item"><i class="bi bi-mortarboard"></i><div><span class="fw-semibold">All Courses</span></div></a>
-              <a href="course-details.html?id=course-podcasting-fundamentals" class="wave-dropdown-item"><i class="bi bi-broadcast"></i><div><span class="fw-semibold">Podcasting Fundamentals</span></div></a>
-              <a href="course-details.html?id=course-mic-technique" class="wave-dropdown-item"><i class="bi bi-soundwave"></i><div><span class="fw-semibold">Recording & Mic Technique</span></div></a>
-              <a href="course-details.html?id=course-audio-editing" class="wave-dropdown-item"><i class="bi bi-scissors"></i><div><span class="fw-semibold">Audio Editing</span></div></a>
-              <a href="course-details.html?id=course-mixing-mastering" class="wave-dropdown-item"><i class="bi bi-activity"></i><div><span class="fw-semibold">Mixing & Mastering</span></div></a>
-              <a href="course-details.html?id=course-noise-control" class="wave-dropdown-item"><i class="bi bi-shield-check"></i><div><span class="fw-semibold">Noise Control</span></div></a>
-            </div>
-          </li>
+          <li class="wave-nav-item"><a href="academy.html" class="wave-nav-link active">Academy</a></li>
           <li class="wave-nav-item"><a href="guides.html" class="wave-nav-link">Guides</a></li>
           <li class="wave-nav-item"><a href="warranty.html" class="wave-nav-link">Warranty</a></li>
           <li class="wave-nav-item"><a href="about.html" class="wave-nav-link">About</a></li>
           <li class="wave-nav-item"><a href="contact.html" class="wave-nav-link">Contact</a></li>
         </ul>
 
-        <div class="wave-nav-actions">
-          <button class="btn-theme-toggle" id="themeToggleBtn" aria-label="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+                <div class="wave-nav-actions">
           <button class="nav-icon-badge-btn cart-open-trigger" aria-label="Open Cart Drawer">
             <i class="bi bi-bag"></i><span class="nav-badge cart-badge-count">1</span>
           </button>
-          <a href="login.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Login</a>
-          <a href="signup.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Sign Up</a>
-          <a href="shop.html" class="btn-wave btn-wave-primary btn-wave-sm d-none d-sm-inline-flex">Shop Gear</a>
+          <a href="signup.html" class="btn-wave btn-wave-primary btn-wave-sm">Sign Up</a>
           <button class="btn-mobile-toggle" id="mobileMenuToggle" aria-label="Open navigation"><i class="bi bi-list fs-4"></i></button>
         </div>
       </nav>
@@ -73,13 +60,13 @@
     </div>
     <ul class="mobile-nav-list">
       <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
-      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Shop Gear</a></li>
-      <li class="mobile-nav-item"><a href="compare.html" class="mobile-nav-link">Compare Gear</a></li>
+      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Shop</a></li>
+      <li class="mobile-nav-item"><a href="compare.html" class="mobile-nav-link">Compare Gear <span class="badge bg-info text-dark font-tech compare-badge-count">0</span></a></li>
       <li class="mobile-nav-item"><a href="academy.html" class="mobile-nav-link active">Academy</a></li>
       <li class="mobile-nav-item"><a href="guides.html" class="mobile-nav-link">Guides</a></li>
-      <li class="mobile-nav-item"><a href="warranty.html" class="mobile-nav-link">Warranty</a></li>
-      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
-      <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      <li class="mobile-nav-item"><a href="warranty.html" class="mobile-nav-link">Warranty Registration</a></li>
+      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About WAVECRAFT</a></li>
+      <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact & Support</a></li>
     </ul>
   </aside>
 
@@ -166,8 +153,90 @@
       </div>
 
       <!-- Course Cards Grid -->
-      <div class="row g-4" id="academyCourseListContainer">
+      <div class="row g-4 grid-2-center-last justify-content-center" id="academyCourseListContainer">
         <!-- Rendered via JavaScript on DOM load -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       NEW SECTION: ACADEMY CERTIFICATION & CAREER TRACKS
+       ========================================================================== -->
+  <section class="py-5" style="background-color: var(--bg-surface-1); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container py-3">
+      <div class="row align-items-end mb-4">
+        <div class="col-12 col-lg-8">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> Professional Audio Certification</div>
+          <h2 class="h1 fw-bold mb-2">Verified Creator & Engineer Badges</h2>
+          <p class="text-secondary mb-0">Complete rigorous acoustic practical assessments and earn verified WAVECRAFT credentials recognized by leading podcast networks and broadcast studios.</p>
+        </div>
+        <div class="col-12 col-lg-4 text-lg-end mt-3 mt-lg-0">
+          <a href="signup.html" class="btn-wave btn-wave-primary">
+            <i class="bi bi-award me-1"></i> Claim Student Access
+          </a>
+        </div>
+      </div>
+
+      <div class="row g-4 grid-2-center-last justify-content-center">
+        <!-- Track 1 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="p-4 rounded-4 border border-secondary border-opacity-25 h-100 d-flex flex-column" style="background: var(--bg-surface-2);">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <span class="badge bg-info bg-opacity-10 text-cyan border border-info border-opacity-25 px-3 py-2 font-tech">CDE BADGE</span>
+              <span class="text-muted small font-tech">12 MODULES</span>
+            </div>
+            <h3 class="h4 fw-bold mb-2">Certified Dialogue Editor</h3>
+            <p class="text-secondary small mb-4">Master spectral de-noising, sibilance reduction, breath attenuation, and Spotify/Apple loudness target normalization (-16 LUFS integrated).</p>
+            <ul class="list-unstyled text-secondary small mb-4 mt-auto">
+              <li class="mb-2"><i class="bi bi-check2-circle text-cyan me-2"></i> Spectral De-Rustle & De-Hum</li>
+              <li class="mb-2"><i class="bi bi-check2-circle text-cyan me-2"></i> Voice Isolation & De-Reverb</li>
+              <li class="mb-2"><i class="bi bi-check2-circle text-cyan me-2"></i> Multi-Mic Phase Alignment</li>
+            </ul>
+            <a href="course-details.html?id=course-audio-editing" class="btn-wave btn-wave-outline btn-wave-sm w-100 text-center">
+              View Syllabus & Exam
+            </a>
+          </div>
+        </div>
+
+        <!-- Track 2 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="p-4 rounded-4 border border-secondary border-opacity-25 h-100 d-flex flex-column" style="background: var(--bg-surface-2);">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <span class="badge bg-cyan text-dark font-tech px-3 py-2 fw-bold">BAS BADGE</span>
+              <span class="text-muted small font-tech">16 MODULES</span>
+            </div>
+            <h3 class="h4 fw-bold mb-2">Broadcast Acoustic Specialist</h3>
+            <p class="text-secondary small mb-4">Understand room treatment physics, polar rejection angles, boundary interference attenuation, and analog preamp gain staging.</p>
+            <ul class="list-unstyled text-secondary small mb-4 mt-auto">
+              <li class="mb-2"><i class="bi bi-check2-circle text-cyan me-2"></i> Acoustic Panel Positioning</li>
+              <li class="mb-2"><i class="bi bi-check2-circle text-cyan me-2"></i> Off-Axis Rejection Tuning</li>
+              <li class="mb-2"><i class="bi bi-check2-circle text-cyan me-2"></i> Analog Preamp EIN Measurement</li>
+            </ul>
+            <a href="course-details.html?id=course-noise-control" class="btn-wave btn-wave-primary btn-wave-sm w-100 text-center">
+              View Syllabus & Exam
+            </a>
+          </div>
+        </div>
+
+        <!-- Track 3 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="p-4 rounded-4 border border-secondary border-opacity-25 h-100 d-flex flex-column" style="background: var(--bg-surface-2);">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <span class="badge bg-info bg-opacity-10 text-cyan border border-info border-opacity-25 px-3 py-2 font-tech">MPP BADGE</span>
+              <span class="text-muted small font-tech">24 MODULES</span>
+            </div>
+            <h3 class="h4 fw-bold mb-2">Master Podcast Producer</h3>
+            <p class="text-secondary small mb-4">Complete end-to-end studio workflow: from 4-person panel setup to live remote recording, dynamic compression, and distribution.</p>
+            <ul class="list-unstyled text-secondary small mb-4 mt-auto">
+              <li class="mb-2"><i class="bi bi-check2-circle text-cyan me-2"></i> Multitrack Panel Mixing</li>
+              <li class="mb-2"><i class="bi bi-check2-circle text-cyan me-2"></i> Remote Guest Audio Clean-Up</li>
+              <li class="mb-2"><i class="bi bi-check2-circle text-cyan me-2"></i> Show Mastering & RSS Feeds</li>
+            </ul>
+            <a href="course-details.html?id=course-mixing-mastering" class="btn-wave btn-wave-outline btn-wave-sm w-100 text-center">
+              View Syllabus & Exam
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -185,6 +254,15 @@
             <strong>Build Better Sound. Create With Confidence.</strong><br>
             A specialist destination combining professional podcast audio technology, intelligent acoustic comparisons, and creator production academy.
           </p>
+          <div class="social-links-wrap mt-3">
+            <a href="https://youtube.com" class="social-icon-btn" aria-label="YouTube" target="_blank" rel="noopener"><i class="bi bi-youtube"></i></a>
+            <a href="https://spotify.com" class="social-icon-btn" aria-label="Spotify" target="_blank" rel="noopener"><i class="bi bi-spotify"></i></a>
+            <a href="https://apple.com/apple-podcasts" class="social-icon-btn" aria-label="Apple Podcasts" target="_blank" rel="noopener"><i class="bi bi-apple"></i></a>
+            <a href="https://twitter.com" class="social-icon-btn" aria-label="Twitter / X" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://instagram.com" class="social-icon-btn" aria-label="Instagram" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
+            <a href="https://discord.com" class="social-icon-btn" aria-label="Discord" target="_blank" rel="noopener"><i class="bi bi-discord"></i></a>
+            <a href="https://github.com" class="social-icon-btn" aria-label="GitHub" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+          </div>
         </div>
         <div class="col-6 col-md-3 col-lg-2">
           <h4 class="footer-col-title">Shop</h4>

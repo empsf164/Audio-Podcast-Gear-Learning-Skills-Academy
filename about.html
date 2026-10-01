@@ -9,6 +9,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
   <link rel="stylesheet" href="assets/css/theme.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
@@ -35,14 +37,11 @@
           <li class="wave-nav-item"><a href="contact.html" class="wave-nav-link">Contact</a></li>
         </ul>
 
-        <div class="wave-nav-actions">
-          <button class="btn-theme-toggle" id="themeToggleBtn" aria-label="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+                <div class="wave-nav-actions">
           <button class="nav-icon-badge-btn cart-open-trigger" aria-label="Open Cart Drawer">
             <i class="bi bi-bag"></i><span class="nav-badge cart-badge-count">1</span>
           </button>
-          <a href="login.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Login</a>
-          <a href="signup.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Sign Up</a>
-          <a href="shop.html" class="btn-wave btn-wave-primary btn-wave-sm d-none d-sm-inline-flex">Shop Gear</a>
+          <a href="signup.html" class="btn-wave btn-wave-primary btn-wave-sm">Sign Up</a>
           <button class="btn-mobile-toggle" id="mobileMenuToggle" aria-label="Open navigation"><i class="bi bi-list fs-4"></i></button>
         </div>
       </nav>
@@ -61,13 +60,13 @@
     </div>
     <ul class="mobile-nav-list">
       <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
-      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Shop Gear</a></li>
-      <li class="mobile-nav-item"><a href="compare.html" class="mobile-nav-link">Compare Gear</a></li>
+      <li class="mobile-nav-item"><a href="shop.html" class="mobile-nav-link">Shop</a></li>
+      <li class="mobile-nav-item"><a href="compare.html" class="mobile-nav-link">Compare Gear <span class="badge bg-info text-dark font-tech compare-badge-count">0</span></a></li>
       <li class="mobile-nav-item"><a href="academy.html" class="mobile-nav-link">Academy</a></li>
       <li class="mobile-nav-item"><a href="guides.html" class="mobile-nav-link">Guides</a></li>
-      <li class="mobile-nav-item"><a href="warranty.html" class="mobile-nav-link">Warranty</a></li>
-      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link active">About</a></li>
-      <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      <li class="mobile-nav-item"><a href="warranty.html" class="mobile-nav-link">Warranty Registration</a></li>
+      <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link active">About WAVECRAFT</a></li>
+      <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact & Support</a></li>
     </ul>
   </aside>
 
@@ -159,6 +158,58 @@
     </div>
   </section>
 
+  <!-- ==========================================================================
+       NEW SECTION: LABORATORY ACOUSTIC CALIBRATION & TESTING STANDARDS
+       ========================================================================== -->
+  <section class="py-5" style="background-color: var(--bg-surface-1); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container py-3">
+      <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span> LABORATORY STANDARDS</div>
+          <h2 class="h1 fw-bold mb-1">Our 4-Point Acoustic Calibration Protocol</h2>
+          <p class="text-secondary small mb-0">Every WAVECRAFT transducer undergoes rigorous laboratory testing before receiving serial certification.</p>
+        </div>
+        <a href="contact.html" class="btn-wave btn-wave-outline mt-3 mt-md-0">
+          Visit Our Laboratory <i class="bi bi-geo-alt ms-1"></i>
+        </a>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="p-4 rounded-4 border border-secondary border-opacity-25 h-100 position-relative overflow-hidden" style="background: var(--bg-surface-2);">
+            <div class="text-info font-tech display-6 fw-bold opacity-50 mb-2">01</div>
+            <h4 class="h5 fw-bold mb-2">Anechoic Frequency Sweep</h4>
+            <p class="text-secondary small mb-0">Every capsule curve is individually calibrated in an isolated sound chamber to guarantee flat vocal intelligibility.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="p-4 rounded-4 border border-secondary border-opacity-25 h-100 position-relative overflow-hidden" style="background: var(--bg-surface-2);">
+            <div class="text-cyan font-tech display-6 fw-bold opacity-50 mb-2">02</div>
+            <h4 class="h5 fw-bold mb-2">-130 dBu EIN Noise Floor</h4>
+            <p class="text-secondary small mb-0">Custom discrete JFET preamps are tested in Faraday cages to eliminate electromagnetic interference and hiss.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="p-4 rounded-4 border border-secondary border-opacity-25 h-100 position-relative overflow-hidden" style="background: var(--bg-surface-2);">
+            <div class="text-info font-tech display-6 fw-bold opacity-50 mb-2">03</div>
+            <h4 class="h5 fw-bold mb-2">95 dB SPL Transient Test</h4>
+            <p class="text-secondary small mb-0">Dual-stage mesh and internal acoustic dampening are tested against explosive vocal plosives ('P' and 'B' sounds).</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="p-4 rounded-4 border border-secondary border-opacity-25 h-100 position-relative overflow-hidden" style="background: var(--bg-surface-2);">
+            <div class="text-cyan font-tech display-6 fw-bold opacity-50 mb-2">04</div>
+            <h4 class="h5 fw-bold mb-2">100-Hour Stress Cycling</h4>
+            <p class="text-secondary small mb-0">Aircraft-grade aluminum chassis undergo continuous environmental humidity and drop-test validation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="wave-footer">
     <div class="container">
@@ -172,6 +223,15 @@
             <strong>Build Better Sound. Create With Confidence.</strong><br>
             A specialist destination combining professional podcast audio technology, intelligent acoustic comparisons, and creator production academy.
           </p>
+          <div class="social-links-wrap mt-3">
+            <a href="https://youtube.com" class="social-icon-btn" aria-label="YouTube" target="_blank" rel="noopener"><i class="bi bi-youtube"></i></a>
+            <a href="https://spotify.com" class="social-icon-btn" aria-label="Spotify" target="_blank" rel="noopener"><i class="bi bi-spotify"></i></a>
+            <a href="https://apple.com/apple-podcasts" class="social-icon-btn" aria-label="Apple Podcasts" target="_blank" rel="noopener"><i class="bi bi-apple"></i></a>
+            <a href="https://twitter.com" class="social-icon-btn" aria-label="Twitter / X" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://instagram.com" class="social-icon-btn" aria-label="Instagram" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
+            <a href="https://discord.com" class="social-icon-btn" aria-label="Discord" target="_blank" rel="noopener"><i class="bi bi-discord"></i></a>
+            <a href="https://github.com" class="social-icon-btn" aria-label="GitHub" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+          </div>
         </div>
         <div class="col-6 col-md-3 col-lg-2">
           <h4 class="footer-col-title">Shop</h4>

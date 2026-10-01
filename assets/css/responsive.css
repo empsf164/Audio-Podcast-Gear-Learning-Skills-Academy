@@ -31,15 +31,15 @@ html, body {
 }
 
 /* ==========================================================================
-   TABLET LANDSCAPE & PORTRAIT (768px - 991px)
+   TABLET & LAPTOP 1024px VIEW (UP TO 1024.98px)
    ========================================================================== */
-@media (max-width: 991.98px) {
+@media (max-width: 1024.98px) {
   /* Show Mobile Hamburger, Hide Desktop Nav Links */
   .wave-nav-menu {
-    display: none;
+    display: none !important;
   }
   .btn-mobile-toggle {
-    display: flex;
+    display: flex !important;
   }
   
   /* Hero layout stack */
@@ -73,6 +73,37 @@ html, body {
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+/* ==========================================================================
+   1024PX CARD GRID ALIGNMENT (768px - 1024.98px)
+   Align 2 cards in one row, and center-align any trailing odd card
+   Target Sections: Gear Architecture, Professional Catalog, Knowledge Hub, Shop, & WAVECRAFT Academy
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 1024.98px) {
+  .grid-2-center-last,
+  #homeFeaturedProductsGrid,
+  #shopProductsContainer,
+  #homeAcademyCoursesGrid,
+  #academyCourseListContainer,
+  .signal-chain-grid,
+  .buying-guides-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  .grid-2-center-last > [class*="col-"],
+  #homeFeaturedProductsGrid > [class*="col-"],
+  #shopProductsContainer > [class*="col-"],
+  #homeAcademyCoursesGrid > [class*="col-"],
+  #academyCourseListContainer > [class*="col-"],
+  .signal-chain-grid > [class*="col-"],
+  .buying-guides-grid > [class*="col-"] {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    width: 50% !important;
   }
 }
 

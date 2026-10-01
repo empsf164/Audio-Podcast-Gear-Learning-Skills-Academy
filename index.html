@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WAVECRAFT — Build Better Sound. Create With Confidence.</title>
-  <meta name="description" content="Professional podcast audio gear ecommerce, intelligent spec comparisons, 360° product viewing, and creator skills academy.">
+  <meta name="description"
+    content="Professional podcast audio gear ecommerce, intelligent spec comparisons, 360° product viewing, and creator skills academy.">
   <meta property="og:title" content="WAVECRAFT — Audio Podcast Gear Learning & Skills Academy">
-  <meta property="og:description" content="Discover broadcast microphones, studio headphones, audio interfaces, and master podcast production skills.">
+  <meta property="og:description"
+    content="Discover broadcast microphones, studio headphones, audio interfaces, and master podcast production skills.">
   <meta property="og:type" content="website">
 
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
   <!-- Custom Theme, Main & Responsive CSS -->
   <link rel="stylesheet" href="assets/css/theme.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
+
 <body class="bg-tech-pattern">
 
   <!-- ==========================================================================
@@ -40,194 +47,27 @@
           <li class="wave-nav-item">
             <a href="index.html" class="wave-nav-link active">Home</a>
           </li>
-
-          <!-- Shop Dropdown -->
           <li class="wave-nav-item">
-            <a href="shop.html" class="wave-nav-link" aria-haspopup="true">
-              Shop <i class="bi bi-chevron-down dropdown-caret"></i>
-            </a>
-            <div class="wave-dropdown">
-              <a href="shop.html?category=microphones" class="wave-dropdown-item">
-                <i class="bi bi-mic"></i>
-                <div>
-                  <span class="fw-semibold">Microphones</span>
-                  <span class="item-desc">Dynamic, Condenser, USB & XLR</span>
-                </div>
-              </a>
-              <a href="shop.html?category=headphones" class="wave-dropdown-item">
-                <i class="bi bi-headphones"></i>
-                <div>
-                  <span class="fw-semibold">Headphones</span>
-                  <span class="item-desc">Closed-Back Reference & Tracking</span>
-                </div>
-              </a>
-              <a href="shop.html?category=interfaces" class="wave-dropdown-item">
-                <i class="bi bi-cpu"></i>
-                <div>
-                  <span class="fw-semibold">Audio Interfaces</span>
-                  <span class="item-desc">High-Gain USB-C 192kHz Hubs</span>
-                </div>
-              </a>
-              <a href="shop.html?category=mixers" class="wave-dropdown-item">
-                <i class="bi bi-sliders"></i>
-                <div>
-                  <span class="fw-semibold">Mixers & Consoles</span>
-                  <span class="item-desc">Multitrack Production Decks</span>
-                </div>
-              </a>
-              <a href="shop.html?category=bundles" class="wave-dropdown-item">
-                <i class="bi bi-box-seam"></i>
-                <div>
-                  <span class="fw-semibold">Podcast Bundles</span>
-                  <span class="item-desc">Matched Turnkey Creator Suites</span>
-                </div>
-              </a>
-              <a href="shop.html?category=accessories" class="wave-dropdown-item">
-                <i class="bi bi-tools"></i>
-                <div>
-                  <span class="fw-semibold">Accessories</span>
-                  <span class="item-desc">Boom Arms, Cables & Shockmounts</span>
-                </div>
-              </a>
-              <div class="dropdown-divider my-1 border-secondary opacity-25"></div>
-              <a href="shop.html?filter=new" class="wave-dropdown-item">
-                <i class="bi bi-stars"></i>
-                <div>
-                  <span class="fw-semibold">New Arrivals</span>
-                  <span class="item-desc">Latest Audio Engineering Releases</span>
-                </div>
-              </a>
-            </div>
+            <a href="shop.html" class="wave-nav-link">Shop</a>
           </li>
-
-          <!-- Compare Link -->
           <li class="wave-nav-item">
             <a href="compare.html" class="wave-nav-link">
               Compare
               <span class="nav-badge compare-badge-count" style="display:none;">0</span>
             </a>
           </li>
-
-          <!-- Academy Dropdown -->
           <li class="wave-nav-item">
-            <a href="academy.html" class="wave-nav-link" aria-haspopup="true">
-              Academy <i class="bi bi-chevron-down dropdown-caret"></i>
-            </a>
-            <div class="wave-dropdown">
-              <a href="academy.html" class="wave-dropdown-item">
-                <i class="bi bi-mortarboard"></i>
-                <div>
-                  <span class="fw-semibold">All Courses</span>
-                  <span class="item-desc">Complete Audio Curriculum</span>
-                </div>
-              </a>
-              <a href="course-details.html?id=course-podcasting-fundamentals" class="wave-dropdown-item">
-                <i class="bi bi-broadcast"></i>
-                <div>
-                  <span class="fw-semibold">Podcasting Fundamentals</span>
-                  <span class="item-desc">Concept, Workflow & Hosting</span>
-                </div>
-              </a>
-              <a href="course-details.html?id=course-mic-technique" class="wave-dropdown-item">
-                <i class="bi bi-soundwave"></i>
-                <div>
-                  <span class="fw-semibold">Recording & Mic Technique</span>
-                  <span class="item-desc">Proximity, Gain Staging & Nulls</span>
-                </div>
-              </a>
-              <a href="course-details.html?id=course-audio-editing" class="wave-dropdown-item">
-                <i class="bi bi-scissors"></i>
-                <div>
-                  <span class="fw-semibold">Audio Editing</span>
-                  <span class="item-desc">Spectral Repair & Dialogue Cadence</span>
-                </div>
-              </a>
-              <a href="course-details.html?id=course-mixing-mastering" class="wave-dropdown-item">
-                <i class="bi bi-activity"></i>
-                <div>
-                  <span class="fw-semibold">Mixing & Mastering</span>
-                  <span class="item-desc">LUFS Standards & Dynamics</span>
-                </div>
-              </a>
-              <a href="course-details.html?id=course-live-streaming" class="wave-dropdown-item">
-                <i class="bi bi-cast"></i>
-                <div>
-                  <span class="fw-semibold">Live Streaming</span>
-                  <span class="item-desc">OBS Audio, Submixes & Ducking</span>
-                </div>
-              </a>
-              <a href="course-details.html?id=course-noise-control" class="wave-dropdown-item">
-                <i class="bi bi-shield-check"></i>
-                <div>
-                  <span class="fw-semibold">Noise Control</span>
-                  <span class="item-desc">Acoustics & Environmental Gates</span>
-                </div>
-              </a>
-            </div>
+            <a href="academy.html" class="wave-nav-link">Academy</a>
           </li>
-
-          <!-- Guides Dropdown -->
           <li class="wave-nav-item">
-            <a href="guides.html" class="wave-nav-link" aria-haspopup="true">
-              Guides <i class="bi bi-chevron-down dropdown-caret"></i>
-            </a>
-            <div class="wave-dropdown">
-              <a href="guides.html#guide-microphones" class="wave-dropdown-item">
-                <i class="bi bi-journal-text"></i>
-                <div>
-                  <span class="fw-semibold">Microphone Guide</span>
-                  <span class="item-desc">Dynamic vs Condenser Selection</span>
-                </div>
-              </a>
-              <a href="noise-cancellation-guide.html" class="wave-dropdown-item">
-                <i class="bi bi-soundwave"></i>
-                <div>
-                  <span class="fw-semibold">Noise-Cancellation Guide</span>
-                  <span class="item-desc">Signal Problem & Room Solutions</span>
-                </div>
-              </a>
-              <a href="guides.html#guide-interfaces" class="wave-dropdown-item">
-                <i class="bi bi-lightning-charge"></i>
-                <div>
-                  <span class="fw-semibold">Audio Interface Guide</span>
-                  <span class="item-desc">Preamps, Gain & Sample Rates</span>
-                </div>
-              </a>
-              <a href="guides.html#guide-setup" class="wave-dropdown-item">
-                <i class="bi bi-hdd-rack"></i>
-                <div>
-                  <span class="fw-semibold">Podcast Setup Guide</span>
-                  <span class="item-desc">Solo, Multi-Host & Remote Rooms</span>
-                </div>
-              </a>
-              <a href="guides.html#buying-guides" class="wave-dropdown-item">
-                <i class="bi bi-bag-check"></i>
-                <div>
-                  <span class="fw-semibold">Buying Guides</span>
-                  <span class="item-desc">Targeted Creator Recommendations</span>
-                </div>
-              </a>
-              <a href="guides.html#audio-glossary" class="wave-dropdown-item">
-                <i class="bi bi-book"></i>
-                <div>
-                  <span class="fw-semibold">Audio Glossary</span>
-                  <span class="item-desc">EIN, THD, Polar Nulls & LUFS Defined</span>
-                </div>
-              </a>
-            </div>
+            <a href="guides.html" class="wave-nav-link">Guides</a>
           </li>
-
-          <!-- Warranty -->
           <li class="wave-nav-item">
             <a href="warranty.html" class="wave-nav-link">Warranty</a>
           </li>
-
-          <!-- About -->
           <li class="wave-nav-item">
             <a href="about.html" class="wave-nav-link">About</a>
           </li>
-
-          <!-- Contact -->
           <li class="wave-nav-item">
             <a href="contact.html" class="wave-nav-link">Contact</a>
           </li>
@@ -235,25 +75,14 @@
 
         <!-- Right Side Nav Actions -->
         <div class="wave-nav-actions">
-          <!-- Theme Toggle -->
-          <button class="btn-theme-toggle" id="themeToggleBtn" aria-label="Toggle theme">
-            <i class="bi bi-sun-fill"></i>
-          </button>
-
           <!-- Cart Trigger -->
           <button class="nav-icon-badge-btn cart-open-trigger" aria-label="Open Cart Drawer">
             <i class="bi bi-bag"></i>
             <span class="nav-badge cart-badge-count">1</span>
           </button>
 
-          <!-- Auth Links -->
-          <a href="login.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Login</a>
-          <a href="signup.html" class="d-none d-lg-inline-block text-secondary small fw-bold px-2 py-1">Sign Up</a>
-
-          <!-- Primary Shop CTA -->
-          <a href="shop.html" class="btn-wave btn-wave-primary btn-wave-sm d-none d-sm-inline-flex">
-            Shop Gear
-          </a>
+          <!-- Sign Up Button -->
+          <a href="signup.html" class="btn-wave btn-wave-primary btn-wave-sm">Sign Up</a>
 
           <!-- Mobile Hamburger Toggle -->
           <button class="btn-mobile-toggle" id="mobileMenuToggle" aria-label="Open mobile navigation">
@@ -281,57 +110,22 @@
 
     <ul class="mobile-nav-list">
       <li class="mobile-nav-item">
-        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="index.html" class="mobile-nav-link active">Home</a>
       </li>
-      
       <li class="mobile-nav-item">
-        <a href="#" class="mobile-nav-link mobile-dropdown-toggle">
-          Shop <i class="bi bi-chevron-down dropdown-caret"></i>
-        </a>
-        <div class="mobile-dropdown-content">
-          <a href="shop.html"><i class="bi bi-grid me-2"></i>All Products</a>
-          <a href="shop.html?category=microphones"><i class="bi bi-mic me-2"></i>Microphones</a>
-          <a href="shop.html?category=headphones"><i class="bi bi-headphones me-2"></i>Headphones</a>
-          <a href="shop.html?category=interfaces"><i class="bi bi-cpu me-2"></i>Audio Interfaces</a>
-          <a href="shop.html?category=mixers"><i class="bi bi-sliders me-2"></i>Mixers & Consoles</a>
-          <a href="shop.html?category=bundles"><i class="bi bi-box-seam me-2"></i>Podcast Bundles</a>
-          <a href="shop.html?category=accessories"><i class="bi bi-tools me-2"></i>Accessories</a>
-        </div>
+        <a href="shop.html" class="mobile-nav-link">Shop</a>
       </li>
-
       <li class="mobile-nav-item">
         <a href="compare.html" class="mobile-nav-link">
           Compare Gear <span class="badge bg-info text-dark font-tech compare-badge-count">0</span>
         </a>
       </li>
-
       <li class="mobile-nav-item">
-        <a href="#" class="mobile-nav-link mobile-dropdown-toggle">
-          Academy <i class="bi bi-chevron-down dropdown-caret"></i>
-        </a>
-        <div class="mobile-dropdown-content">
-          <a href="academy.html"><i class="bi bi-mortarboard me-2"></i>All Courses</a>
-          <a href="course-details.html?id=course-podcasting-fundamentals"><i class="bi bi-broadcast me-2"></i>Podcasting Fundamentals</a>
-          <a href="course-details.html?id=course-mic-technique"><i class="bi bi-soundwave me-2"></i>Microphone Technique</a>
-          <a href="course-details.html?id=course-audio-editing"><i class="bi bi-scissors me-2"></i>Audio Editing</a>
-          <a href="course-details.html?id=course-mixing-mastering"><i class="bi bi-activity me-2"></i>Mixing & Mastering</a>
-          <a href="course-details.html?id=course-noise-control"><i class="bi bi-shield-check me-2"></i>Noise Control</a>
-        </div>
+        <a href="academy.html" class="mobile-nav-link">Academy</a>
       </li>
-
       <li class="mobile-nav-item">
-        <a href="#" class="mobile-nav-link mobile-dropdown-toggle">
-          Guides <i class="bi bi-chevron-down dropdown-caret"></i>
-        </a>
-        <div class="mobile-dropdown-content">
-          <a href="guides.html#guide-microphones"><i class="bi bi-journal-text me-2"></i>Microphone Guide</a>
-          <a href="noise-cancellation-guide.html"><i class="bi bi-soundwave me-2"></i>Noise-Cancellation Guide</a>
-          <a href="guides.html#guide-interfaces"><i class="bi bi-lightning-charge me-2"></i>Audio Interface Guide</a>
-          <a href="guides.html#guide-setup"><i class="bi bi-hdd-rack me-2"></i>Podcast Setup Guide</a>
-          <a href="guides.html#audio-glossary"><i class="bi bi-book me-2"></i>Audio Glossary</a>
-        </div>
+        <a href="guides.html" class="mobile-nav-link">Guides</a>
       </li>
-
       <li class="mobile-nav-item">
         <a href="warranty.html" class="mobile-nav-link">Warranty Registration</a>
       </li>
@@ -345,9 +139,7 @@
 
     <div class="pt-4 border-top border-secondary opacity-75 mt-3">
       <div class="d-grid gap-2">
-        <a href="login.html" class="btn-wave btn-wave-secondary btn-wave-sm w-100">Account Login</a>
-        <a href="signup.html" class="btn-wave btn-wave-outline btn-wave-sm w-100">Create Account</a>
-        <a href="shop.html" class="btn-wave btn-wave-primary btn-wave-sm w-100 mt-1">Shop Audio Gear</a>
+        <a href="signup.html" class="btn-wave btn-wave-primary btn-wave-sm w-100">Sign Up</a>
       </div>
     </div>
   </aside>
@@ -376,7 +168,8 @@
         Proceed to Secure Checkout
       </button>
       <div class="text-center mt-2">
-        <span class="text-muted" style="font-size: 0.75rem;"><i class="bi bi-shield-lock me-1"></i>30-Day Studio Trial • 2-Year Warranty</span>
+        <span class="text-muted" style="font-size: 0.75rem;"><i class="bi bi-shield-lock me-1"></i>30-Day Studio Trial •
+          2-Year Warranty</span>
       </div>
     </div>
   </aside>
@@ -399,7 +192,8 @@
           </h1>
 
           <p class="hero-subtitle">
-            Professional podcast audio gear, intelligent technical comparisons, and practical hands-on training for creators at every level.
+            Professional podcast audio gear, intelligent technical comparisons, and practical hands-on training for
+            creators at every level.
           </p>
 
           <div class="hero-cta-group d-flex flex-wrap align-items-center gap-3 mb-4">
@@ -428,7 +222,7 @@
         <div class="col-12 col-lg-6">
           <div class="hero-image-frame">
             <img src="assets/images/hero/hero-setup.jpg" alt="WAVECRAFT Professional Podcast Audio Setup">
-            
+
             <!-- Subtle Technical HUD Overlays -->
             <div class="tech-overlay-tag tag-pos-1">
               <span class="tag-indicator"></span> 48 kHz / 24-bit HD
@@ -514,14 +308,15 @@
         <div>
           <div class="eyebrow"><span class="eyebrow-dot"></span> Gear Architecture</div>
           <h2 class="h1 mb-1">Engineered for Every Signal Chain</h2>
-          <p class="text-secondary mb-0">Discover acoustically matched audio instruments designed for transparent vocal capture.</p>
+          <p class="text-secondary mb-0">Discover acoustically matched audio instruments designed for transparent vocal
+            capture.</p>
         </div>
         <a href="shop.html" class="btn-wave btn-wave-outline mt-3 mt-md-0">
           Browse All Hardware <i class="bi bi-arrow-right ms-1"></i>
         </a>
       </div>
 
-      <div class="row g-4">
+      <div class="row g-4 grid-2-center-last signal-chain-grid justify-content-center">
         <!-- Microphones -->
         <div class="col-12 col-md-6 col-lg-3">
           <a href="shop.html?category=microphones" class="category-card">
@@ -533,8 +328,6 @@
             <div class="category-pills">
               <span class="category-pill">Dynamic</span>
               <span class="category-pill">Condenser</span>
-              <span class="category-pill">USB</span>
-              <span class="category-pill">XLR</span>
             </div>
             <div class="category-image-wrap">
               <img src="assets/images/products/mic-x1.jpg" alt="WAVECRAFT Studio Microphones">
@@ -553,7 +346,6 @@
             <div class="category-pills">
               <span class="category-pill">Closed-Back</span>
               <span class="category-pill">Studio Reference</span>
-              <span class="category-pill">45mm Drivers</span>
             </div>
             <div class="category-image-wrap">
               <img src="assets/images/products/headphones-hd7.jpg" alt="WAVECRAFT Reference Headphones">
@@ -572,10 +364,27 @@
             <div class="category-pills">
               <span class="category-pill">USB-C</span>
               <span class="category-pill">2-Channel</span>
-              <span class="category-pill">192kHz / 24-bit</span>
             </div>
             <div class="category-image-wrap">
               <img src="assets/images/products/interface-core2.jpg" alt="WAVECRAFT Audio Interfaces">
+            </div>
+          </a>
+        </div>
+
+        <!-- Mixers & Consoles -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <a href="shop.html?category=mixers" class="category-card">
+            <div class="category-header">
+              <span class="text-info font-tech small fw-bold">PROCESSING</span>
+              <h3>Mixers & Consoles</h3>
+              <p class="text-muted small mb-0">Tactile multitrack control</p>
+            </div>
+            <div class="category-pills">
+              <span class="category-pill">Broadcast Deck</span>
+              <span class="category-pill">DSP FX</span>
+            </div>
+            <div class="category-image-wrap">
+              <img src="assets/images/products/mixer-deck4.jpg" alt="WAVECRAFT Audio Mixers">
             </div>
           </a>
         </div>
@@ -591,7 +400,6 @@
             <div class="category-pills">
               <span class="category-pill">Starter Kit</span>
               <span class="category-pill">Pro Suite</span>
-              <span class="category-pill">Low-Profile Arm</span>
             </div>
             <div class="category-image-wrap">
               <img src="assets/images/products/bundle-pro-creator.jpg" alt="WAVECRAFT Creator Bundles">
@@ -605,13 +413,15 @@
   <!-- ==========================================================================
        FEATURED PRODUCTS SHOWCASE
        ========================================================================== -->
-  <section class="py-5" style="background-color: var(--bg-surface-1); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+  <section class="py-5"
+    style="background-color: var(--bg-surface-1); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
     <div class="container">
       <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
         <div>
           <div class="eyebrow"><span class="eyebrow-dot"></span> Professional Catalog</div>
           <h2 class="h1 mb-1">Precision Audio Instruments</h2>
-          <p class="text-secondary mb-0">Tested in our sound laboratory for true broadcast fidelity and ultra-low noise floors.</p>
+          <p class="text-secondary mb-0">Tested in our sound laboratory for true broadcast fidelity and ultra-low noise
+            floors.</p>
         </div>
         <div class="d-flex gap-2 mt-3 mt-md-0">
           <a href="compare.html" class="btn-wave btn-wave-secondary btn-wave-sm">
@@ -624,7 +434,7 @@
       </div>
 
       <!-- Product Grid populated from products.js -->
-      <div class="row g-4" id="homeFeaturedProductsGrid">
+      <div class="row g-4 grid-2-center-last justify-content-center" id="homeFeaturedProductsGrid">
         <!-- Rendered via JavaScript on DOM load -->
       </div>
     </div>
@@ -640,7 +450,9 @@
           <div class="eyebrow"><span class="eyebrow-dot"></span> Interactive Engineering Showroom</div>
           <h2 class="h1 mb-2">See Every Detail Before You Buy.</h2>
           <p class="text-secondary mb-3">
-            Inspect our flagship <strong>WAVECRAFT Studio Mic X1</strong> in real-time 360-degree rotation. Hover over technical hotspots to explore custom shielding, dual analog/digital converters, and zero-latency hardware monitoring.
+            Inspect our flagship <strong>WAVECRAFT Studio Mic X1</strong> in real-time 360-degree rotation. Hover over
+            technical hotspots to explore custom shielding, dual analog/digital converters, and zero-latency hardware
+            monitoring.
           </p>
           <div class="d-flex flex-wrap gap-3">
             <div class="d-flex align-items-center gap-2">
@@ -673,13 +485,15 @@
   <!-- ==========================================================================
        AUDIO SPEC COMPARISON PREVIEW
        ========================================================================== -->
-  <section class="py-5" style="background-color: var(--bg-surface-1); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+  <section class="py-5"
+    style="background-color: var(--bg-surface-1); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
     <div class="container">
       <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
         <div>
           <div class="eyebrow"><span class="eyebrow-dot"></span> Spec Comparison</div>
           <h2 class="h1 mb-1">Compare What Actually Matters.</h2>
-          <p class="text-secondary mb-0">Cut through marketing jargon. Compare polar rejection, self-noise EIN, sample rates, and frequency response side by side.</p>
+          <p class="text-secondary mb-0">Cut through marketing jargon. Compare polar rejection, self-noise EIN, sample
+            rates, and frequency response side by side.</p>
         </div>
         <div class="d-flex gap-2 mt-3 mt-md-0">
           <button class="btn-wave btn-wave-secondary btn-wave-sm" id="btnToggleHighlightDiffs">
@@ -708,14 +522,15 @@
         <div>
           <div class="eyebrow"><span class="eyebrow-dot"></span> WAVECRAFT Academy</div>
           <h2 class="h1 mb-1">Don't Just Buy Better Gear. Learn How to Use It.</h2>
-          <p class="text-secondary mb-0">Practical, step-by-step masterclasses instructed by award-winning broadcast engineers and dialogue editors.</p>
+          <p class="text-secondary mb-0">Practical, step-by-step masterclasses instructed by award-winning broadcast
+            engineers and dialogue editors.</p>
         </div>
         <a href="academy.html" class="btn-wave btn-wave-primary mt-3 mt-md-0">
           Explore Academy Curriculum <i class="bi bi-arrow-right ms-1"></i>
         </a>
       </div>
 
-      <div class="row g-4" id="homeAcademyCoursesGrid">
+      <div class="row g-4 grid-2-center-last justify-content-center" id="homeAcademyCoursesGrid">
         <!-- Rendered via JavaScript on DOM load -->
       </div>
     </div>
@@ -724,14 +539,17 @@
   <!-- ==========================================================================
        NOISE-CANCELLATION GUIDE SPOTLIGHT
        ========================================================================== -->
-  <section class="py-5" style="background-color: var(--bg-surface-1); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+  <section class="py-5"
+    style="background-color: var(--bg-surface-1); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
     <div class="container">
       <div class="row align-items-center g-4 g-lg-5">
         <div class="col-12 col-lg-6">
           <div class="eyebrow"><span class="eyebrow-dot"></span> Acoustic Science</div>
           <h2 class="h1 mb-3">Noise Is a Signal Problem. Learn How to Control It.</h2>
           <p class="text-secondary mb-4">
-            No microphone on earth can remove all room reflections or keyboard clicks through sheer magic. True broadcast audio quality comes from treating your signal chain: positioning, mechanical decoupling, acoustic treatment, and gentle gating.
+            No microphone on earth can remove all room reflections or keyboard clicks through sheer magic. True
+            broadcast audio quality comes from treating your signal chain: positioning, mechanical decoupling, acoustic
+            treatment, and gentle gating.
           </p>
 
           <!-- Signal Chain Flow Cards -->
@@ -768,11 +586,13 @@
           <!-- Web Audio Test Tone & Low-Cut Player Demo -->
           <div class="audio-waveform-player mt-4">
             <div class="d-flex justify-content-between align-items-center mb-2">
-              <span class="font-tech text-info small fw-bold"><i class="bi bi-play-circle me-1"></i>INTERACTIVE ACOUSTIC TEST BENCH</span>
+              <span class="font-tech text-info small fw-bold"><i class="bi bi-play-circle me-1"></i>INTERACTIVE ACOUSTIC
+                TEST BENCH</span>
               <span class="text-muted small">Powered by Web Audio API</span>
             </div>
             <p class="small text-secondary mb-3">
-              Test how an 80Hz high-pass filter strips low-end air conditioning rumble without affecting voice fundamentals.
+              Test how an 80Hz high-pass filter strips low-end air conditioning rumble without affecting voice
+              fundamentals.
             </p>
             <div class="d-flex flex-wrap gap-2">
               <button class="btn-wave btn-wave-secondary btn-wave-sm audio-demo-noise-btn" data-lowcut="false">
@@ -796,7 +616,8 @@
 
         <div class="col-12 col-lg-6">
           <div class="rounded-4 overflow-hidden border border-secondary border-opacity-25 shadow-lg">
-            <img src="assets/images/guides/guide-noise-acoustics.jpg" alt="Acoustic Engineering Laboratory Testing" class="w-100 h-auto d-block">
+            <img src="assets/images/guides/guide-noise-acoustics.jpg" alt="Acoustic Engineering Laboratory Testing"
+              class="w-100 h-auto d-block">
           </div>
         </div>
       </div>
@@ -812,19 +633,21 @@
         <div>
           <div class="eyebrow"><span class="eyebrow-dot"></span> Knowledge Hub</div>
           <h2 class="h1 mb-1">Audio Engineering Buying Guides</h2>
-          <p class="text-secondary mb-0">Unbiased engineering breakdowns to help you select the exact gear for your room acoustics.</p>
+          <p class="text-secondary mb-0">Unbiased engineering breakdowns to help you select the exact gear for your room
+            acoustics.</p>
         </div>
         <a href="guides.html" class="btn-wave btn-wave-outline mt-3 mt-md-0">
           View All Guides & Glossary <i class="bi bi-arrow-right ms-1"></i>
         </a>
       </div>
 
-      <div class="row g-4">
+      <div class="row g-4 grid-2-center-last buying-guides-grid justify-content-center">
         <div class="col-12 col-md-6 col-lg-3">
           <div class="category-card">
             <span class="text-info font-tech small fw-bold mb-2">MICROPHONE ARCHITECTURE</span>
             <h4 class="h5 mb-2">Which Microphone Is Right for Your Podcast?</h4>
-            <p class="text-secondary small mb-3">Understanding when a dynamic broadcast mic beats a sensitive studio condenser.</p>
+            <p class="text-secondary small mb-3">Understanding when a dynamic broadcast mic beats a sensitive studio
+              condenser.</p>
             <a href="guides.html#guide-microphones" class="mt-auto text-info fw-bold small">
               Read Guide <i class="bi bi-arrow-right ms-1"></i>
             </a>
@@ -835,7 +658,8 @@
           <div class="category-card">
             <span class="text-info font-tech small fw-bold mb-2">CONNECTIVITY MATRIX</span>
             <h4 class="h5 mb-2">USB vs XLR: Which Should You Choose?</h4>
-            <p class="text-secondary small mb-3">A transparent breakdown of simplicity, upgrade paths, and analog preamps.</p>
+            <p class="text-secondary small mb-3">A transparent breakdown of simplicity, upgrade paths, and analog
+              preamps.</p>
             <a href="guides.html#guide-usb-vs-xlr" class="mt-auto text-info fw-bold small">
               Read Guide <i class="bi bi-arrow-right ms-1"></i>
             </a>
@@ -857,8 +681,20 @@
           <div class="category-card">
             <span class="text-info font-tech small fw-bold mb-2">SYSTEM DESIGN</span>
             <h4 class="h5 mb-2">How to Build a Podcast Studio Setup</h4>
-            <p class="text-secondary small mb-3">From solo YouTube creators to 4-person broadcast table arrangements.</p>
+            <p class="text-secondary small mb-3">From solo YouTube creators to 4-person broadcast table arrangements.
+            </p>
             <a href="guides.html#guide-setup" class="mt-auto text-info fw-bold small">
+              Read Guide <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="category-card">
+            <span class="text-info font-tech small fw-bold mb-2">ACOUSTIC TREATMENT</span>
+            <h4 class="h5 mb-2">Room Acoustics & Noise Isolation</h4>
+            <p class="text-secondary small mb-3">Decoupling desk vibrations and absorbing first reflections for pristine recordings.</p>
+            <a href="noise-cancellation-guide.html" class="mt-auto text-info fw-bold small">
               Read Guide <i class="bi bi-arrow-right ms-1"></i>
             </a>
           </div>
@@ -870,7 +706,8 @@
   <!-- ==========================================================================
        WARRANTY CTA STRIP
        ========================================================================== -->
-  <section class="py-5" style="background-color: var(--bg-surface-1); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+  <section class="py-5"
+    style="background-color: var(--bg-surface-1); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
     <div class="container">
       <div class="warranty-card">
         <div class="row align-items-center g-4">
@@ -878,9 +715,10 @@
             <div class="eyebrow"><span class="eyebrow-dot"></span> Lifetime Confidence</div>
             <h2 class="h1 mb-2">Bought Your Gear? Register It in Seconds.</h2>
             <p class="text-secondary mb-4">
-              Activate your 2-Year Official Manufacturer Warranty plus 1-Year Extended Academy Member Warranty with our instant serial registration engine.
+              Activate your 2-Year Official Manufacturer Warranty plus 1-Year Extended Academy Member Warranty with our
+              instant serial registration engine.
             </p>
-            
+
             <div class="d-flex flex-wrap gap-4 mb-4">
               <div class="d-flex align-items-center gap-2">
                 <i class="bi bi-1-circle-fill text-info fs-5"></i>
@@ -908,10 +746,12 @@
           </div>
 
           <div class="col-12 col-lg-5 text-center">
-            <div class="p-4 rounded-4 border border-secondary border-opacity-25" style="background: var(--bg-surface-2);">
+            <div class="p-4 rounded-4 border border-secondary border-opacity-25"
+              style="background: var(--bg-surface-2);">
               <i class="bi bi-shield-check text-info display-4 mb-3 d-inline-block"></i>
               <h4 class="h5 mb-2">WAVECRAFT Authenticity Shield</h4>
-              <p class="text-muted small mb-0">Every genuine unit features a laser-etched serial key verifying laboratory acoustic calibration.</p>
+              <p class="text-muted small mb-0">Every genuine unit features a laser-etched serial key verifying
+                laboratory acoustic calibration.</p>
             </div>
           </div>
         </div>
@@ -927,7 +767,8 @@
       <div class="eyebrow mx-auto"><span class="eyebrow-dot"></span> The Modern Creator's Sound</div>
       <h2 class="display-5 fw-bold mb-3">Create Better Audio. Learn Faster.</h2>
       <p class="text-secondary mx-auto mb-4" style="max-width: 600px;">
-        Join thousands of podcasters, streamers, and audio producers who trust WAVECRAFT hardware and training for broadcast-standard sound.
+        Join thousands of podcasters, streamers, and audio producers who trust WAVECRAFT hardware and training for
+        broadcast-standard sound.
       </p>
       <div class="d-flex flex-wrap justify-content-center gap-3">
         <a href="shop.html" class="btn-wave btn-wave-primary btn-wave-lg">
@@ -956,14 +797,20 @@
           </a>
           <p class="text-secondary small mb-3">
             <strong>Build Better Sound. Create With Confidence.</strong><br>
-            A specialist destination combining professional podcast audio technology, intelligent acoustic comparisons, and creator production academy.
+            A specialist destination combining professional podcast audio technology, intelligent acoustic comparisons,
+            and creator production academy.
           </p>
           <div class="social-links-wrap">
-            <a href="https://youtube.com" class="social-icon-btn" aria-label="YouTube" target="_blank" rel="noopener"><i class="bi bi-youtube"></i></a>
-            <a href="https://spotify.com" class="social-icon-btn" aria-label="Spotify" target="_blank" rel="noopener"><i class="bi bi-spotify"></i></a>
-            <a href="https://apple.com/apple-podcasts" class="social-icon-btn" aria-label="Apple Podcasts" target="_blank" rel="noopener"><i class="bi bi-apple"></i></a>
-            <a href="https://twitter.com" class="social-icon-btn" aria-label="Twitter / X" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
-            <a href="https://github.com" class="social-icon-btn" aria-label="GitHub" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+            <a href="https://youtube.com" class="social-icon-btn" aria-label="YouTube" target="_blank" rel="noopener"><i
+                class="bi bi-youtube"></i></a>
+            <a href="https://spotify.com" class="social-icon-btn" aria-label="Spotify" target="_blank" rel="noopener"><i
+                class="bi bi-spotify"></i></a>
+            <a href="https://apple.com/apple-podcasts" class="social-icon-btn" aria-label="Apple Podcasts"
+              target="_blank" rel="noopener"><i class="bi bi-apple"></i></a>
+            <a href="https://twitter.com" class="social-icon-btn" aria-label="Twitter / X" target="_blank"
+              rel="noopener"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://github.com" class="social-icon-btn" aria-label="GitHub" target="_blank" rel="noopener"><i
+                class="bi bi-github"></i></a>
           </div>
         </div>
 
@@ -1027,7 +874,7 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  
+
   <script src="assets/js/theme.js"></script>
   <script src="assets/js/products.js"></script>
   <script src="assets/js/compare.js"></script>
@@ -1073,4 +920,5 @@
     });
   </script>
 </body>
+
 </html>
