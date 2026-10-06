@@ -181,8 +181,9 @@ a:hover {
 }
 
 .wave-header.scrolled {
+  background-color: rgba(10, 14, 23, 0.96);
   border-bottom-color: var(--border-medium);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
 }
 
 .wave-navbar {
@@ -461,10 +462,36 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.9rem 0;
+  padding: 0.85rem 0.75rem;
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: var(--accent-cyan) !important;
+  background-color: var(--bg-surface-2);
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent-cyan);
+}
+
+.mobile-menu-actions {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mobile-menu-actions .btn-wave {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
 }
 
 .mobile-dropdown-content {
@@ -1330,6 +1357,12 @@ a:hover {
   font-family: var(--font-primary);
   font-size: 0.9375rem;
   transition: all var(--transition-fast);
+  box-sizing: border-box;
+}
+
+.wave-input,
+.wave-select {
+  min-height: 48px;
 }
 
 .wave-input:focus,
@@ -1511,3 +1544,97 @@ a:hover {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ==========================================================================
+   BACK TO TOP BUTTON
+   ========================================================================== */
+.btn-back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--bg-surface-2);
+  border: 1px solid var(--border-accent);
+  color: var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  z-index: 1080;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px);
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+  padding: 0;
+}
+
+.btn-back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.btn-back-to-top:hover {
+  background-color: var(--accent-cyan);
+  color: #000;
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   PASSWORD VISIBILITY TOGGLE & AUTH ENHANCEMENTS
+   ========================================================================== */
+.password-input-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.password-input-wrap .wave-input {
+  padding-right: 2.75rem;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: color var(--transition-fast);
+  z-index: 2;
+}
+
+.password-toggle-btn:hover {
+  color: var(--accent-cyan);
+}
+
+/* Auth link hover */
+.auth-link,
+a.text-info {
+  transition: all var(--transition-fast);
+}
+
+.auth-link:hover,
+a.text-info:hover {
+  color: #fff !important;
+  text-decoration: underline !important;
+}
+
+/* Equal Height Card Utilities */
+.glossary-card,
+.guidance-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+

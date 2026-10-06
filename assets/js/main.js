@@ -325,16 +325,18 @@
      4. DOM INITIALIZATION
      ========================================================================== */
   document.addEventListener('DOMContentLoaded', () => {
-    // 1. Sticky Header
+    // 1. Sticky Header on Scroll
     const header = document.querySelector('.wave-header');
     if (header) {
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 30) {
+      const updateHeaderScroll = () => {
+        if (window.scrollY > 10) {
           header.classList.add('scrolled');
         } else {
           header.classList.remove('scrolled');
         }
-      }, { passive: true });
+      };
+      window.addEventListener('scroll', updateHeaderScroll, { passive: true });
+      updateHeaderScroll();
     }
 
     // 2. Mobile Offcanvas Menu
@@ -413,7 +415,67 @@
       }
     });
 
-    // 5. GSAP Entrance Animations (respects prefers-reduced-motion)
+    // 5. Back to Top Button
+    let backToTopBtn = document.getElementById('backToTopBtn');
+    if (!backToTopBtn) {
+      backToTopBtn = document.createElement('button');
+      backToTopBtn.id = 'backToTopBtn';
+      backToTopBtn.className = 'btn-back-to-top';
+      backToTopBtn.setAttribute('aria-label', 'Back to top');
+      backToTopBtn.innerHTML = '<i class="bi bi-arrow-up"></i>';
+      document.body.appendChild(backToTopBtn);
+    }
+
+    if (backToTopBtn) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 250) {
+          backToTopBtn.classList.add('show');
+        } else {
+          backToTopBtn.classList.remove('show');
+        }
+      }, { passive: true });
+
+      backToTopBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // 6. Password Visibility Toggle (Eye icon)
+    document.querySelectorAll('.password-toggle-btn').forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        const wrap = this.closest('.password-input-wrap') || this.parentElement;
+        const input = wrap.querySelector('input');
+        const icon = this.querySelector('i');
+        if (input) {
+          if (input.type === 'password') {
+            input.type = 'text';
+            if (icon) {
+              icon.classList.remove('bi-eye');
+              icon.classList.add('bi-eye-slash');
+            }
+          } else {
+            input.type = 'password';
+            if (icon) {
+              icon.classList.remove('bi-eye-slash');
+              icon.classList.add('bi-eye');
+            }
+          }
+        }
+      });
+    });
+
+    // 7. Active State Highlight Sync for Mobile & Desktop
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && (href === currentPath || (currentPath === '' && href === 'index.html'))) {
+        link.classList.add('active');
+      }
+    });
+
+    // 8. GSAP Entrance Animations (respects prefers-reduced-motion)
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (window.gsap && !prefersReducedMotion) {
       gsap.from('.hero-content > *', {
@@ -442,7 +504,7 @@
       });
     }
 
-    // 6. Audio Lab demo buttons handler
+    // 9. Audio Lab demo buttons handler
     document.querySelectorAll('.audio-demo-tone-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -473,7 +535,7 @@
       });
     });
 
-    // Checkout demo trigger
+    // 10. Checkout demo trigger
     const checkoutBtn = document.getElementById('cartCheckoutBtn');
     if (checkoutBtn) {
       checkoutBtn.addEventListener('click', () => {
@@ -482,3 +544,4 @@
     }
   });
 })();
+

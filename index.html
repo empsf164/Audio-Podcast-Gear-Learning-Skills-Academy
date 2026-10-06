@@ -48,6 +48,9 @@
             <a href="index.html" class="wave-nav-link active">Home</a>
           </li>
           <li class="wave-nav-item">
+            <a href="about.html" class="wave-nav-link">About</a>
+          </li>
+          <li class="wave-nav-item">
             <a href="shop.html" class="wave-nav-link">Shop</a>
           </li>
           <li class="wave-nav-item">
@@ -64,9 +67,6 @@
           </li>
           <li class="wave-nav-item">
             <a href="warranty.html" class="wave-nav-link">Warranty</a>
-          </li>
-          <li class="wave-nav-item">
-            <a href="about.html" class="wave-nav-link">About</a>
           </li>
           <li class="wave-nav-item">
             <a href="contact.html" class="wave-nav-link">Contact</a>
@@ -113,11 +113,14 @@
         <a href="index.html" class="mobile-nav-link active">Home</a>
       </li>
       <li class="mobile-nav-item">
+        <a href="about.html" class="mobile-nav-link">About</a>
+      </li>
+      <li class="mobile-nav-item">
         <a href="shop.html" class="mobile-nav-link">Shop</a>
       </li>
       <li class="mobile-nav-item">
         <a href="compare.html" class="mobile-nav-link">
-          Compare Gear <span class="badge bg-info text-dark font-tech compare-badge-count">0</span>
+          Compare <span class="badge bg-info text-dark font-tech compare-badge-count">0</span>
         </a>
       </li>
       <li class="mobile-nav-item">
@@ -127,20 +130,15 @@
         <a href="guides.html" class="mobile-nav-link">Guides</a>
       </li>
       <li class="mobile-nav-item">
-        <a href="warranty.html" class="mobile-nav-link">Warranty Registration</a>
+        <a href="warranty.html" class="mobile-nav-link">Warranty</a>
       </li>
       <li class="mobile-nav-item">
-        <a href="about.html" class="mobile-nav-link">About WAVECRAFT</a>
-      </li>
-      <li class="mobile-nav-item">
-        <a href="contact.html" class="mobile-nav-link">Contact & Support</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
       </li>
     </ul>
 
-    <div class="pt-4 border-top border-secondary opacity-75 mt-3">
-      <div class="d-grid gap-2">
-        <a href="signup.html" class="btn-wave btn-wave-primary btn-wave-sm w-100">Sign Up</a>
-      </div>
+    <div class="mobile-menu-actions">
+      <a href="signup.html" class="btn-wave btn-wave-primary w-100">Sign Up</a>
     </div>
   </aside>
 
@@ -495,7 +493,7 @@
           <p class="text-secondary mb-0">Cut through marketing jargon. Compare polar rejection, self-noise EIN, sample
             rates, and frequency response side by side.</p>
         </div>
-        <div class="d-flex gap-2 mt-3 mt-md-0">
+        <div class="d-flex flex-wrap gap-2 mt-3 mt-md-0 spec-compare-actions">
           <button class="btn-wave btn-wave-secondary btn-wave-sm" id="btnToggleHighlightDiffs">
             <i class="bi bi-highlighter"></i> Highlight Differences
           </button>
@@ -919,6 +917,10 @@
       }
     });
   </script>
+  <!-- Back to Top Button -->
+  <button class="btn-back-to-top" id="backToTopBtn" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
 </body>
 
 </html>

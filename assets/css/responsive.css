@@ -3,10 +3,10 @@
    Guaranteed Zero Horizontal Overflow (320px to 2560px+)
    ========================================================================== */
 
-/* Prevent any parent overflow */
+/* Prevent horizontal overflow without breaking position:sticky navbar */
 html, body {
   max-width: 100vw;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* ==========================================================================
@@ -34,15 +34,21 @@ html, body {
    TABLET & LAPTOP 1024px VIEW (UP TO 1024.98px)
    ========================================================================== */
 @media (max-width: 1024.98px) {
-  /* Show Mobile Hamburger, Hide Desktop Nav Links */
+  /* Hide Desktop Nav Links & Show Mobile Hamburger */
   .wave-nav-menu {
     display: none !important;
   }
   .btn-mobile-toggle {
     display: flex !important;
   }
+
+  /* Remove signup button in header on tab, mobile & 1024px view */
+  .wave-header .wave-nav-actions a[href*="signup"],
+  .wave-header .wave-nav-actions .btn-wave {
+    display: none !important;
+  }
   
-  /* Hero layout stack */
+  /* Hero layout stack & equal button sizes on 1024px home page */
   .hero-section {
     padding: 3rem 0 2.5rem;
   }
@@ -51,6 +57,44 @@ html, body {
   }
   .hero-subtitle {
     font-size: 1.05rem;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+  }
+  .hero-cta-group .btn-wave {
+    flex: 1 1 200px;
+    min-width: 200px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Section header button pairs equal height and size on 1024px */
+  .d-flex.gap-2 > .btn-wave-sm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+  }
+
+  /* Compare page: ensure cards and headers equal height */
+  .spec-compare-card .compare-product-col-header > div {
+    min-height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Warranty page: align input textboxes vertically at 1024px */
+  .wave-form-label {
+    min-height: 22px;
+    margin-bottom: 0.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   /* Signal chain: 2 columns on tablet */
@@ -79,7 +123,6 @@ html, body {
 /* ==========================================================================
    1024PX CARD GRID ALIGNMENT (768px - 1024.98px)
    Align 2 cards in one row, and center-align any trailing odd card
-   Target Sections: Gear Architecture, Professional Catalog, Knowledge Hub, Shop, & WAVECRAFT Academy
    ========================================================================== */
 @media (min-width: 768px) and (max-width: 1024.98px) {
   .grid-2-center-last,
@@ -108,7 +151,7 @@ html, body {
 }
 
 /* ==========================================================================
-   MOBILE PHONES (576px - 767px)
+   MOBILE & TABLET SHARED FIXES (UP TO 767.98px)
    ========================================================================== */
 @media (max-width: 767.98px) {
   .hero-title {
@@ -124,7 +167,7 @@ html, body {
   .tag-pos-3 { top: 12px; right: 12px; }
   .tag-pos-4 { bottom: 12px; right: 12px; }
 
-  /* Trust strip vertical stack or compact 2x2 */
+  /* Trust strip vertical stack */
   .trust-strip {
     padding: 1rem 0;
   }
@@ -149,6 +192,37 @@ html, body {
     padding: 0.65rem;
   }
 
+  /* Spec comparison section header buttons: no overlapping */
+  .spec-compare-section-header .d-flex,
+  section .d-flex.flex-wrap.justify-content-between.align-items-end > .d-flex.gap-2 {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem !important;
+    margin-top: 1rem !important;
+  }
+  .spec-compare-section-header .d-flex .btn-wave,
+  section .d-flex.flex-wrap.justify-content-between.align-items-end > .d-flex.gap-2 .btn-wave {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Interactive acoustic test bench buttons: no overlapping */
+  .audio-waveform-player .d-flex.flex-wrap.gap-2 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.6rem !important;
+    width: 100%;
+  }
+  .audio-waveform-player .audio-demo-noise-btn,
+  .audio-waveform-player .audio-demo-tone-btn {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    white-space: normal !important;
+    padding: 0.65rem 1rem !important;
+  }
+
   /* Signal chain: 1 column on mobile */
   .signal-chain-container {
     grid-template-columns: 1fr;
@@ -159,8 +233,33 @@ html, body {
     padding: 1.5rem;
   }
 
+  /* Warranty and Contact Page Mobile Button Alignment */
+  #warrantyRegistrationForm button[type="submit"],
+  #contactForm button[type="submit"],
+  #warrantyConfirmationCard .d-flex.flex-wrap.gap-3 {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+  }
+
+  #warrantyConfirmationCard .btn-wave {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
   .cart-offcanvas {
     max-width: 100%;
+  }
+
+  .btn-back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
   }
 }
 
@@ -187,9 +286,11 @@ html, body {
   }
 
   .btn-wave-lg {
-    padding: 0.75rem 1.4rem;
-    font-size: 0.95rem;
+    padding: 0.75rem 1.2rem;
+    font-size: 0.9rem;
     width: 100%;
+    text-align: center;
+    justify-content: center;
   }
 
   .hero-cta-group {
@@ -232,7 +333,7 @@ html, body {
     background: #fff !important;
     color: #000 !important;
   }
-  .wave-header, .wave-footer, .btn, .btn-wave, .no-print {
+  .wave-header, .wave-footer, .btn, .btn-wave, .no-print, .btn-back-to-top {
     display: none !important;
   }
   .warranty-certificate-card {
@@ -241,3 +342,4 @@ html, body {
     color: #000 !important;
   }
 }
+
