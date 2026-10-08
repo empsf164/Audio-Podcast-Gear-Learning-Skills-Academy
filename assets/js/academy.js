@@ -18,7 +18,7 @@
       instructorRole: 'Executive Podcast Producer',
       instructorAvatar: 'EV',
       price: 'Free with Gear',
-      image: 'assets/images/academy/course-mic-technique.jpg',
+      image: 'assets/images/academy/course-podcasting-fundamentals.jpg',
       featured: true,
       description: 'Master the essential workflow of modern podcasting: structuring your show, selecting the right gear, audio levels, and RSS hosting distribution.',
       outcomes: [
@@ -120,7 +120,7 @@
       instructorRole: 'Mastering Engineer',
       instructorAvatar: 'DR',
       price: '$89',
-      image: 'assets/images/academy/course-audio-editing.jpg',
+      image: 'assets/images/academy/course-mixing-mastering.jpg',
       featured: true,
       description: 'Learn the advanced dynamics processing, multiband containment, true-peak limiting, and international broadcast loudness standards (AES TD1004, EBU R128).',
       outcomes: [
@@ -151,7 +151,7 @@
       instructorRole: 'Acoustic Architect',
       instructorAvatar: 'KH',
       price: 'Free Resource',
-      image: 'assets/images/guides/guide-noise-acoustics.jpg',
+      image: 'assets/images/academy/course-noise-control.jpg',
       featured: true,
       description: 'Understanding why equipment cannot fix a bad room. Learn mechanical isolation, absorption vs diffusion, and smart microphone positioning.',
       outcomes: [
@@ -182,7 +182,7 @@
       instructorRole: 'Broadcast Stream Technical Director',
       instructorAvatar: 'AR',
       price: '$49',
-      image: 'assets/images/hero/hero-setup.jpg',
+      image: 'assets/images/academy/course-live-streaming.jpg',
       featured: false,
       description: 'Configure rock-solid multi-track audio inside OBS Studio, mix discord voice chat, spotify background music, and microphone with automatic ducking.',
       outcomes: [
